@@ -14,10 +14,16 @@ No additional founder/Roundtable Knight seats are active.
 ## Knight Profile Doctrine
 - The Knight names and authority are fixed.
 - The Knight operating roles are not predefined by system doctrine.
-- Each Knight's profile is defined through onboarding output.
+- Each Knight's profile is defined through onboarding output and observed decisions over time.
 - Source of truth packets:
-  - roundtable_knight_profile_v1
-  - roundtable_alignment_packet_v1
+  - roundtable_knight_profile_dynamic_v1
+  - roundtable_alignment_packet_dynamic_v1
+
+## Dynamic Profile Law
+- The onboarding profile is a starting point, not permanent truth.
+- Profiles update from approvals, blocks, deferrals, direct corrections, repeated patterns, and evidence requirements.
+- Profile updates must cite sourceRunId or sourceDecisionId.
+- Profiles are versioned and historical updates are preserved.
 
 ## Decision Rule
 - Required threshold: 3/3 unanimous approval.
@@ -66,3 +72,4 @@ Roundtable decisions are recorded as roundtable_mandate_v1 and must include:
 ## Alignment Gate Before Major Approval
 - Roundtable major-approval work must use onboarded Knight profiles.
 - If profiles are missing or stale, decision status must be pending until profile alignment is complete.
+- If a Knight profile changes materially, roundtable_alignment_packet_dynamic_v1 must be refreshed before major approval.

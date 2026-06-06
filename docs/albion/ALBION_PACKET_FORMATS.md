@@ -173,47 +173,71 @@ Authority rule:
 - Approval requires unanimous 3/3 (Gwaine, Lancelot, Percival).
 - Any single reject blocks.
 
-## 6.1) roundtable_knight_profile_v1
-Purpose: Individual Knight onboarding profile packet and source of truth for operating style.
+## 6.1) roundtable_knight_profile_dynamic_v1
+Purpose: Individual Knight living profile packet and source of truth for operating behavior.
 
 Required fields:
 - schemaVersion
+- profileVersion
 - knightName: Gwaine | Percival | Lancelot
 - realPerson: Thomas | Dylan | Levon
-- selfDefinedPrimaryLanes[]
-- selfDefinedSecondaryLanes[]
-- sharedLanes[]
-- kingdomFocus[]
-- decisionStyle
-- strengths[]
-- weakSpots[]
-- preferredInputs[]
-- preferredOutputs[]
-- approvalCriteria[]
-- blockingCriteria[]
-- evidenceRequiredForApproval[]
-- questionsTheyAlwaysAsk[]
-- thingsTheyDoNotWantAIToDo[]
-- communicationStyle
-- escalationTriggers[]
-- roundtableCollaborationRules[]
+- currentProfile:
+	- selfDefinedPrimaryLanes[]
+	- selfDefinedSecondaryLanes[]
+	- sharedLanes[]
+	- kingdomFocus[]
+	- kingdomAvoidUnlessNeeded[]
+	- decisionStyle
+	- strengths[]
+	- weakSpots[]
+	- preferredInputs[]
+	- preferredOutputs[]
+	- approvalCriteria[]
+	- blockingCriteria[]
+	- evidenceRequiredForApproval[]
+	- questionsTheyAlwaysAsk[]
+	- thingsTheyDoNotWantAIToDo[]
+	- communicationStyle
+	- canSponsorEarlyWorkFor[]
+	- requiresFullRoundtableApprovalFor[]
+	- defersToOtherKnightsWhen[]
+	- overlapWithOtherKnights[]
+	- escalationTriggers[]
+	- merlinPresentationRules[]
+	- albionRoutingRules[]
+	- roundtableCollaborationRules[]
+- profileConfidence:
+	- highConfidence[]
+	- mediumConfidence[]
+	- lowConfidence[]
+	- needsValidationThroughDecisions[]
+- observedPatterns[]
+- decisionHistory[]
+- changeLog[]
+- profileUpdateTriggers[]
+- profileUpdateRules[]
+- lastUpdatedFromRunId
 - profileStatus: ready_for_roundtable_alignment
 
 Doctrine rule:
 - Knight roles are not assumed by system doctrine.
-- The onboarding output defines Knight operating profile.
+- The onboarding output defines the starting profile.
+- Real decisions and corrections update the profile over time.
 
-## 6.2) roundtable_alignment_packet_v1
-Purpose: Combined Roundtable operating agreement based on the three onboarding profiles.
+## 6.2) roundtable_alignment_packet_dynamic_v1
+Purpose: Dynamic Roundtable operating agreement based on the three living Knight profiles.
 
 Required fields:
 - schemaVersion
+- alignmentVersion
 - requiredKnights: ["Gwaine", "Percival", "Lancelot"]
 - profilesSummarized
 - sharedAuthorityRules[]
 - primaryLaneMap
 - secondaryLaneMap
 - overlapZones[]
+- knownTensionZones[]
+- leadSupportMap[]
 - requiresUnanimousApproval[]
 - singleKnightSponsorshipAllowedFor[]
 - evidenceRequirementsByKnight
@@ -221,14 +245,17 @@ Required fields:
 - escalationTriggers[]
 - merlinPresentationRules[]
 - albionRoutingRules[]
+- antiSpiralRules[]
+- profileUpdatePolicy
 - approvalGate:
 	- passingRule: unanimous_3_of_3
 	- failureRule: any_rejection_blocks
-- profileStatus: ready
+- alignmentStatus: ready
 
 Doctrine rule:
 - Do not force rigid departments.
 - Preserve overlap and shared authority based on profile evidence.
+- Refresh alignment whenever a Knight profile changes materially.
 
 ## 7) albion_action_manifest_v1
 Purpose: Final Albion handoff contract to Merlin.
