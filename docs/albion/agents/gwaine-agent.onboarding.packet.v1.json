@@ -45,8 +45,8 @@
   ],
   "allowedOutputs": [
     "albion_input_packet_v1",
-    "roundtable_knight_profile_v1 draft",
-    "roundtable_alignment_packet_v1 draft",
+    "roundtable_knight_profile_dynamic_v1 draft",
+    "roundtable_alignment_packet_dynamic_v1 draft",
     "route plan",
     "blocker report",
     "Kingdom registry draft",

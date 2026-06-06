@@ -20,9 +20,14 @@ No unregistered Kingdom receives work.
 - PriceScout
 - Continuum
 - LISA
-- Merlin
 - AutoBott
 - Albion Core
+
+Merlin boundary rule:
+- Merlin is separate and user-facing.
+- Merlin is not a Kingdom.
+- Merlin is not listed in the Kingdom Registry.
+- Albion serves Merlin and returns clean action/release packets to Merlin.
 
 ## Governance Flow
 1. Intake packet with kingdomId

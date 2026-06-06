@@ -231,8 +231,8 @@ Albion should use a route library before creating net-new routes:
 ## Roundtable Output
 - Roundtable output packet: roundtable_mandate_v1
 - Roundtable profile packets:
-  - roundtable_knight_profile_v1
-  - roundtable_alignment_packet_v1
+  - roundtable_knight_profile_dynamic_v1
+  - roundtable_alignment_packet_dynamic_v1
 - Mandate decisions govern final pass/block status.
 - Mandate includes routeDecision:
   - destinationReached

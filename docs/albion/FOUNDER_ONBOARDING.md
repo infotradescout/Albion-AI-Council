@@ -51,8 +51,14 @@ High Court output is a recommendation packet only:
 - high_court_recommendation_packet_v1
 
 Roundtable profile packets:
-- roundtable_knight_profile_v1
-- roundtable_alignment_packet_v1
+- roundtable_knight_profile_dynamic_v1
+- roundtable_alignment_packet_dynamic_v1
+
+Profile lifecycle rule:
+- The first onboarding output is the starting profile, not final truth.
+- Profiles update from approvals, blocks, deferrals, corrections, repeated patterns, evidence requirements, and format preferences.
+- Material profile updates must cite sourceRunId or sourceDecisionId.
+- Alignment must refresh after material profile changes.
 
 ## Mandatory Operating Chain
 1. Intake packet v1 includes destination and currentLocation
@@ -86,7 +92,9 @@ Roundtable profile packets:
 
 ## Founder Execution Order
 1. Run Roundtable Knight Onboarding Prompt separately for Thomas, Dylan, and Levon.
-2. Produce three roundtable_knight_profile_v1 packets.
+2. Produce three roundtable_knight_profile_dynamic_v1 packets.
 3. Run Roundtable Alignment Prompt.
-4. Produce roundtable_alignment_packet_v1.
-5. Only then proceed with Kingdom and constituent expansion work.
+4. Produce roundtable_alignment_packet_dynamic_v1.
+5. After meaningful decisions, run profile updates with sourceRunId or sourceDecisionId.
+6. Refresh alignment when any Knight profile changes materially.
+7. Only then proceed with Kingdom and constituent expansion work.

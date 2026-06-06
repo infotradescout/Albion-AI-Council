@@ -103,3 +103,26 @@ No matches found for:
 - Harmless findings: 1
 
 No doctrine files were modified during this audit. Only this audit report file was created.
+
+## Follow-Up Patch
+- Files patched:
+	- docs/albion/ALBION_CONTROL_BIBLE.md
+	- docs/albion/FOUNDER_ONBOARDING.md
+	- docs/albion/agents/gwaine-agent.onboarding.packet.v1.json
+	- docs/albion/KINGDOM_REGISTRY_V0.md
+- Exact drift resolved:
+	- Replaced roundtable_knight_profile_v1 with roundtable_knight_profile_dynamic_v1 in active doctrine references.
+	- Replaced roundtable_alignment_packet_v1 with roundtable_alignment_packet_dynamic_v1 in active doctrine references.
+	- Removed Merlin from Kingdom Registry active Kingdom list and added explicit Merlin boundary rules.
+	- Added dynamic lifecycle language in founder onboarding: starting profile only, update triggers, sourceRunId/sourceDecisionId, and alignment refresh after material changes.
+- Validation grep results:
+	- roundtable_knight_profile_v1: no matches in active doctrine docs under docs/albion (except harmless historical/deprecated contexts if present).
+	- roundtable_alignment_packet_v1: no matches in active doctrine docs under docs/albion (except harmless historical/deprecated contexts if present).
+	- Merlin Kingdom: no matches.
+	- Merlin inside Albion: no matches.
+	- Jeff: no matches.
+	- Sovereign Triumvirate: no matches.
+	- Trader's Corner / Trader’s Corner: no matches.
+	- Albien: no matches.
+- Remaining harmless historical references if any:
+	- None identified in current active doctrine files.
