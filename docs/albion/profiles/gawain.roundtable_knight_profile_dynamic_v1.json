@@ -84,11 +84,10 @@
       "albion_serves_merlin",
       "profile_is_starting_state_not_final"
     ],
-    "mediumConfidence": [
-      "routing_questions_are_core_to_thomas_decision_process",
-      "evidence_and_checkpoint_requirements_are_expected_for_approval"
-    ],
+    "mediumConfidence": [],
     "lowConfidence": [
+      "routing_questions_are_core_to_thomas_decision_process",
+      "evidence_and_checkpoint_requirements_are_expected_for_approval",
       "preferred_input_format",
       "preferred_output_format",
       "personal_decision_style",
@@ -109,28 +108,30 @@
       "evidence_threshold_specifics",
       "format_preferences",
       "defers_to_other_knights_when",
-      "overlap_with_other_knights"
+      "overlap_with_other_knights",
+      "questions_they_always_ask_specific_wording",
+      "things_they_do_not_want_ai_to_do_specific_wording"
     ]
   },
   "observedPatterns": [
     {
       "pattern": "founder_requires_dynamic_not_static_profile_model",
-      "source": "initial_onboarding_instruction",
-      "confidence": "high"
+      "source": "system_seed_instruction_not_direct_founder_answers",
+      "confidence": "low"
     },
     {
       "pattern": "founder_prioritizes_routing_doctrine_and_evidence_gates",
-      "source": "initial_onboarding_instruction",
-      "confidence": "high"
+      "source": "system_seed_instruction_not_direct_founder_answers",
+      "confidence": "low"
     }
   ],
   "decisionHistory": [
     {
       "decisionId": "decision_2026-06-06_initial_dynamic_onboarding_start",
       "type": "onboarding_baseline_created",
-      "summary": "Created first dynamic baseline profile for Gawain/Thomas without predefined role assumptions.",
+      "summary": "Created doctrine-seeded baseline profile for Gawain/Thomas without direct Thomas interview answers.",
       "impact": "profile_initialized",
-      "confidence": "high"
+      "confidence": "low"
     }
   ],
   "changeLog": [
@@ -139,9 +140,9 @@
       "sourceRunId": "run_2026-06-06_Gawain_dynamic_onboarding_v1",
       "sourceDecisionId": "decision_2026-06-06_initial_dynamic_onboarding_start",
       "changeType": "initial_onboarding_baseline",
-      "whatChanged": "Initialized dynamic Knight profile with doctrine-backed constraints and unknowns preserved.",
-      "whyChanged": "Start first real Roundtable dynamic onboarding run without role assumptions.",
-      "confidence": "high"
+      "whatChanged": "Initialized doctrine-seeded baseline with fixed Albion facts and placeholders where direct founder answers are missing.",
+      "whyChanged": "Prepare starting structure before real founder onboarding interview is completed.",
+      "confidence": "low"
     }
   ],
   "profileUpdateTriggers": [
@@ -162,5 +163,5 @@
     "Never overwrite prior profile history; append versioned changes."
   ],
   "lastUpdatedFromRunId": "run_2026-06-06_Gawain_dynamic_onboarding_v1",
-  "profileStatus": "ready_for_roundtable_alignment"
+  "profileStatus": "needs_real_founder_answers"
 }
