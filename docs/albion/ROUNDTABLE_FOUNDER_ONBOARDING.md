@@ -14,172 +14,70 @@
 ## Critical Correction
 - Knight operating roles are not predefined.
 - Do not assign rigid departments or fake boxes.
-- The onboarding result defines each Knight profile.
-- The onboarding packet is the source of truth.
+- Initial onboarding creates the starting profile only.
+- Profiles update over time from real decisions.
+- Onboarding plus observed decisions defines each Knight profile.
 
-## Required Packet 1: roundtable_knight_profile_v1
-{
-  "schemaVersion": "roundtable_knight_profile_v1",
-  "knightName": "Gwaine | Percival | Lancelot",
-  "realPerson": "Thomas | Dylan | Levon",
-  "selfDefinedPrimaryLanes": [],
-  "selfDefinedSecondaryLanes": [],
-  "sharedLanes": [],
-  "kingdomFocus": [],
-  "decisionStyle": "",
-  "strengths": [],
-  "weakSpots": [],
-  "preferredInputs": [],
-  "preferredOutputs": [],
-  "approvalCriteria": [],
-  "blockingCriteria": [],
-  "evidenceRequiredForApproval": [],
-  "questionsTheyAlwaysAsk": [],
-  "thingsTheyDoNotWantAIToDo": [],
-  "communicationStyle": "",
-  "escalationTriggers": [],
-  "roundtableCollaborationRules": [],
-  "profileStatus": "ready_for_roundtable_alignment"
-}
+## Dynamic Source-of-Truth Packets
+- roundtable_knight_profile_dynamic_v1
+- roundtable_alignment_packet_dynamic_v1
 
-## Required Packet 2: roundtable_alignment_packet_v1
-{
-  "schemaVersion": "roundtable_alignment_packet_v1",
-  "requiredKnights": ["Gwaine", "Percival", "Lancelot"],
-  "profiles": {
-    "Gwaine": "roundtable_knight_profile_v1",
-    "Percival": "roundtable_knight_profile_v1",
-    "Lancelot": "roundtable_knight_profile_v1"
-  },
-  "sharedAuthorityRules": [
-    "Nothing major passes without 3/3 approval.",
-    "Any Knight can block.",
-    "AI recommendations are advisory only.",
-    "Knight profiles are produced by onboarding, not assumed."
-  ],
-  "approvalGate": {
-    "passingRule": "unanimous_3_of_3",
-    "failureRule": "any_rejection_blocks"
-  },
-  "profileStatus": "ready"
-}
+## Dynamic Knight Profile Requirements
+Every Knight profile must include:
+- profileVersion
+- currentProfile
+- profileConfidence
+  - highConfidence
+  - mediumConfidence
+  - lowConfidence
+  - needsValidationThroughDecisions
+- observedPatterns
+- decisionHistory
+- profileUpdateTriggers
+- profileUpdateRules
+- lastUpdatedFromRunId
+- profileStatus
 
-## Roundtable Knight Onboarding Prompt
-You are onboarding me as one of the three real human Knights of Albion.
+Profile updates are versioned and must preserve change history.
+No silent overwrites are allowed.
 
-Merlin is the user-facing layer.
-Albion is the one-input/action orchestration layer serving Merlin.
+## Dynamic Alignment Requirements
+Roundtable alignment must include:
+- alignmentVersion
+- knownTensionZones
+- profileUpdatePolicy
+- alignmentStatus
 
-The Roundtable is the human governance layer of Albion.
+Alignment is not one-and-done. It must refresh after material profile changes.
 
-There are exactly three Knights:
-- Gwaine = Thomas
-- Percival = Dylan
-- Lancelot = Levon
+## When Profiles Update
+Run dynamic profile updates when a Knight:
+- approves with reason
+- blocks with reason
+- defers to another Knight
+- corrects an AI assumption
+- repeats a question pattern
+- rejects an output format
+- changes Kingdom focus
+- adds or tightens evidence requirements
 
-Nothing major passes unless all three Knights approve.
-Any one Knight can block.
-AI can recommend, but AI cannot approve final authority.
+Every material update must cite sourceRunId or sourceDecisionId.
 
-Your job is not to assign me a fake role.
-Your job is to extract my real operating profile from my answers.
+## Founder Operating Steps
+1. Run the shared onboarding prompt in [docs/albion/ROUNDTABLE_KNIGHT_ONBOARDING_PROMPT.md](docs/albion/ROUNDTABLE_KNIGHT_ONBOARDING_PROMPT.md) separately for Thomas, Dylan, and Levon.
+2. Capture three roundtable_knight_profile_dynamic_v1 packets.
+3. Run the dynamic alignment prompt in [docs/albion/ROUNDTABLE_ALIGNMENT_PROMPT.md](docs/albion/ROUNDTABLE_ALIGNMENT_PROMPT.md).
+4. Publish the initial roundtable_alignment_packet_dynamic_v1 baseline.
+5. After meaningful decisions, run the dynamic update process in [docs/albion/ROUNDTABLE_KNIGHT_DYNAMIC_PROFILE.md](docs/albion/ROUNDTABLE_KNIGHT_DYNAMIC_PROFILE.md).
+6. Refresh alignment when any profile changes materially.
 
-Ask me questions that define:
-1. What I naturally own in the business.
-2. What I am best at noticing.
-3. What I usually build, sell, package, fix, organize, or push forward.
-4. What kinds of decisions I want to approve.
-5. What kinds of decisions I want to block.
-6. What evidence I need before approving.
-7. What output style helps me move fastest.
-8. Which Kingdoms I care about most.
-9. What I do not want AI agents doing without me.
-10. Where I overlap with the other Knights.
-11. When something should require all 3 Knights.
-12. When a single Knight can sponsor early work.
-13. What makes me lose trust in an AI output.
-14. What should trigger escalation back to the full Roundtable.
-
-After asking the minimum necessary questions, produce this JSON only:
-{
-  "schemaVersion": "roundtable_knight_profile_v1",
-  "knightName": "",
-  "realPerson": "",
-  "selfDefinedPrimaryLanes": [],
-  "selfDefinedSecondaryLanes": [],
-  "sharedLanes": [],
-  "kingdomFocus": [],
-  "decisionStyle": "",
-  "strengths": [],
-  "weakSpots": [],
-  "preferredInputs": [],
-  "preferredOutputs": [],
-  "approvalCriteria": [],
-  "blockingCriteria": [],
-  "evidenceRequiredForApproval": [],
-  "questionsTheyAlwaysAsk": [],
-  "thingsTheyDoNotWantAIToDo": [],
-  "communicationStyle": "",
-  "escalationTriggers": [],
-  "roundtableCollaborationRules": [],
-  "profileStatus": "ready_for_roundtable_alignment"
-}
-
-Do not execute project work yet.
-Do not create Albion agents yet.
-Do not create Kingdom constituents yet.
-Do not assume my role from my name.
-The onboarding result defines the Knight.
-
-## Roundtable Alignment Prompt
-You are aligning the three real human Knights of Albion.
-
-Input:
-- Gwaine / Thomas profile
-- Percival / Dylan profile
-- Lancelot / Levon profile
-
-Your job is to combine the three onboarding profiles into one Roundtable operating agreement.
-
-Do not redefine the Knights.
-Do not force them into rigid departments.
-Use only what their onboarding profiles say.
-
-Produce:
-1. Shared authority rules.
-2. Each Knight's self-defined primary lanes.
-3. Each Knight's secondary lanes.
-4. Where the Knights overlap.
-5. What requires unanimous 3/3 approval.
-6. What can be started by one Knight as sponsorship only.
-7. What evidence each Knight needs.
-8. What causes each Knight to block.
-9. What causes escalation to full Roundtable.
-10. How Merlin and Albion should present outputs to each Knight.
-
-Return this JSON only:
-{
-  "schemaVersion": "roundtable_alignment_packet_v1",
-  "requiredKnights": ["Gwaine", "Percival", "Lancelot"],
-  "profilesSummarized": {
-    "Gwaine": {},
-    "Percival": {},
-    "Lancelot": {}
-  },
-  "sharedAuthorityRules": [],
-  "primaryLaneMap": {},
-  "secondaryLaneMap": {},
-  "overlapZones": [],
-  "requiresUnanimousApproval": [],
-  "singleKnightSponsorshipAllowedFor": [],
-  "evidenceRequirementsByKnight": {},
-  "blockingCriteriaByKnight": {},
-  "escalationTriggers": [],
-  "merlinPresentationRules": [],
-  "albionRoutingRules": [],
-  "approvalGate": {
-    "passingRule": "unanimous_3_of_3",
-    "failureRule": "any_rejection_blocks"
-  },
-  "profileStatus": "ready"
-}
+## Preserved Albion Laws
+- Merlin is separate and user-facing.
+- Albion serves Merlin.
+- No packet, no action.
+- No evidence, no claim.
+- No destination/current location, no route.
+- No Kingdom contamination.
+- Major decisions require unanimous 3/3 approval.
+- Any Knight can block.
+- High Court and AI review are advisory only.
