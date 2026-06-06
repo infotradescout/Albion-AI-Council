@@ -10,7 +10,7 @@ The Roundtable is the human governance layer of Albion.
 
 There are exactly three Knights:
 
-- Gwaine = Thomas
+- Gawain = Thomas
 - Percival = Dylan
 - Lancelot = Levon
 
@@ -166,11 +166,11 @@ Do not produce strategy advice yet.
 Only onboard me and produce my dynamic Roundtable Knight profile.
 
 ## How to use this prompt
-1. Thomas runs this prompt as Gwaine.
+1. Thomas runs this prompt as Gawain.
 2. Dylan runs this prompt as Percival.
 3. Levon runs this prompt as Lancelot.
 4. Collect three profile outputs.
 5. Save outputs as:
-   - gwaine_profile.json
+   - Gawain_profile.json
    - percival_profile.json
    - lancelot_profile.json

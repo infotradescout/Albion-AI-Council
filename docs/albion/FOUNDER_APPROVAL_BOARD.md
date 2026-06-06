@@ -10,7 +10,7 @@ Founder Approval Board provides one-view tracking for mandate status and blocker
 - Sponsor
 - Priority
 - Status
-- Gwaine
+- Gawain
 - Lancelot
 - Percival
 - Blocked By

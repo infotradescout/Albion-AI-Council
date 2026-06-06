@@ -51,7 +51,7 @@ Scope: Read-only terminology and doctrine drift audit across docs/albion
 - Severity: blocker
 - Patch required: yes
 
-### File: docs/albion/agents/gwaine-agent.onboarding.packet.v1.json
+### File: docs/albion/agents/Gawain-agent.onboarding.packet.v1.json
 - Exact stale phrase: "roundtable_knight_profile_v1 draft"
 - Location: line 48
 - Why it conflicts: Agent allowed outputs list references deprecated static packet naming.
@@ -108,7 +108,7 @@ No doctrine files were modified during this audit. Only this audit report file w
 - Files patched:
 	- docs/albion/ALBION_CONTROL_BIBLE.md
 	- docs/albion/FOUNDER_ONBOARDING.md
-	- docs/albion/agents/gwaine-agent.onboarding.packet.v1.json
+	- docs/albion/agents/Gawain-agent.onboarding.packet.v1.json
 	- docs/albion/KINGDOM_REGISTRY_V0.md
 - Exact drift resolved:
 	- Replaced roundtable_knight_profile_v1 with roundtable_knight_profile_dynamic_v1 in active doctrine references.

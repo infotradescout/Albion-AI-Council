@@ -204,7 +204,7 @@ Albion should use a route library before creating net-new routes:
 ## Final Authority
 - Final approval authority belongs to The Roundtable, not the AI High Court.
 - Albion has exactly 3 Knights in the founder/Roundtable layer:
-  - Thomas = Gwaine
+  - Thomas = Gawain
   - Levon = Lancelot
   - Dylan = Percival
 - Knight names are fixed and authority is fixed.
@@ -212,7 +212,7 @@ Albion should use a route library before creating net-new routes:
 - Knight profiles are produced by onboarding and are source of truth.
 - Nothing passes when approval is required unless all 3 Knights approve.
 - Required approvals:
-  - Gwaine approve
+  - Gawain approve
   - Lancelot approve
   - Percival approve
 - Any single Knight rejection blocks passage.

@@ -22,7 +22,7 @@ Albion runs like route navigation:
 - The High Court cannot grant final passage.
 
 ## Roundtable Composition (Exact)
-- Thomas = Gwaine
+- Thomas = Gawain
 - Levon = Lancelot
 - Dylan = Percival
 

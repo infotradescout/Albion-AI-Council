@@ -3,7 +3,7 @@
 ## Fixed Facts
 - Albion starts with three known human Knights.
 - Their names are fixed:
-  - Gwaine = Thomas
+  - Gawain = Thomas
   - Percival = Dylan
   - Lancelot = Levon
 - Their authority is fixed:

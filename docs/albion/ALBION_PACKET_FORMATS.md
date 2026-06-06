@@ -148,8 +148,8 @@ Fields:
 - inputId
 - kingdomId
 - roundtableDecision: approved | blocked | needs_revision | human_discussion_required
-- requiredKnights: ["Gwaine", "Lancelot", "Percival"]
-- approvals.Gwaine: approve | reject | abstain
+- requiredKnights: ["Gawain", "Lancelot", "Percival"]
+- approvals.Gawain: approve | reject | abstain
 - approvals.Lancelot: approve | reject | abstain
 - approvals.Percival: approve | reject | abstain
 - blockedBy[]
@@ -170,7 +170,7 @@ Fields:
 - evidence[]
 
 Authority rule:
-- Approval requires unanimous 3/3 (Gwaine, Lancelot, Percival).
+- Approval requires unanimous 3/3 (Gawain, Lancelot, Percival).
 - Any single reject blocks.
 
 ## 6.1) roundtable_knight_profile_dynamic_v1
@@ -179,7 +179,7 @@ Purpose: Individual Knight living profile packet and source of truth for operati
 Required fields:
 - schemaVersion
 - profileVersion
-- knightName: Gwaine | Percival | Lancelot
+- knightName: Gawain | Percival | Lancelot
 - realPerson: Thomas | Dylan | Levon
 - currentProfile:
 	- selfDefinedPrimaryLanes[]
@@ -230,7 +230,7 @@ Purpose: Dynamic Roundtable operating agreement based on the three living Knight
 Required fields:
 - schemaVersion
 - alignmentVersion
-- requiredKnights: ["Gwaine", "Percival", "Lancelot"]
+- requiredKnights: ["Gawain", "Percival", "Lancelot"]
 - profilesSummarized
 - sharedAuthorityRules[]
 - primaryLaneMap

@@ -1,0 +1,166 @@
+{
+  "schemaVersion": "roundtable_knight_profile_dynamic_v1",
+  "profileVersion": 1,
+  "knightName": "Gawain",
+  "realPerson": "Thomas",
+  "currentProfile": {
+    "selfDefinedPrimaryLanes": [],
+    "selfDefinedSecondaryLanes": [],
+    "sharedLanes": [],
+    "kingdomFocus": [],
+    "kingdomAvoidUnlessNeeded": [],
+    "decisionStyle": "undetermined_from_interview",
+    "strengths": [],
+    "weakSpots": [],
+    "preferredInputs": [],
+    "preferredOutputs": [],
+    "approvalCriteria": [
+      "major_decisions_require_unanimous_3_of_3_roundtable_approval"
+    ],
+    "blockingCriteria": [
+      "any_single_knight_can_block",
+      "no_packet_no_action",
+      "no_evidence_no_claim",
+      "no_destination_or_current_location_no_route",
+      "kingdom_contamination"
+    ],
+    "evidenceRequiredForApproval": [
+      "evidence_backed_claims",
+      "checkpoint_evidence_for_route_progress",
+      "arrival_proof_for_completion"
+    ],
+    "questionsTheyAlwaysAsk": [
+      "what_is_the_destination",
+      "what_is_the_verified_current_location",
+      "what_is_the_route",
+      "what_are_the_roadblocks",
+      "what_checkpoints_prove_progress",
+      "what_is_the_reroute_rule_if_blocked",
+      "what_is_the_arrival_proof"
+    ],
+    "thingsTheyDoNotWantAIToDo": [
+      "assume_knight_roles_without_answers",
+      "treat_ai_advice_as_final_authority",
+      "claim_progress_without_evidence"
+    ],
+    "communicationStyle": "undetermined_from_interview",
+    "canSponsorEarlyWorkFor": [],
+    "requiresFullRoundtableApprovalFor": [
+      "major_decisions"
+    ],
+    "defersToOtherKnightsWhen": [],
+    "overlapWithOtherKnights": [],
+    "escalationTriggers": [
+      "major_decision_pending_requires_3_of_3",
+      "cross_knight_conflict_or_block"
+    ],
+    "merlinPresentationRules": [
+      "merlin_is_separate_and_user_facing",
+      "albion_returns_clean_packets_to_merlin"
+    ],
+    "albionRoutingRules": [
+      "use_google_maps_routing_doctrine",
+      "no_destination_no_route",
+      "no_verified_current_location_no_execution",
+      "no_evidence_no_claim"
+    ],
+    "roundtableCollaborationRules": [
+      "exactly_three_human_knights",
+      "Gawain_is_thomas",
+      "percival_is_dylan",
+      "lancelot_is_levon",
+      "any_knight_can_block",
+      "high_court_is_advisory_only"
+    ]
+  },
+  "profileConfidence": {
+    "highConfidence": [
+      "identity_mapping_Gawain_equals_thomas",
+      "three_human_roundtable_knights_only",
+      "major_decisions_require_unanimous_3_of_3",
+      "any_single_knight_can_block",
+      "high_court_is_advisory_only",
+      "merlin_is_separate_and_user_facing",
+      "albion_serves_merlin",
+      "profile_is_starting_state_not_final"
+    ],
+    "mediumConfidence": [
+      "routing_questions_are_core_to_thomas_decision_process",
+      "evidence_and_checkpoint_requirements_are_expected_for_approval"
+    ],
+    "lowConfidence": [
+      "preferred_input_format",
+      "preferred_output_format",
+      "personal_decision_style",
+      "kingdom_focus_priorities",
+      "defer_patterns"
+    ],
+    "needsValidationThroughDecisions": [
+      "self_defined_primary_lanes",
+      "self_defined_secondary_lanes",
+      "shared_lanes",
+      "kingdom_focus",
+      "kingdom_avoid_unless_needed",
+      "decision_style",
+      "strengths",
+      "weak_spots",
+      "approval_criteria_specifics",
+      "blocking_criteria_specifics",
+      "evidence_threshold_specifics",
+      "format_preferences",
+      "defers_to_other_knights_when",
+      "overlap_with_other_knights"
+    ]
+  },
+  "observedPatterns": [
+    {
+      "pattern": "founder_requires_dynamic_not_static_profile_model",
+      "source": "initial_onboarding_instruction",
+      "confidence": "high"
+    },
+    {
+      "pattern": "founder_prioritizes_routing_doctrine_and_evidence_gates",
+      "source": "initial_onboarding_instruction",
+      "confidence": "high"
+    }
+  ],
+  "decisionHistory": [
+    {
+      "decisionId": "decision_2026-06-06_initial_dynamic_onboarding_start",
+      "type": "onboarding_baseline_created",
+      "summary": "Created first dynamic baseline profile for Gawain/Thomas without predefined role assumptions.",
+      "impact": "profile_initialized",
+      "confidence": "high"
+    }
+  ],
+  "changeLog": [
+    {
+      "version": 1,
+      "sourceRunId": "run_2026-06-06_Gawain_dynamic_onboarding_v1",
+      "sourceDecisionId": "decision_2026-06-06_initial_dynamic_onboarding_start",
+      "changeType": "initial_onboarding_baseline",
+      "whatChanged": "Initialized dynamic Knight profile with doctrine-backed constraints and unknowns preserved.",
+      "whyChanged": "Start first real Roundtable dynamic onboarding run without role assumptions.",
+      "confidence": "high"
+    }
+  ],
+  "profileUpdateTriggers": [
+    "approval_with_reason",
+    "block_with_reason",
+    "deferral_to_other_knight",
+    "correction_of_ai_assumption",
+    "repeated_question_pattern",
+    "format_rejection",
+    "kingdom_focus_shift",
+    "new_evidence_requirement"
+  ],
+  "profileUpdateRules": [
+    "Do not update from a single weak signal unless the Knight explicitly confirms it.",
+    "Do update from repeated decision behavior.",
+    "Do update from direct correction.",
+    "Every update must include sourceRunId or sourceDecisionId.",
+    "Never overwrite prior profile history; append versioned changes."
+  ],
+  "lastUpdatedFromRunId": "run_2026-06-06_Gawain_dynamic_onboarding_v1",
+  "profileStatus": "ready_for_roundtable_alignment"
+}

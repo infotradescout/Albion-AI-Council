@@ -9,7 +9,7 @@ The Authority Matrix determines who can approve what, and when Roundtable 3/3 is
 - approvalReason
 
 ## Roundtable 3/3 Required
-The following require unanimous approval from Gwaine, Lancelot, and Percival:
+The following require unanimous approval from Gawain, Lancelot, and Percival:
 - production release
 - cross-Kingdom access
 - pricing or business model changes

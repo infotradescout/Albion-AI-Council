@@ -42,7 +42,7 @@ Merlin boundary rule:
 - High Court is advisory only.
 - Roundtable is final authority where approval is required.
 - 3/3 unanimous Knight approval is required:
-  - Gwaine
+  - Gawain
   - Lancelot
   - Percival
 - Any one Knight rejection blocks passage.

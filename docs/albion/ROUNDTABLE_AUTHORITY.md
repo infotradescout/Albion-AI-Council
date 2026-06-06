@@ -5,7 +5,7 @@
 - The High Court is advisory and does not have final pass power.
 
 ## Knights (Exact and Exclusive)
-- Gwaine (Thomas)
+- Gawain (Thomas)
 - Lancelot (Levon)
 - Percival (Dylan)
 
@@ -28,7 +28,7 @@ No additional founder/Roundtable Knight seats are active.
 ## Decision Rule
 - Required threshold: 3/3 unanimous approval.
 - Passage requires:
-  - Gwaine = approve
+  - Gawain = approve
   - Lancelot = approve
   - Percival = approve
 - Any single reject blocks passage.
@@ -44,8 +44,8 @@ Roundtable decisions are recorded as roundtable_mandate_v1 and must include:
 - inputId
 - kingdomId
 - roundtableDecision: approved | blocked | needs_revision | human_discussion_required
-- requiredKnights: ["Gwaine", "Lancelot", "Percival"]
-- approvals.Gwaine: approve | reject | abstain
+- requiredKnights: ["Gawain", "Lancelot", "Percival"]
+- approvals.Gawain: approve | reject | abstain
 - approvals.Lancelot: approve | reject | abstain
 - approvals.Percival: approve | reject | abstain
 - blockedBy[]

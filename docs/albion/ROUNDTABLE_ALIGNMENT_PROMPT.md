@@ -5,7 +5,7 @@ Use this after all three dynamic profiles exist. Re-run whenever one profile cha
 You are aligning the three living Knight profiles of Albion.
 
 Input:
-- Gwaine dynamic profile
+- Gawain dynamic profile
 - Percival dynamic profile
 - Lancelot dynamic profile
 
@@ -23,9 +23,9 @@ Produce this JSON only:
 {
 "schemaVersion": "roundtable_alignment_packet_dynamic_v1",
 "alignmentVersion": 1,
-"requiredKnights": ["Gwaine", "Percival", "Lancelot"],
+"requiredKnights": ["Gawain", "Percival", "Lancelot"],
 "profilesSummarized": {
-"Gwaine": {},
+"Gawain": {},
 "Percival": {},
 "Lancelot": {}
 },
