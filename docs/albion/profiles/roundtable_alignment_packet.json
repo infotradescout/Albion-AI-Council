@@ -14,7 +14,7 @@
     },
     "Lancelot": {
       "profileSource": "lancelot.roundtable_knight_profile_dynamic_v1.json",
-      "status": "missing"
+      "status": "present_invalid_json"
     }
   },
   "universalRoundtableLaw": [],

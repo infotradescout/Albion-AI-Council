@@ -11,7 +11,7 @@ Required files:
 Current status:
 - Gawain/Thomas profile exists.
 - Percival/Dylan profile missing.
-- Lancelot/Levon profile missing.
+- Lancelot/Levon profile received but invalid JSON (truncated). Re-run and save full JSON.
 
 ## Canonical Knight Names
 - Gawain = Thomas
@@ -38,6 +38,7 @@ This is not a personality quiz. It tells Albion how to route work, what you need
 5. Answer naturally from real decision behavior.
 6. Return JSON only.
 7. Save the result as `docs/albion/profiles/lancelot.roundtable_knight_profile_dynamic_v1.json`.
+8. Validate the saved file parses as JSON before marking complete.
 
 ## Preserved Albion Laws
 - All major decisions require unanimous 3/3.
