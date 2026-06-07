@@ -232,6 +232,8 @@ Required fields:
 - alignmentVersion
 - requiredKnights: ["Gawain", "Percival", "Lancelot"]
 - profilesSummarized
+- universalRoundtableLaw[]
+- gawainSpecificRules[]
 - sharedAuthorityRules[]
 - primaryLaneMap
 - secondaryLaneMap
@@ -250,12 +252,65 @@ Required fields:
 - approvalGate:
 	- passingRule: unanimous_3_of_3
 	- failureRule: any_rejection_blocks
-- alignmentStatus: ready
+- alignmentStatus: ready | waiting_for_profiles
 
 Doctrine rule:
 - Do not force rigid departments.
 - Preserve overlap and shared authority based on profile evidence.
 - Refresh alignment whenever a Knight profile changes materially.
+
+## 6.3) gawain_decision_packet_v1
+Purpose: Schema-first decision-control packet for Gawain routing/governance review.
+
+Required fields:
+- schemaVersion
+- decisionId
+- destination
+- currentLocation
+- route
+- roadblocks[]
+- checkpoints[]
+- rerouteRules[]
+- arrivalProof
+- customerHappinessImpact:
+	- isImpacted
+	- affectedAreas[]
+- requiresRoundtable
+- recommendedDecision: approve | block | defer | needs_evidence
+- evidenceClassification:
+	- verifiedFact[]
+	- assumption[]
+	- unknown[]
+	- conflict[]
+	- recommendation[]
+- antiFabrication:
+	- missingFields[]
+	- unsupportedClaims[]
+	- blockedLanguage[]
+	- status: pass | blocked
+- escalationClass: localKingdomWork | gawainReview | fullRoundtableRequired | blocked
+- createdAt
+
+Gate rules:
+- No destination, no route.
+- No current location, no execution.
+- No evidence, no claim.
+- If customerHappinessImpact.isImpacted is true, requiresRoundtable must be true.
+
+## 6.4) profile_update_ledger_entry_v1
+Purpose: Append-only record for dynamic profile changes.
+
+Required fields:
+- profileChange
+- sourceDecisionId or sourceRunId
+- reason
+- confidence: low | medium | high
+- previousRuleStillVisible: true | false
+- appendedAt
+
+Ledger law:
+- Profile updates append; they do not overwrite prior rules or history.
+- Unsupported profile edits without sourceDecisionId/sourceRunId are invalid.
 
 ## 7) albion_action_manifest_v1
 Purpose: Final Albion handoff contract to Merlin.

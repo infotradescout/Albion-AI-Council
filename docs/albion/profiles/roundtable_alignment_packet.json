@@ -1,0 +1,55 @@
+{
+  "schemaVersion": "roundtable_alignment_packet_dynamic_v1",
+  "alignmentVersion": 1,
+  "requiredKnights": ["Gawain", "Percival", "Lancelot"],
+  "missingProfiles": ["Percival", "Lancelot"],
+  "profilesSummarized": {
+    "Gawain": {
+      "profileSource": "gawain.roundtable_knight_profile_dynamic_v1.json",
+      "status": "present"
+    },
+    "Percival": {
+      "profileSource": "percival.roundtable_knight_profile_dynamic_v1.json",
+      "status": "missing"
+    },
+    "Lancelot": {
+      "profileSource": "lancelot.roundtable_knight_profile_dynamic_v1.json",
+      "status": "missing"
+    }
+  },
+  "universalRoundtableLaw": [],
+  "gawainSpecificRules": [],
+  "sharedAuthorityRules": [
+    "Nothing major passes without unanimous 3/3 approval.",
+    "Any Knight can block.",
+    "AI recommendations are advisory only."
+  ],
+  "primaryLaneMap": {},
+  "secondaryLaneMap": {},
+  "overlapZones": [],
+  "knownTensionZones": [],
+  "leadSupportMap": [],
+  "requiresUnanimousApproval": [],
+  "singleKnightSponsorshipAllowedFor": [],
+  "evidenceRequirementsByKnight": {},
+  "blockingCriteriaByKnight": {},
+  "escalationTriggers": [],
+  "merlinPresentationRules": [],
+  "albionRoutingRules": [],
+  "antiSpiralRules": [],
+  "profileUpdatePolicy": {
+    "whenToRefreshAlignment": [
+      "any Knight profile changes materially",
+      "a Knight blocks for a new reason",
+      "a repeated conflict appears",
+      "a Kingdom focus changes",
+      "Merlin presentation rules change"
+    ],
+    "changeRequiresRoundtableConfirmation": true
+  },
+  "approvalGate": {
+    "passingRule": "unanimous_3_of_3",
+    "failureRule": "any_rejection_blocks"
+  },
+  "alignmentStatus": "waiting_for_profiles"
+}

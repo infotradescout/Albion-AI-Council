@@ -9,6 +9,11 @@ Input:
 - Percival dynamic profile
 - Lancelot dynamic profile
 
+If either Percival or Lancelot profile is missing, do not generate a final alignment.
+Return only:
+- alignmentStatus: waiting_for_profiles
+- missingProfiles: []
+
 Your job is to create or update the Roundtable operating agreement.
 
 Do not force static roles.
@@ -29,6 +34,8 @@ Produce this JSON only:
 "Percival": {},
 "Lancelot": {}
 },
+"universalRoundtableLaw": [],
+"gawainSpecificRules": [],
 "sharedAuthorityRules": [
 "Nothing major passes without unanimous 3/3 approval.",
 "Any Knight can block.",
@@ -62,11 +69,13 @@ Produce this JSON only:
 "passingRule": "unanimous_3_of_3",
 "failureRule": "any_rejection_blocks"
 },
-"alignmentStatus": "ready"
+"alignmentStatus": "ready | waiting_for_profiles"
 }
 
 ## How to use
 1. Run shared onboarding prompt separately for Thomas, Dylan, and Levon.
 2. Collect three roundtable_knight_profile_dynamic_v1 outputs.
-3. Run this alignment prompt to create alignment baseline.
-4. Re-run this prompt after material profile change events.
+3. If Dylan (Percival) or Levon (Lancelot) profile is missing, stop and return waiting_for_profiles.
+4. Run this alignment prompt to create alignment baseline.
+5. Save output as roundtable_alignment_packet.json.
+6. Re-run this prompt after material profile change events.
