@@ -2,11 +2,11 @@
   "schemaVersion": "roundtable_alignment_packet_dynamic_v1",
   "alignmentVersion": 1,
   "requiredKnights": ["Gawain", "Percival", "Lancelot"],
-  "missingProfiles": ["Percival", "Lancelot"],
+  "missingProfiles": ["Percival"],
   "profilesSummarized": {
     "Gawain": {
       "profileSource": "gawain.roundtable_knight_profile_dynamic_v1.json",
-      "status": "present"
+      "status": "present_valid_json"
     },
     "Percival": {
       "profileSource": "percival.roundtable_knight_profile_dynamic_v1.json",
@@ -14,7 +14,7 @@
     },
     "Lancelot": {
       "profileSource": "lancelot.roundtable_knight_profile_dynamic_v1.json",
-      "status": "present_invalid_json"
+      "status": "present_valid_json"
     }
   },
   "universalRoundtableLaw": [],
@@ -51,5 +51,5 @@
     "passingRule": "unanimous_3_of_3",
     "failureRule": "any_rejection_blocks"
   },
-  "alignmentStatus": "waiting_for_profiles"
+  "alignmentStatus": "blocked_waiting_for_valid_profiles"
 }

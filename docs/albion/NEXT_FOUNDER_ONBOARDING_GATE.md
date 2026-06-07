@@ -9,9 +9,9 @@ Required files:
 - `docs/albion/profiles/lancelot.roundtable_knight_profile_dynamic_v1.json`
 
 Current status:
-- Gawain/Thomas profile exists.
+- Gawain/Thomas profile exists and parses as valid JSON.
 - Percival/Dylan profile missing.
-- Lancelot/Levon profile received but invalid JSON (truncated). Re-run and save full JSON.
+- Lancelot/Levon profile exists and parses as valid JSON.
 
 ## Canonical Knight Names
 - Gawain = Thomas
@@ -30,15 +30,8 @@ This is not a personality quiz. It tells Albion how to route work, what you need
 6. Return JSON only.
 7. Save the result as `docs/albion/profiles/percival.roundtable_knight_profile_dynamic_v1.json`.
 
-## Levon (Lancelot) Instructions
-1. Open ChatGPT.
-2. Open `docs/albion/ROUNDTABLE_KNIGHT_ONBOARDING_PROMPT.md`.
-3. Paste the full prompt into ChatGPT.
-4. State clearly: "I am Lancelot/Levon."
-5. Answer naturally from real decision behavior.
-6. Return JSON only.
-7. Save the result as `docs/albion/profiles/lancelot.roundtable_knight_profile_dynamic_v1.json`.
-8. Validate the saved file parses as JSON before marking complete.
+## Levon (Lancelot) Status
+Lancelot/Levon has returned a complete valid JSON profile and is no longer blocking alignment generation.
 
 ## Preserved Albion Laws
 - All major decisions require unanimous 3/3.
@@ -50,6 +43,6 @@ This is not a personality quiz. It tells Albion how to route work, what you need
 
 ## Final Stop Rule
 Do not create `roundtable_alignment_packet_dynamic_v1` yet.
-Do not create placeholder Percival or Lancelot profiles.
-Do not infer Dylan or Levon profiles from Thomas.
-Create alignment only after both missing profile files are present.
+Do not create placeholder Percival profiles.
+Do not infer Dylan profiles from Thomas, Levon, or Gawain.
+Create alignment only after the Percival profile file is present and parses as valid JSON.
