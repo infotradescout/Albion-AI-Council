@@ -1,6 +1,6 @@
 {
 "schemaVersion": "roundtable_knight_profile_dynamic_v1",
-"profileVersion": 1,
+"profileVersion": 2,
 "knightName": "Gawain",
 "realPerson": "Thomas",
 "currentProfile": {
@@ -385,7 +385,17 @@
 "Gawain approves tests when they have one success signal, one failure signal, and one owner.",
 "Gawain allows affiliate/discount offer testing when the offer is real, useful, clean, has known terms, known internal payout, and does not trick or overcharge the customer.",
 "Gawain allows public beta when users understand what they are doing, no major consequence is hidden, support exists, and rollback exists.",
-"Gawain may approve positioning/message fixes and targeted build work at the same time when both stay tied to the route and measurable learning."
+"Gawain may approve positioning/message fixes and targeted build work at the same time when both stay tied to the route and measurable learning.",
+"Confirmed activity signal: ChatGPT control tower pattern.",
+"Confirmed activity signal: intent drift sensitivity.",
+"Confirmed activity signal: validation-first trust pattern.",
+"Confirmed activity signal: narrow slice discipline.",
+"Confirmed activity signal: AI chain-of-custody pattern.",
+"Confirmed activity signal: no-fluff output preference.",
+"Confirmed activity signal: boundary enforcement pattern.",
+"Confirmed activity signal: objector/auditor pattern.",
+"Confirmed activity signal: handoff completeness requirement.",
+"Confirmed activity signal: runtime truth preference."
 ],
 "mediumConfidence": [
 "Gawain is opportunity-forward when an offer has customer value, product/service quality, and affiliate payout.",
@@ -501,6 +511,75 @@
 ]
 }
 ],
+"activityDerivedProfileSignals": {
+"sourceType": "activity_derived_from_thomas_chatgpt_usage",
+"evidenceTreatment": "observed_not_self_declared",
+"confirmationSourceDecisionId": "gawain_activity_signal_confirmation_001",
+"confirmationNote": "Thomas confirmed the activity-derived Gawain signals were pretty spot on.",
+"observedPatterns": [
+{
+"signalId": "activity_signal_001",
+"name": "ChatGPT Control Tower Pattern",
+"description": "Thomas uses ChatGPT as the central control plane for routing, auditing, validating, and producing executor-ready prompts across Codex, Gemini, Copilot, Replit, VS Code, and other tools."
+},
+{
+"signalId": "activity_signal_002",
+"name": "Intent Drift Sensitivity",
+"description": "Thomas rapidly corrects the assistant when it answers the wrong layer, finalizes too early, asks bad questions, uses developer jargon, or misses the intended system command."
+},
+{
+"signalId": "activity_signal_003",
+"name": "Validation-First Trust Pattern",
+"description": "Thomas trusts claims only when backed by source evidence, tests, runtime proof, production smoke, commits, logs, or user-visible evidence."
+},
+{
+"signalId": "activity_signal_004",
+"name": "Narrow Slice Discipline",
+"description": "Thomas prefers one destination per packet, no scope creep, preserve working behavior, finish current slice before opening new loops, and state what is intentionally not changing."
+},
+{
+"signalId": "activity_signal_005",
+"name": "AI Chain-of-Custody Pattern",
+"description": "Thomas uses multiple AIs but keeps authority human: Gemini as objector/suggestor, ChatGPT/Gawain as router/synthesizer/governance guard, Codex as executor, and Roundtable as approval authority."
+},
+{
+"signalId": "activity_signal_006",
+"name": "No-Fluff Output Preference",
+"description": "Thomas prefers direct, decision-first, owner-readable, executor-ready output with Summary for Gemini and Codex Prompt. He rejects generic strategy, fake data, placeholders, and unsupported claims."
+},
+{
+"signalId": "activity_signal_007",
+"name": "Boundary Enforcement Pattern",
+"description": "Thomas repeatedly enforces separation of projects, brands, Kingdoms, AI authority, and human governance."
+},
+{
+"signalId": "activity_signal_008",
+"name": "Objector/Auditor Pattern",
+"description": "Thomas frequently acts as adversarial reviewer, acceptance-gate checker, doctrine enforcer, and production-readiness auditor."
+},
+{
+"signalId": "activity_signal_009",
+"name": "Handoff Completeness Requirement",
+"description": "Thomas often works from mobile or constrained environments and needs complete prompts, no placeholders, exact next actions, and outputs usable by another AI/human without missing context."
+},
+{
+"signalId": "activity_signal_010",
+"name": "Runtime Truth Preference",
+"description": "Thomas distinguishes architecture claims from implementation claims, validation claims, and production/user-visible proof."
+}
+],
+"modules": [
+"Intent Drift Detector",
+"Validation Ladder",
+"Slice Discipline Guard",
+"AI Chain of Custody",
+"No-Fluff Output Filter",
+"Boundary Registry",
+"Objector Mode",
+"Handoff Completeness Guard",
+"Runtime Truth Classifier"
+]
+},
 "decisionHistory": [
 {
 "sourceDecisionId": "gawain_onboarding_scenario_1",
@@ -662,6 +741,23 @@
 "sourceDecisionId": "gawain_gap_closure_001",
 "decision": "Approved test rule, affiliate offer rule, public beta rule, and resource rule. Corrected build-more rule: positioning/message fixes and targeted build work can happen at the same time.",
 "profileImpact": "Final onboarding gaps closed enough for first Gawain profile."
+},
+{
+"sourceDecisionId": "gawain_activity_signal_confirmation_001",
+"observedDecision": "Thomas confirmed the activity-derived Gawain signals were pretty spot on.",
+"profileImpact": "Promote ChatGPT activity-derived signals from inferred observations to high-confidence Gawain profile evidence.",
+"confirmedSignals": [
+"ChatGPT control tower pattern",
+"intent drift sensitivity",
+"validation-first trust pattern",
+"narrow slice discipline",
+"AI chain-of-custody pattern",
+"no-fluff output preference",
+"boundary enforcement pattern",
+"objector/auditor pattern",
+"handoff completeness requirement",
+"runtime truth preference"
+]
 }
 ],
 "profileUpdateTriggers": [
@@ -684,6 +780,6 @@
 "Every profile correction must preserve the prior decision record and cite the correction source.",
 "Use plain-language owner rules when technical wording blocks clear governance."
 ],
-"lastUpdatedFromRunId": "gawain_onboarding_initial_run_2026-06-06",
+"lastUpdatedFromRunId": "gawain_activity_signal_confirmation_001",
 "profileStatus": "ready_for_roundtable_alignment"
 }
