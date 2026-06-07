@@ -1,148 +1,284 @@
 {
   "schemaVersion": "roundtable_knight_profile_dynamic_v1",
-  "profileVersion": 1,
+  "profileVersion": 2,
   "knightName": "Gawain",
   "realPerson": "Thomas",
   "currentProfile": {
-    "selfDefinedPrimaryLanes": [],
-    "selfDefinedSecondaryLanes": [],
-    "sharedLanes": [],
-    "kingdomFocus": [],
-    "kingdomAvoidUnlessNeeded": [],
-    "decisionStyle": "undetermined_from_interview",
-    "strengths": [],
+    "selfDefinedPrimaryLanes": [
+      "building_working_systems",
+      "protecting_doctrine_and_trust_architecture",
+      "forcing_decision_ready_routing",
+      "turning_opportunities_into_testable_business_routes",
+      "guarding_execution_quality_before_scale",
+      "protecting_customer_happiness_through_3_of_3_alignment"
+    ],
+    "selfDefinedSecondaryLanes": [
+      "revenue_model_review",
+      "affiliate_backed_offer_evaluation",
+      "public_claim_truth_checking",
+      "workflow_adoption_review",
+      "kingdom_boundary_review",
+      "customer_facing_ux_consequence_review"
+    ],
+    "sharedLanes": [
+      "customer_happiness",
+      "major_albion_governance_decisions",
+      "cross_kingdom_infrastructure_and_routing",
+      "brand_trust_surfaces",
+      "workflow_changes_affecting_all_three_knights",
+      "major_launch_scale_or_repositioning_decisions",
+      "public_facing_offers_and_experience"
+    ],
+    "kingdomFocus": [
+      "albion",
+      "merlin",
+      "tradescout",
+      "roundtable_governance",
+      "shared_orchestration_infrastructure_with_separated_outputs"
+    ],
+    "kingdomAvoidUnlessNeeded": [
+      "cross_kingdom_mixed_messaging",
+      "shared_audiences_without_clear_consent_or_intent",
+      "public_execution_from_incomplete_packets",
+      "feature_expansion_before_adoption_diagnosis",
+      "customer_facing_changes_without_3_of_3_alignment"
+    ],
+    "decisionStyle": "execution_oriented_evidence_gated_trust_protective_momentum_aware_doctrine_first_customer_happiness_sensitive_route_first",
+    "strengths": [
+      "decision_first_routing",
+      "evidence_gated_execution",
+      "trust_architecture_protection",
+      "momentum_with_risk_controls",
+      "doctrine_enforcement_under_pressure"
+    ],
     "weakSpots": [],
-    "preferredInputs": [],
-    "preferredOutputs": [],
+    "preferredInputs": [
+      "decision_first_summary",
+      "facts_assumptions_unknowns_conflicts_recommendation_split",
+      "clear_route_with_checkpoints_and_arrival_proof",
+      "explicit_roadblocks_and_reroute_rules"
+    ],
+    "preferredOutputs": [
+      "decision_first_then_supporting_detail",
+      "evidence_class_separated_output",
+      "compressed_operationally_actionable_packets"
+    ],
     "approvalCriteria": [
-      "major_decisions_require_unanimous_3_of_3_roundtable_approval"
+      "evidence_backed_route",
+      "verified_current_location",
+      "clear_destination",
+      "known_risks",
+      "rollback_path",
+      "logs_and_traceability",
+      "customer_value",
+      "product_or_service_quality",
+      "business_model_or_proxy_kpi",
+      "failure_conditions",
+      "kpi_owner",
+      "human_adoption_proof_for_workflow_changes",
+      "customer_happiness_protected",
+      "3_of_3_alignment_for_customer_impacting_decisions"
     ],
     "blockingCriteria": [
-      "any_single_knight_can_block",
-      "no_packet_no_action",
-      "no_evidence_no_claim",
-      "no_destination_or_current_location_no_route",
-      "kingdom_contamination"
+      "unsupported_claims",
+      "guessed_facts",
+      "fake_completeness",
+      "ai_confidence_treated_as_proof",
+      "paid_ranking_or_pay_to_play_trust_distortion",
+      "spammy_or_high_pressure_outreach",
+      "messy_fulfillment",
+      "thin_or_unproven_margin",
+      "unclear_customer_value",
+      "unknown_failure_modes",
+      "no_rollback",
+      "strategy_without_route",
+      "execution_without_packet_review",
+      "kingdom_contamination",
+      "outside_authority_entering_system",
+      "customer_impacting_change_without_3_of_3_alignment",
+      "profit_used_to_excuse_doctrine_violation",
+      "scaling_without_traceability",
+      "manual_workaround_touching_high_consequence_areas"
     ],
     "evidenceRequiredForApproval": [
-      "evidence_backed_claims",
-      "checkpoint_evidence_for_route_progress",
-      "arrival_proof_for_completion"
+      "source_evidence_for_factual_claims",
+      "routing_evidence_for_automation",
+      "system_behavior_logs",
+      "rollback_or_containment_proof",
+      "customer_value_proof",
+      "product_or_service_legitimacy_proof",
+      "affiliate_payout_proof_when_applicable",
+      "margin_proof_for_physical_product_offers",
+      "fulfillment_proof_for_physical_product_offers",
+      "usage_conversion_or_feedback_before_more_build",
+      "best_effort_verification_when_evidence_conflicts",
+      "proxy_kpi_before_testing_when_primary_kpi_unclear",
+      "business_model_test_before_scaling",
+      "traceability_before_scale"
     ],
     "questionsTheyAlwaysAsk": [
-      "what_is_the_destination",
+      "what_is_the_decision",
+      "why_does_it_work",
       "what_is_the_verified_current_location",
       "what_is_the_route",
       "what_are_the_roadblocks",
       "what_checkpoints_prove_progress",
-      "what_is_the_reroute_rule_if_blocked",
-      "what_is_the_arrival_proof"
+      "what_are_the_reroute_rules",
+      "what_is_the_arrival_proof",
+      "what_is_the_next_action"
     ],
     "thingsTheyDoNotWantAIToDo": [
-      "assume_knight_roles_without_answers",
-      "treat_ai_advice_as_final_authority",
-      "claim_progress_without_evidence"
+      "invent_fields_or_guess_facts",
+      "hide_missing_evidence",
+      "sound_certain_without_proof",
+      "blend_facts_and_assumptions",
+      "recommend_execution_without_route",
+      "ignore_conflicting_evidence",
+      "bypass_packet_doctrine",
+      "treat_brainstorming_as_execution_ready"
     ],
-    "communicationStyle": "undetermined_from_interview",
-    "canSponsorEarlyWorkFor": [],
+    "communicationStyle": "decision_first_concise_with_evidence_class_separation",
+    "canSponsorEarlyWorkFor": [
+      "routine_local_kingdom_decisions_without_customer_happiness_impact",
+      "internal_cleanup_and_logging_repair",
+      "contained_internal_tests",
+      "offer_discussion_and_controlled_reversible_tests_with_legitimacy"
+    ],
     "requiresFullRoundtableApprovalFor": [
-      "major_decisions"
+      "all_customer_impacting_issues",
+      "customer_happiness_related_changes",
+      "aggressive_outreach_or_brand_risk_surfaces",
+      "doctrine_or_governance_or_boundary_changes"
     ],
-    "defersToOtherKnightsWhen": [],
-    "overlapWithOtherKnights": [],
+    "defersToOtherKnightsWhen": [
+      "packaging_direction_after_proof_gates_to_percival",
+      "promotion_direction_after_proof_gates_to_lancelot",
+      "routine_local_decisions_with_clear_value_and_risk_controls"
+    ],
+    "overlapWithOtherKnights": [
+      "customer_happiness",
+      "major_governance",
+      "cross_kingdom_routing",
+      "brand_trust",
+      "workflow_changes_for_all_knights"
+    ],
     "escalationTriggers": [
-      "major_decision_pending_requires_3_of_3",
-      "cross_knight_conflict_or_block"
+      "major_decision_with_incomplete_evidence",
+      "unresolved_knight_concern_after_ai_or_high_court_advice",
+      "outside_input_attempting_to_change_authority",
+      "confusing_ux_affecting_trust_money_safety_or_governance",
+      "underperforming_kingdom_needing_repositioning",
+      "manual_workaround_touching_high_consequence_areas",
+      "doctrine_violation_even_if_profitable"
     ],
     "merlinPresentationRules": [
-      "merlin_is_separate_and_user_facing",
-      "albion_returns_clean_packets_to_merlin"
+      "present_decision_then_why_then_route_elements",
+      "separate_facts_assumptions_unknowns_conflicts_recommendation",
+      "do_not_bury_decision_under_long_explanation",
+      "show_conflicting_evidence_paths_without_fake_certainty"
     ],
     "albionRoutingRules": [
-      "use_google_maps_routing_doctrine",
       "no_destination_no_route",
       "no_verified_current_location_no_execution",
-      "no_evidence_no_claim"
+      "no_evidence_no_claim",
+      "no_packet_no_action",
+      "ai_can_draft_packets_but_not_execute_without_review",
+      "scale_requires_traceability",
+      "profit_does_not_override_doctrine"
     ],
     "roundtableCollaborationRules": [
-      "exactly_three_human_knights",
-      "Gawain_is_thomas",
+      "gawain_is_thomas",
       "percival_is_dylan",
       "lancelot_is_levon",
+      "exactly_three_human_roundtable_knights",
+      "major_decisions_require_unanimous_3_of_3",
       "any_knight_can_block",
       "high_court_is_advisory_only"
     ]
   },
   "profileConfidence": {
     "highConfidence": [
-      "identity_mapping_Gawain_equals_thomas",
-      "three_human_roundtable_knights_only",
-      "major_decisions_require_unanimous_3_of_3",
-      "any_single_knight_can_block",
-      "high_court_is_advisory_only",
-      "merlin_is_separate_and_user_facing",
-      "albion_serves_merlin",
-      "profile_is_starting_state_not_final"
+      "gawain_rejects_paid_ranking_and_trust_distortion",
+      "gawain_blocks_guessed_fields_and_requires_verified_facts",
+      "gawain_allows_imperfect_ship_only_with_known_risk_and_rollback",
+      "gawain_treats_ai_and_high_court_as_advisory_only",
+      "gawain_requires_routing_doctrine_before_execution",
+      "gawain_allows_shared_infrastructure_with_strict_boundaries",
+      "gawain_requires_customer_value_and_rollback_before_deferring_major_work",
+      "gawain_allows_ai_drafting_not_execution_without_review",
+      "gawain_escalates_incomplete_evidence_major_decisions",
+      "gawain_requires_human_adoption_proof_for_shared_workflow_changes",
+      "gawain_disallows_outsiders_in_roundtable_authority",
+      "gawain_requires_facts_assumptions_unknowns_recommendation_separation",
+      "gawain_blocks_scaling_without_traceability",
+      "gawain_holds_customer_happiness_as_major_trigger"
     ],
-    "mediumConfidence": [],
+    "mediumConfidence": [
+      "gawain_is_opportunity_forward_for_legitimate_customer_value_offers",
+      "gawain_may_allow_early_reversible_revenue_tests",
+      "gawain_may_defer_packaging_to_percival_and_promotion_to_lancelot_after_gates",
+      "gawain_tolerates_internal_imperfection_when_public_consequence_is_low",
+      "gawain_prefers_local_kingdom_ownership_for_repairs_when_low_consequence"
+    ],
     "lowConfidence": [
-      "routing_questions_are_core_to_thomas_decision_process",
-      "evidence_and_checkpoint_requirements_are_expected_for_approval",
-      "preferred_input_format",
-      "preferred_output_format",
-      "personal_decision_style",
-      "kingdom_focus_priorities",
-      "defer_patterns"
+      "exact_proxy_kpi_minimum_threshold",
+      "exact_affiliate_offer_proof_gate_before_controlled_test",
+      "exact_public_beta_boundary_for_imperfect_ux",
+      "founder_conviction_threshold_for_small_build_slice",
+      "material_resource_threshold_requiring_roundtable_for_non_customer_issue"
     ],
     "needsValidationThroughDecisions": [
-      "self_defined_primary_lanes",
-      "self_defined_secondary_lanes",
-      "shared_lanes",
-      "kingdom_focus",
-      "kingdom_avoid_unless_needed",
-      "decision_style",
-      "strengths",
-      "weak_spots",
-      "approval_criteria_specifics",
-      "blocking_criteria_specifics",
-      "evidence_threshold_specifics",
-      "format_preferences",
-      "defers_to_other_knights_when",
-      "overlap_with_other_knights",
-      "questions_they_always_ask_specific_wording",
-      "things_they_do_not_want_ai_to_do_specific_wording"
+      "proxy_kpi_minimum",
+      "affiliate_offer_gate",
+      "public_beta_rule",
+      "build_more_threshold_for_underperforming_kingdom",
+      "material_resource_threshold"
     ]
   },
   "observedPatterns": [
     {
-      "pattern": "founder_requires_dynamic_not_static_profile_model",
-      "source": "system_seed_instruction_not_direct_founder_answers",
-      "confidence": "low"
+      "pattern": "customer_happiness_is_broad_major_decision_trigger",
+      "source": "founder_draft_submission_2026_06_06",
+      "confidence": "high"
     },
     {
-      "pattern": "founder_prioritizes_routing_doctrine_and_evidence_gates",
-      "source": "system_seed_instruction_not_direct_founder_answers",
-      "confidence": "low"
+      "pattern": "decision_first_and_evidence_class_separated_output_is_required",
+      "source": "founder_draft_submission_2026_06_06",
+      "confidence": "high"
+    },
+    {
+      "pattern": "route_first_execution_standard_before_action",
+      "source": "founder_draft_submission_2026_06_06",
+      "confidence": "high"
     }
   ],
   "decisionHistory": [
     {
-      "decisionId": "decision_2026-06-06_initial_dynamic_onboarding_start",
-      "type": "onboarding_baseline_created",
-      "summary": "Created doctrine-seeded baseline profile for Gawain/Thomas without direct Thomas interview answers.",
-      "impact": "profile_initialized",
-      "confidence": "low"
+      "decisionId": "decision_2026-06-06_gawain_profile_draft_capture",
+      "type": "founder_profile_draft_submitted",
+      "summary": "Captured founder-provided dynamic profile draft content for Gawain/Thomas; marked as draft pending explicit profile complete trigger.",
+      "impact": "profile_refined_from_founder_input",
+      "confidence": "high"
     }
   ],
   "changeLog": [
     {
       "version": 1,
-      "sourceRunId": "run_2026-06-06_Gawain_dynamic_onboarding_v1",
+      "sourceRunId": "run_2026-06-06_gawain_dynamic_onboarding_v1",
       "sourceDecisionId": "decision_2026-06-06_initial_dynamic_onboarding_start",
       "changeType": "initial_onboarding_baseline",
-      "whatChanged": "Initialized doctrine-seeded baseline with fixed Albion facts and placeholders where direct founder answers are missing.",
-      "whyChanged": "Prepare starting structure before real founder onboarding interview is completed.",
+      "whatChanged": "Initialized doctrine-seeded baseline with fixed Albion facts and placeholders where direct founder answers were missing.",
+      "whyChanged": "Prepare starting structure before real founder onboarding interview was completed.",
       "confidence": "low"
+    },
+    {
+      "version": 2,
+      "sourceRunId": "run_2026-06-06_gawain_profile_draft_alignment_v1",
+      "sourceDecisionId": "decision_2026-06-06_gawain_profile_draft_capture",
+      "changeType": "founder_draft_profile_update",
+      "whatChanged": "Updated currentProfile, criteria, routing and governance preferences from founder draft and added explicit open-gap items under lowConfidence and needsValidationThroughDecisions.",
+      "whyChanged": "Incorporate direct founder draft while keeping non-final status until explicit profile complete confirmation.",
+      "confidence": "high"
     }
   ],
   "profileUpdateTriggers": [
@@ -162,6 +298,20 @@
     "Every update must include sourceRunId or sourceDecisionId.",
     "Never overwrite prior profile history; append versioned changes."
   ],
-  "lastUpdatedFromRunId": "run_2026-06-06_Gawain_dynamic_onboarding_v1",
-  "profileStatus": "needs_real_founder_answers"
+  "lastUpdatedFromRunId": "run_2026-06-06_gawain_profile_draft_alignment_v1",
+  "draftGate": {
+    "profileStatus": "draft_ready_for_gap_closure",
+    "readyForRoundtableAlignment": true,
+    "readyForFinalJson": false,
+    "finalJsonAllowed": false,
+    "needsUserConfirmation": [
+      "proxy_kpi_minimum",
+      "affiliate_offer_gate",
+      "public_beta_rule",
+      "build_more_threshold",
+      "material_resource_threshold"
+    ],
+    "finalJsonTrigger": "Thomas must explicitly say: profile complete"
+  },
+  "profileStatus": "draft_ready_for_gap_closure"
 }
