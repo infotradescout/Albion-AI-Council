@@ -1,6 +1,6 @@
 {
   "schemaVersion": "roundtable_knight_profile_dynamic_v1",
-  "profileVersion": 2,
+  "profileVersion": 3,
   "knightName": "Gawain",
   "realPerson": "Thomas",
   "currentProfile": {
@@ -67,6 +67,7 @@
       "evidence_backed_route",
       "verified_current_location",
       "clear_destination",
+      "every_test_has_success_signal_failure_signal_and_owner_before_start",
       "known_risks",
       "rollback_path",
       "logs_and_traceability",
@@ -142,7 +143,8 @@
       "routine_local_kingdom_decisions_without_customer_happiness_impact",
       "internal_cleanup_and_logging_repair",
       "contained_internal_tests",
-      "offer_discussion_and_controlled_reversible_tests_with_legitimacy"
+      "offer_discussion_and_controlled_reversible_tests_with_legitimacy",
+      "positioning_and_message_fixes_plus_targeted_friction_build_when_route_is_measurable"
     ],
     "requiresFullRoundtableApprovalFor": [
       "all_customer_impacting_issues",
@@ -182,6 +184,7 @@
       "no_verified_current_location_no_execution",
       "no_evidence_no_claim",
       "no_packet_no_action",
+      "underperforming_kingdoms_can_run_positioning_message_fixes_and_targeted_build_in_parallel_when_both_map_to_route_and_are_measurable",
       "ai_can_draft_packets_but_not_execute_without_review",
       "scale_requires_traceability",
       "profit_does_not_override_doctrine"
@@ -211,7 +214,12 @@
       "gawain_disallows_outsiders_in_roundtable_authority",
       "gawain_requires_facts_assumptions_unknowns_recommendation_separation",
       "gawain_blocks_scaling_without_traceability",
-      "gawain_holds_customer_happiness_as_major_trigger"
+      "gawain_holds_customer_happiness_as_major_trigger",
+      "gawain_clarified_underperforming_kingdom_rule_is_both_and_not_either_or",
+      "gawain_requires_test_rule_success_failure_owner_before_start",
+      "gawain_defined_affiliate_offer_legitimacy_gate_for_controlled_tests",
+      "gawain_defined_public_beta_safety_and_visibility_gate",
+      "gawain_defined_internal_resource_escalation_rule"
     ],
     "mediumConfidence": [
       "gawain_is_opportunity_forward_for_legitimate_customer_value_offers",
@@ -221,18 +229,10 @@
       "gawain_prefers_local_kingdom_ownership_for_repairs_when_low_consequence"
     ],
     "lowConfidence": [
-      "exact_proxy_kpi_minimum_threshold",
-      "exact_affiliate_offer_proof_gate_before_controlled_test",
-      "exact_public_beta_boundary_for_imperfect_ux",
-      "founder_conviction_threshold_for_small_build_slice",
-      "material_resource_threshold_requiring_roundtable_for_non_customer_issue"
+      "exact_numeric_threshold_for_meaningful_internal_resource_usage"
     ],
     "needsValidationThroughDecisions": [
-      "proxy_kpi_minimum",
-      "affiliate_offer_gate",
-      "public_beta_rule",
-      "build_more_threshold_for_underperforming_kingdom",
-      "material_resource_threshold"
+      "resource_threshold_numeric_boundary"
     ]
   },
   "observedPatterns": [
@@ -250,6 +250,11 @@
       "pattern": "route_first_execution_standard_before_action",
       "source": "founder_draft_submission_2026_06_06",
       "confidence": "high"
+    },
+    {
+      "pattern": "underperforming_kingdom_rule_runs_positioning_and_targeted_build_together_when_both_are_measurable",
+      "source": "gawain_gap_closure_001",
+      "confidence": "high"
     }
   ],
   "decisionHistory": [
@@ -258,6 +263,13 @@
       "type": "founder_profile_draft_submitted",
       "summary": "Captured founder-provided dynamic profile draft content for Gawain/Thomas; marked as draft pending explicit profile complete trigger.",
       "impact": "profile_refined_from_founder_input",
+      "confidence": "high"
+    },
+    {
+      "decisionId": "gawain_gap_closure_001",
+      "type": "gap_closure_confirmed",
+      "summary": "Thomas approved gap rules 1, 2, 3, and 5, and clarified rule 4 is both/and: positioning/message fixes and targeted build may run together when route-linked and measurable.",
+      "impact": "gaps_closed_for_first_profile_confirmation",
       "confidence": "high"
     }
   ],
@@ -279,6 +291,15 @@
       "whatChanged": "Updated currentProfile, criteria, routing and governance preferences from founder draft and added explicit open-gap items under lowConfidence and needsValidationThroughDecisions.",
       "whyChanged": "Incorporate direct founder draft while keeping non-final status until explicit profile complete confirmation.",
       "confidence": "high"
+    },
+    {
+      "version": 3,
+      "sourceRunId": "run_2026-06-06_gawain_gap_closure_001",
+      "sourceDecisionId": "gawain_gap_closure_001",
+      "changeType": "gap_closure_update",
+      "whatChanged": "Closed remaining gap set by adding explicit testRule, affiliateOfferRule, publicBetaRule, buildMoreRule (both/and), and resourceRule signals; updated confidence and routing criteria.",
+      "whyChanged": "Log Thomas-confirmed closure and prepare profile for final confirmation trigger.",
+      "confidence": "high"
     }
   ],
   "profileUpdateTriggers": [
@@ -298,20 +319,14 @@
     "Every update must include sourceRunId or sourceDecisionId.",
     "Never overwrite prior profile history; append versioned changes."
   ],
-  "lastUpdatedFromRunId": "run_2026-06-06_gawain_profile_draft_alignment_v1",
+  "lastUpdatedFromRunId": "run_2026-06-06_gawain_gap_closure_001",
   "draftGate": {
-    "profileStatus": "draft_ready_for_gap_closure",
+    "profileStatus": "gap_closed_ready_for_final_confirmation",
     "readyForRoundtableAlignment": true,
-    "readyForFinalJson": false,
+    "readyForFinalJson": true,
     "finalJsonAllowed": false,
-    "needsUserConfirmation": [
-      "proxy_kpi_minimum",
-      "affiliate_offer_gate",
-      "public_beta_rule",
-      "build_more_threshold",
-      "material_resource_threshold"
-    ],
+    "waitingFor": "Thomas says: profile complete",
     "finalJsonTrigger": "Thomas must explicitly say: profile complete"
   },
-  "profileStatus": "draft_ready_for_gap_closure"
+  "profileStatus": "gap_closed_ready_for_final_confirmation"
 }
