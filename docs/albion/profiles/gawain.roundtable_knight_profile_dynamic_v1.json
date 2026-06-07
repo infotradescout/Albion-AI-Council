@@ -1,332 +1,689 @@
 {
-  "schemaVersion": "roundtable_knight_profile_dynamic_v1",
-  "profileVersion": 3,
-  "knightName": "Gawain",
-  "realPerson": "Thomas",
-  "currentProfile": {
-    "selfDefinedPrimaryLanes": [
-      "building_working_systems",
-      "protecting_doctrine_and_trust_architecture",
-      "forcing_decision_ready_routing",
-      "turning_opportunities_into_testable_business_routes",
-      "guarding_execution_quality_before_scale",
-      "protecting_customer_happiness_through_3_of_3_alignment"
-    ],
-    "selfDefinedSecondaryLanes": [
-      "revenue_model_review",
-      "affiliate_backed_offer_evaluation",
-      "public_claim_truth_checking",
-      "workflow_adoption_review",
-      "kingdom_boundary_review",
-      "customer_facing_ux_consequence_review"
-    ],
-    "sharedLanes": [
-      "customer_happiness",
-      "major_albion_governance_decisions",
-      "cross_kingdom_infrastructure_and_routing",
-      "brand_trust_surfaces",
-      "workflow_changes_affecting_all_three_knights",
-      "major_launch_scale_or_repositioning_decisions",
-      "public_facing_offers_and_experience"
-    ],
-    "kingdomFocus": [
-      "albion",
-      "merlin",
-      "tradescout",
-      "roundtable_governance",
-      "shared_orchestration_infrastructure_with_separated_outputs"
-    ],
-    "kingdomAvoidUnlessNeeded": [
-      "cross_kingdom_mixed_messaging",
-      "shared_audiences_without_clear_consent_or_intent",
-      "public_execution_from_incomplete_packets",
-      "feature_expansion_before_adoption_diagnosis",
-      "customer_facing_changes_without_3_of_3_alignment"
-    ],
-    "decisionStyle": "execution_oriented_evidence_gated_trust_protective_momentum_aware_doctrine_first_customer_happiness_sensitive_route_first",
-    "strengths": [
-      "decision_first_routing",
-      "evidence_gated_execution",
-      "trust_architecture_protection",
-      "momentum_with_risk_controls",
-      "doctrine_enforcement_under_pressure"
-    ],
-    "weakSpots": [],
-    "preferredInputs": [
-      "decision_first_summary",
-      "facts_assumptions_unknowns_conflicts_recommendation_split",
-      "clear_route_with_checkpoints_and_arrival_proof",
-      "explicit_roadblocks_and_reroute_rules"
-    ],
-    "preferredOutputs": [
-      "decision_first_then_supporting_detail",
-      "evidence_class_separated_output",
-      "compressed_operationally_actionable_packets"
-    ],
-    "approvalCriteria": [
-      "evidence_backed_route",
-      "verified_current_location",
-      "clear_destination",
-      "every_test_has_success_signal_failure_signal_and_owner_before_start",
-      "known_risks",
-      "rollback_path",
-      "logs_and_traceability",
-      "customer_value",
-      "product_or_service_quality",
-      "business_model_or_proxy_kpi",
-      "failure_conditions",
-      "kpi_owner",
-      "human_adoption_proof_for_workflow_changes",
-      "customer_happiness_protected",
-      "3_of_3_alignment_for_customer_impacting_decisions"
-    ],
-    "blockingCriteria": [
-      "unsupported_claims",
-      "guessed_facts",
-      "fake_completeness",
-      "ai_confidence_treated_as_proof",
-      "paid_ranking_or_pay_to_play_trust_distortion",
-      "spammy_or_high_pressure_outreach",
-      "messy_fulfillment",
-      "thin_or_unproven_margin",
-      "unclear_customer_value",
-      "unknown_failure_modes",
-      "no_rollback",
-      "strategy_without_route",
-      "execution_without_packet_review",
-      "kingdom_contamination",
-      "outside_authority_entering_system",
-      "customer_impacting_change_without_3_of_3_alignment",
-      "profit_used_to_excuse_doctrine_violation",
-      "scaling_without_traceability",
-      "manual_workaround_touching_high_consequence_areas"
-    ],
-    "evidenceRequiredForApproval": [
-      "source_evidence_for_factual_claims",
-      "routing_evidence_for_automation",
-      "system_behavior_logs",
-      "rollback_or_containment_proof",
-      "customer_value_proof",
-      "product_or_service_legitimacy_proof",
-      "affiliate_payout_proof_when_applicable",
-      "margin_proof_for_physical_product_offers",
-      "fulfillment_proof_for_physical_product_offers",
-      "usage_conversion_or_feedback_before_more_build",
-      "best_effort_verification_when_evidence_conflicts",
-      "proxy_kpi_before_testing_when_primary_kpi_unclear",
-      "business_model_test_before_scaling",
-      "traceability_before_scale"
-    ],
-    "questionsTheyAlwaysAsk": [
-      "what_is_the_decision",
-      "why_does_it_work",
-      "what_is_the_verified_current_location",
-      "what_is_the_route",
-      "what_are_the_roadblocks",
-      "what_checkpoints_prove_progress",
-      "what_are_the_reroute_rules",
-      "what_is_the_arrival_proof",
-      "what_is_the_next_action"
-    ],
-    "thingsTheyDoNotWantAIToDo": [
-      "invent_fields_or_guess_facts",
-      "hide_missing_evidence",
-      "sound_certain_without_proof",
-      "blend_facts_and_assumptions",
-      "recommend_execution_without_route",
-      "ignore_conflicting_evidence",
-      "bypass_packet_doctrine",
-      "treat_brainstorming_as_execution_ready"
-    ],
-    "communicationStyle": "decision_first_concise_with_evidence_class_separation",
-    "canSponsorEarlyWorkFor": [
-      "routine_local_kingdom_decisions_without_customer_happiness_impact",
-      "internal_cleanup_and_logging_repair",
-      "contained_internal_tests",
-      "offer_discussion_and_controlled_reversible_tests_with_legitimacy",
-      "positioning_and_message_fixes_plus_targeted_friction_build_when_route_is_measurable"
-    ],
-    "requiresFullRoundtableApprovalFor": [
-      "all_customer_impacting_issues",
-      "customer_happiness_related_changes",
-      "aggressive_outreach_or_brand_risk_surfaces",
-      "doctrine_or_governance_or_boundary_changes"
-    ],
-    "defersToOtherKnightsWhen": [
-      "packaging_direction_after_proof_gates_to_percival",
-      "promotion_direction_after_proof_gates_to_lancelot",
-      "routine_local_decisions_with_clear_value_and_risk_controls"
-    ],
-    "overlapWithOtherKnights": [
-      "customer_happiness",
-      "major_governance",
-      "cross_kingdom_routing",
-      "brand_trust",
-      "workflow_changes_for_all_knights"
-    ],
-    "escalationTriggers": [
-      "major_decision_with_incomplete_evidence",
-      "unresolved_knight_concern_after_ai_or_high_court_advice",
-      "outside_input_attempting_to_change_authority",
-      "confusing_ux_affecting_trust_money_safety_or_governance",
-      "underperforming_kingdom_needing_repositioning",
-      "manual_workaround_touching_high_consequence_areas",
-      "doctrine_violation_even_if_profitable"
-    ],
-    "merlinPresentationRules": [
-      "present_decision_then_why_then_route_elements",
-      "separate_facts_assumptions_unknowns_conflicts_recommendation",
-      "do_not_bury_decision_under_long_explanation",
-      "show_conflicting_evidence_paths_without_fake_certainty"
-    ],
-    "albionRoutingRules": [
-      "no_destination_no_route",
-      "no_verified_current_location_no_execution",
-      "no_evidence_no_claim",
-      "no_packet_no_action",
-      "underperforming_kingdoms_can_run_positioning_message_fixes_and_targeted_build_in_parallel_when_both_map_to_route_and_are_measurable",
-      "ai_can_draft_packets_but_not_execute_without_review",
-      "scale_requires_traceability",
-      "profit_does_not_override_doctrine"
-    ],
-    "roundtableCollaborationRules": [
-      "gawain_is_thomas",
-      "percival_is_dylan",
-      "lancelot_is_levon",
-      "exactly_three_human_roundtable_knights",
-      "major_decisions_require_unanimous_3_of_3",
-      "any_knight_can_block",
-      "high_court_is_advisory_only"
-    ]
-  },
-  "profileConfidence": {
-    "highConfidence": [
-      "gawain_rejects_paid_ranking_and_trust_distortion",
-      "gawain_blocks_guessed_fields_and_requires_verified_facts",
-      "gawain_allows_imperfect_ship_only_with_known_risk_and_rollback",
-      "gawain_treats_ai_and_high_court_as_advisory_only",
-      "gawain_requires_routing_doctrine_before_execution",
-      "gawain_allows_shared_infrastructure_with_strict_boundaries",
-      "gawain_requires_customer_value_and_rollback_before_deferring_major_work",
-      "gawain_allows_ai_drafting_not_execution_without_review",
-      "gawain_escalates_incomplete_evidence_major_decisions",
-      "gawain_requires_human_adoption_proof_for_shared_workflow_changes",
-      "gawain_disallows_outsiders_in_roundtable_authority",
-      "gawain_requires_facts_assumptions_unknowns_recommendation_separation",
-      "gawain_blocks_scaling_without_traceability",
-      "gawain_holds_customer_happiness_as_major_trigger",
-      "gawain_clarified_underperforming_kingdom_rule_is_both_and_not_either_or",
-      "gawain_requires_test_rule_success_failure_owner_before_start",
-      "gawain_defined_affiliate_offer_legitimacy_gate_for_controlled_tests",
-      "gawain_defined_public_beta_safety_and_visibility_gate",
-      "gawain_defined_internal_resource_escalation_rule"
-    ],
-    "mediumConfidence": [
-      "gawain_is_opportunity_forward_for_legitimate_customer_value_offers",
-      "gawain_may_allow_early_reversible_revenue_tests",
-      "gawain_may_defer_packaging_to_percival_and_promotion_to_lancelot_after_gates",
-      "gawain_tolerates_internal_imperfection_when_public_consequence_is_low",
-      "gawain_prefers_local_kingdom_ownership_for_repairs_when_low_consequence"
-    ],
-    "lowConfidence": [
-      "exact_numeric_threshold_for_meaningful_internal_resource_usage"
-    ],
-    "needsValidationThroughDecisions": [
-      "resource_threshold_numeric_boundary"
-    ]
-  },
-  "observedPatterns": [
-    {
-      "pattern": "customer_happiness_is_broad_major_decision_trigger",
-      "source": "founder_draft_submission_2026_06_06",
-      "confidence": "high"
-    },
-    {
-      "pattern": "decision_first_and_evidence_class_separated_output_is_required",
-      "source": "founder_draft_submission_2026_06_06",
-      "confidence": "high"
-    },
-    {
-      "pattern": "route_first_execution_standard_before_action",
-      "source": "founder_draft_submission_2026_06_06",
-      "confidence": "high"
-    },
-    {
-      "pattern": "underperforming_kingdom_rule_runs_positioning_and_targeted_build_together_when_both_are_measurable",
-      "source": "gawain_gap_closure_001",
-      "confidence": "high"
-    }
-  ],
-  "decisionHistory": [
-    {
-      "decisionId": "decision_2026-06-06_gawain_profile_draft_capture",
-      "type": "founder_profile_draft_submitted",
-      "summary": "Captured founder-provided dynamic profile draft content for Gawain/Thomas; marked as draft pending explicit profile complete trigger.",
-      "impact": "profile_refined_from_founder_input",
-      "confidence": "high"
-    },
-    {
-      "decisionId": "gawain_gap_closure_001",
-      "type": "gap_closure_confirmed",
-      "summary": "Thomas approved gap rules 1, 2, 3, and 5, and clarified rule 4 is both/and: positioning/message fixes and targeted build may run together when route-linked and measurable.",
-      "impact": "gaps_closed_for_first_profile_confirmation",
-      "confidence": "high"
-    }
-  ],
-  "changeLog": [
-    {
-      "version": 1,
-      "sourceRunId": "run_2026-06-06_gawain_dynamic_onboarding_v1",
-      "sourceDecisionId": "decision_2026-06-06_initial_dynamic_onboarding_start",
-      "changeType": "initial_onboarding_baseline",
-      "whatChanged": "Initialized doctrine-seeded baseline with fixed Albion facts and placeholders where direct founder answers were missing.",
-      "whyChanged": "Prepare starting structure before real founder onboarding interview was completed.",
-      "confidence": "low"
-    },
-    {
-      "version": 2,
-      "sourceRunId": "run_2026-06-06_gawain_profile_draft_alignment_v1",
-      "sourceDecisionId": "decision_2026-06-06_gawain_profile_draft_capture",
-      "changeType": "founder_draft_profile_update",
-      "whatChanged": "Updated currentProfile, criteria, routing and governance preferences from founder draft and added explicit open-gap items under lowConfidence and needsValidationThroughDecisions.",
-      "whyChanged": "Incorporate direct founder draft while keeping non-final status until explicit profile complete confirmation.",
-      "confidence": "high"
-    },
-    {
-      "version": 3,
-      "sourceRunId": "run_2026-06-06_gawain_gap_closure_001",
-      "sourceDecisionId": "gawain_gap_closure_001",
-      "changeType": "gap_closure_update",
-      "whatChanged": "Closed remaining gap set by adding explicit testRule, affiliateOfferRule, publicBetaRule, buildMoreRule (both/and), and resourceRule signals; updated confidence and routing criteria.",
-      "whyChanged": "Log Thomas-confirmed closure and prepare profile for final confirmation trigger.",
-      "confidence": "high"
-    }
-  ],
-  "profileUpdateTriggers": [
-    "approval_with_reason",
-    "block_with_reason",
-    "deferral_to_other_knight",
-    "correction_of_ai_assumption",
-    "repeated_question_pattern",
-    "format_rejection",
-    "kingdom_focus_shift",
-    "new_evidence_requirement"
-  ],
-  "profileUpdateRules": [
-    "Do not update from a single weak signal unless the Knight explicitly confirms it.",
-    "Do update from repeated decision behavior.",
-    "Do update from direct correction.",
-    "Every update must include sourceRunId or sourceDecisionId.",
-    "Never overwrite prior profile history; append versioned changes."
-  ],
-  "lastUpdatedFromRunId": "run_2026-06-06_gawain_gap_closure_001",
-  "draftGate": {
-    "profileStatus": "gap_closed_ready_for_final_confirmation",
-    "readyForRoundtableAlignment": true,
-    "readyForFinalJson": true,
-    "finalJsonAllowed": false,
-    "waitingFor": "Thomas says: profile complete",
-    "finalJsonTrigger": "Thomas must explicitly say: profile complete"
-  },
-  "profileStatus": "gap_closed_ready_for_final_confirmation"
+"schemaVersion": "roundtable_knight_profile_dynamic_v1",
+"profileVersion": 1,
+"knightName": "Gawain",
+"realPerson": "Thomas",
+"currentProfile": {
+"selfDefinedPrimaryLanes": [
+"building working systems",
+"protecting doctrine and trust architecture",
+"forcing decision-ready routing",
+"turning opportunities into testable business routes",
+"guarding execution quality before scale",
+"protecting customer happiness through 3/3 Roundtable alignment"
+],
+"selfDefinedSecondaryLanes": [
+"revenue model review",
+"affiliate-backed offer evaluation",
+"public claim and copy truth-checking",
+"workflow adoption review",
+"Kingdom boundary review",
+"customer-facing UX consequence review"
+],
+"sharedLanes": [
+"customer happiness",
+"major Albion governance decisions",
+"cross-Kingdom infrastructure and routing",
+"brand trust surfaces",
+"workflow changes affecting all three Knights",
+"major launch, scale, or repositioning decisions",
+"public-facing offers and experience"
+],
+"kingdomFocus": [
+"Albion",
+"Merlin",
+"TradeScout",
+"Roundtable governance",
+"shared orchestration infrastructure when Kingdom outputs remain separate"
+],
+"kingdomAvoidUnlessNeeded": [
+"cross-Kingdom mixed messaging",
+"shared audiences without clear consent or intent",
+"public execution from incomplete packets",
+"feature expansion in underperforming Kingdoms before adoption diagnosis",
+"customer-facing changes without 3/3 alignment"
+],
+"decisionStyle": "Execution-oriented, evidence-gated, trust-protective, momentum-aware, doctrine-first, customer-happiness-sensitive, and route-first. Gawain will ship imperfect working systems when risks are known and rollback exists, but blocks or escalates when trust, money, safety, routing, governance, evidence, doctrine, Kingdom boundaries, or customer happiness are at risk.",
+"strengths": [
+"recognizes when polished strategy lacks execution route",
+"separates useful momentum from scalable business proof",
+"protects trust architecture against short-term revenue shortcuts",
+"accepts automation when observable, logged, evidenced, and reversible",
+"keeps governance authority with the three Knights",
+"pushes routine ownership back to Kingdom owners instead of bottlenecking the Roundtable",
+"handles uncertainty without forcing fake clean answers",
+"requires evidence-aligned claims and public copy",
+"distinguishes local repair from full Roundtable escalation",
+"protects customer happiness as a major governance trigger"
+],
+"weakSpots": [
+"may reject or escalate quickly when customer value is unclear",
+"may block physical or product offers until operational proof is strong",
+"may require extra structure before acting on broad strategy",
+"may slow high-pressure growth tactics when brand trust is exposed",
+"may demand clearer proof before scaling even when early momentum is strong"
+],
+"preferredInputs": [
+"routing-map format",
+"clear destination",
+"verified current location",
+"proposed route",
+"traffic and roadblocks",
+"checkpoints",
+"reroute rules",
+"arrival proof",
+"facts / assumptions / unknowns / recommendation",
+"known / unknown / conflict framing",
+"evidence split when sources conflict",
+"business model test before scale",
+"rollback or containment path",
+"KPI owner and failure conditions",
+"customer happiness impact statement"
+],
+"preferredOutputs": [
+"decision-ready packets",
+"route-first execution plans",
+"short approve / block / defer options",
+"strongest truthful claim supported by evidence",
+"recommendations that show uncertainty without overcomplicating the decision",
+"public copy rewritten to match proof level",
+"risk records for major decisions with incomplete evidence",
+"clear local-vs-Roundtable ownership boundaries",
+"decision-first summaries with detail below"
+],
+"approvalCriteria": [
+"evidence-backed routing",
+"logs and traceability",
+"rollback path",
+"real customer value",
+"good product or service quality",
+"affiliate payout or clear monetization path when evaluating offers",
+"monetization that does not alter trust order",
+"verified facts only",
+"core function works",
+"known risks are documented",
+"usable enough for intended audience",
+"clear customer value",
+"proof or testable evidence",
+"failure conditions",
+"KPI ownership",
+"human adoption proof for workflow changes",
+"all three Knights trial workflow changes that affect all three",
+"fallback to old workflow for process changes",
+"outside input treated as advisory evidence only",
+"public claims match available evidence",
+"logging and evidence fixed before scaling",
+"business model test before scaling",
+"Kingdom owners handle routine local decisions",
+"3/3 Knight alignment for anything involving customer happiness",
+"one clear sign of success, one clear sign of failure, and one owner before a test starts",
+"affiliate or discount offer is real, useful, clean, has known terms, has known internal payout, and does not trick or overcharge the customer",
+"public beta users understand what they are doing and no important consequence is hidden",
+"support and rollback exist for public beta",
+"positioning/message fixes and targeted build work can run together when tied to the route and measurable learning"
+],
+"blockingCriteria": [
+"unsupported claims",
+"untraceable automation",
+"irreversible routing mistakes",
+"paid search ranking",
+"pay-to-play visibility that appears organic",
+"monetization that damages homeowner trust",
+"guessed facts",
+"fake completeness",
+"AI-generated claims without evidence",
+"public use of unverified information",
+"thin or unproven margin",
+"messy fulfillment",
+"unclear delivery accountability",
+"spammy outreach",
+"high-pressure tactics that damage brand trust",
+"unknown failure modes",
+"AI or High Court overriding Knight governance",
+"strategy without execution route",
+"execution request without verified current location",
+"Kingdom contamination",
+"shared audiences without consent or clear intent",
+"mixed brand messaging",
+"unclear customer value",
+"test without owner or KPI",
+"AI executing without reviewed packet",
+"major decision with hidden evidence gaps",
+"feature expansion without adoption diagnosis or measurable learning path",
+"false clean recommendation that ignores conflicting evidence",
+"workflow changes without human adoption proof",
+"outside party gaining approval authority",
+"silent profile rewrites",
+"confusing UX around payments, trust, verification, safety, governance, authority, or customer happiness",
+"unsupported best-in-class, guaranteed, trusted, or proven public claims",
+"scaling with messy evidence trail",
+"routine decisions escalated unnecessarily",
+"mistaking engagement for monetization",
+"manual workarounds touching money, trust, safety, routing, governance, evidence, or customer happiness without review",
+"passing customer-impacting decisions without all three Knights aligned",
+"customer-impacting changes treated as local-only operational issues"
+],
+"evidenceRequiredForApproval": [
+"source evidence for each factual field",
+"routing evidence and logs for automation",
+"rollback or containment proof",
+"customer value proof",
+"product or service quality proof",
+"affiliate payout or monetization proof where relevant",
+"margin proof for physical product offers",
+"fulfillment proof for physical product offers",
+"known risk list",
+"failure conditions",
+"KPI and owner",
+"one clear success signal before a test starts",
+"one clear failure signal before a test starts",
+"business model test before scaling",
+"usage, conversion, and user feedback before further build investment in weak Kingdoms when available",
+"best-effort verification when evidence conflicts",
+"proof level matched to public claim strength",
+"traceability before scale",
+"customer happiness impact assessment for customer-facing changes"
+],
+"questionsTheyAlwaysAsk": [
+"Does the core function work?",
+"What breaks?",
+"Can we roll it back?",
+"What is the customer value?",
+"How do we prove it?",
+"Who owns the KPI?",
+"What are the failure conditions?",
+"Is this a feature problem or a positioning problem?",
+"Can we fix positioning and build the friction fix at the same time?",
+"What does usage show?",
+"What does conversion show?",
+"What did users actually say?",
+"What happens if the user misunderstands this?",
+"Does confusion create trust, money, safety, governance, or customer happiness risk?",
+"Is this just attention, or is there a business model?",
+"What are we testing before scale?",
+"How do we capture value?",
+"Does this involve customer happiness?",
+"Are all three Knights on board?"
+],
+"thingsTheyDoNotWantAIToDo": [
+"recommend paid ranking as a revenue shortcut",
+"invent fields to make a page look complete",
+"hide missing evidence behind polished copy",
+"treat confidence as proof",
+"hide weak routing behind polished language",
+"treat brainstorming as approval-ready work",
+"blend facts, assumptions, guesses, and recommendations",
+"sound confident without showing evidence class",
+"make recommendations without separating what is known from what is inferred",
+"skip Albion packet doctrine",
+"act on assumed obviousness",
+"execute before review",
+"flatten conflicting evidence into a fake clean answer",
+"rewrite Knight profiles from one weak signal",
+"overclaim in public copy",
+"treat customer-impacting decisions as local-only decisions",
+"create developer-style rules when owner judgment rules are needed"
+],
+"communicationStyle": "Direct, operational, decision-first, evidence-separated, and route-based. Prefers plain-language owner rules over developer jargon. Wants crisp framing that separates facts, assumptions, unknowns, risks, recommendation, next action, rollback, and customer happiness impact.",
+"canSponsorEarlyWorkFor": [
+"reversible revenue tests",
+"affiliate-backed offers",
+"discount-driven contractor/homeowner offers",
+"Kingdom-level operational fixes",
+"local logging and evidence cleanup",
+"contained improvements before wider scaling",
+"business model tests attached to real momentum",
+"AI-drafted packets awaiting review",
+"targeted build work paired with positioning/message fixes when the route stays measurable"
+],
+"requiresFullRoundtableApprovalFor": [
+"anything involving customer happiness",
+"customer-facing satisfaction, trust, clarity, support, pricing, delivery, routing, UX, expectation, or brand-promise decisions",
+"major decisions",
+"any monetization tied to visibility, ranking, routing, or trust surfaces",
+"physical product launches with margin or fulfillment risk",
+"aggressive outreach or high-pressure sales messaging",
+"campaigns that may create brand trust risk",
+"any major proposal where one Knight raises unresolved concern",
+"any attempt to override a Knight through AI or advisory review",
+"cross-Kingdom reuse with boundary risk",
+"major approvals where customer value remains unclear",
+"major decisions with incomplete evidence",
+"decisions where delay has cost but proceeding creates material risk",
+"Kingdom repositioning",
+"major pivot decisions",
+"continued investment into weak-adoption Kingdoms when customer happiness or major resource focus is affected",
+"workflow changes affecting all three Knights",
+"official changes to Roundtable operating process",
+"outside input that may change doctrine, governance, or Kingdom boundaries",
+"public UX confusion affecting trust, money, safety, governance, or customer happiness",
+"manual workarounds touching money, trust, safety, routing, governance, evidence, or customer happiness",
+"internal work that uses meaningful time, money, team attention, changes how people work, or distracts from the main route"
+],
+"defersToOtherKnightsWhen": [
+"Dylan/Percival can shape packaging once economics and fulfillment are viable",
+"Levon/Lancelot can shape promotion once the offer can be delivered reliably",
+"Levon/Lancelot can sponsor outreach when tone is brand-safe and value is clear",
+"Dylan/Percival can state product/package value and failure conditions clearly",
+"Levon/Lancelot can state marketing value, KPI, audience, and rollback clearly",
+"the sponsoring Knight owns the KPI, proof, failure conditions, and rollback",
+"the decision is preparation or repair only and does not pass customer-impacting change without 3/3 alignment"
+],
+"overlapWithOtherKnights": [
+"customer happiness",
+"offer approval when customer value and monetization are involved",
+"product/package decisions when margin and fulfillment affect brand trust",
+"marketing/outreach decisions when tone affects brand reputation",
+"workflow changes affecting all three Knights",
+"major Kingdom repositioning decisions",
+"cross-Kingdom infrastructure decisions",
+"public-facing UX and claims",
+"pricing, support, delivery, routing, and expectation-setting"
+],
+"escalationTriggers": [
+"customer happiness impact",
+"money risk",
+"trust risk",
+"safety risk",
+"routing risk",
+"governance risk",
+"evidence risk",
+"doctrine change",
+"Kingdom boundary risk",
+"cross-Kingdom contamination",
+"aggressive or spammy outreach",
+"major decision with incomplete evidence",
+"underperforming Kingdom requiring repositioning",
+"conflicting evidence on a major or irreversible decision",
+"workflow change affecting all three Knights",
+"outside input that may change doctrine, governance, or Kingdom boundaries",
+"confusing UX affecting trust, money, safety, governance, or customer happiness",
+"manual workaround touching high-consequence areas",
+"Kingdom cannot repair its own traceability after repeated attempts",
+"internal work uses meaningful time, money, team attention, changes how people work, or distracts from the main route"
+],
+"merlinPresentationRules": [
+"show missing fields plainly instead of filling them",
+"separate facts from assumptions",
+"state unknowns plainly",
+"make recommendation after evidence separation",
+"show uncertainty without overcomplicating the decision",
+"state when two things can both be true",
+"separate verified facts from unresolved conflict",
+"rewrite overclaims into supportable language",
+"separate evidence-backed claims from positioning language",
+"present Kingdom-specific outputs separately even when infrastructure is shared",
+"do not present brainstorming as execution-ready",
+"use destination, current location, route, roadblocks, checkpoints, reroute rules, and arrival proof for action requests",
+"start with the decision before the detail",
+"use plain-language owner rules when Thomas says a topic feels too technical",
+"include customer happiness impact when relevant"
+],
+"albionRoutingRules": [
+"automation may route packets if route evidence and rollback exist",
+"usable imperfect systems can move if route, risks, checkpoints, and rollback are defined",
+"brainstorming may be preserved, but execution requires routing doctrine",
+"backend systems may be shared when outputs remain Kingdom-separated",
+"cross-Kingdom reuse requires boundary checks before execution",
+"AI may draft packets",
+"execution requires packet review",
+"no packet review means no action",
+"working systems may continue locally while evidence cleanup happens",
+"scale requires traceability",
+"momentum may continue while business model is tested",
+"scaling requires business model evidence",
+"manual workarounds may move locally when low-consequence",
+"high-consequence workarounds require escalation",
+"anything involving customer happiness requires all three Knights on board",
+"every test needs one clear sign of success, one clear sign of failure, and one owner before it starts",
+"public beta is allowed only when users understand what they are doing, no important consequence is hidden, support exists, and rollback exists",
+"positioning/message fixes and targeted build work may run together when tied to the route and measurable learning"
+],
+"roundtableCollaborationRules": [
+"nothing passes without all three Knights on board",
+"customer happiness impact makes an issue major",
+"each Knight must state approve, block, or defer on escalated decisions",
+"concerns must be converted into recorded governance decisions",
+"material evidence gaps must be documented before full Roundtable review",
+"Roundtable should decide with known, unknown, risk, and rollback visible",
+"all-Knight workflow changes require all-Knight trial before becoming official",
+"fallback workflow must remain available until adoption is proven",
+"only Gawain, Percival, and Lancelot are inside Roundtable authority",
+"outside parties may inform evidence but cannot approve, block, or sponsor Albion decisions",
+"routine non-customer-impacting Kingdom decisions should stay local",
+"escalation requires meaningful doctrine, trust, money, safety, governance, evidence, customer happiness, or cross-Kingdom risk",
+"Kingdom owners need clear decision boundaries",
+"customer-facing satisfaction, trust, clarity, support, pricing, delivery, routing, UX, expectation, and brand-promise decisions require 3/3 alignment"
+]
+},
+"profileConfidence": {
+"highConfidence": [
+"Gawain rejects paid ranking and pay-to-play trust distortion in TradeScout.",
+"Gawain blocks guessed fields and requires verified facts only for factual public or operational outputs.",
+"Gawain is ship-oriented when core function works, risks are known, and rollback exists.",
+"Gawain treats AI and High Court as advisory only; Roundtable authority remains human.",
+"Gawain requires routing doctrine before execution.",
+"Gawain allows shared infrastructure only if Kingdom outputs, data boundaries, brands, audience, and trust rules stay separate.",
+"Gawain requires customer value, proof, KPI ownership, failure conditions, and rollback before deferring major work.",
+"Gawain allows AI to draft packets but not execute without packet review.",
+"Gawain escalates major decisions with incomplete evidence using written risk records.",
+"Gawain escalates underperforming Kingdoms when the issue may be positioning rather than features.",
+"Gawain handles conflicting evidence by showing both evidence paths and best-effort verification.",
+"Gawain requires all three Knights to trial workflow changes that affect all three.",
+"Gawain does not allow outsiders into Albion authority.",
+"Gawain treats one behavior mismatch as temporary unless it repeats across multiple decisions.",
+"Gawain wants AI output rewritten into facts / assumptions / unknowns / recommendation when blended.",
+"Gawain escalates confusing UX when it affects trust, money, safety, governance, or customer happiness.",
+"Gawain rewrites unsupported strong public claims into evidence-supported claims.",
+"Gawain blocks scaling when logging/evidence is messy, while letting the Kingdom fix local traceability.",
+"Gawain pushes routine non-customer-impacting decisions back to Kingdom owners.",
+"Gawain requires a business model test before scaling momentum.",
+"Gawain escalates manual workarounds touching money, trust, safety, routing, governance, evidence, or customer happiness.",
+"Gawain holds that nothing passes without all three Knights on board.",
+"Gawain treats customer happiness as the major-decision trigger.",
+"Gawain uses plain-language owner rules instead of developer-style thresholds when needed.",
+"Gawain approves tests when they have one success signal, one failure signal, and one owner.",
+"Gawain allows affiliate/discount offer testing when the offer is real, useful, clean, has known terms, known internal payout, and does not trick or overcharge the customer.",
+"Gawain allows public beta when users understand what they are doing, no major consequence is hidden, support exists, and rollback exists.",
+"Gawain may approve positioning/message fixes and targeted build work at the same time when both stay tied to the route and measurable learning."
+],
+"mediumConfidence": [
+"Gawain is opportunity-forward when an offer has customer value, product/service quality, and affiliate payout.",
+"Gawain may allow early reversible revenue tests after discussion.",
+"Gawain may defer packaging to Dylan/Percival and promotion to Levon/Lancelot after proof gates are met.",
+"Gawain tolerates internal/private imperfection when public consequence is low.",
+"Gawain prefers local Kingdom ownership for repair work unless high-consequence areas are affected.",
+"Gawain can tolerate limited ambiguity if there is a clear route, owner, and review point."
+],
+"lowConfidence": [
+"Exact Kingdoms Gawain cares about most beyond Albion, Merlin, TradeScout, and Roundtable governance.",
+"Exact numeric thresholds for meaningful time, money, or team attention.",
+"Exact preferred cadence and format for Roundtable packet reviews.",
+"Exact division of responsibilities between Dylan/Percival and Levon/Lancelot beyond known primary tendencies."
+],
+"needsValidationThroughDecisions": [
+"How much evidence is sufficient for affiliate-backed offers before controlled launch in different customer contexts.",
+"Where Gawain draws the line between public beta and internal-only release in real customer cases.",
+"How strict Gawain is on cost caps during momentum tests.",
+"Whether Gawain requires unanimous approval for all cross-Kingdom infrastructure or only when outputs/data/trust/customer-happiness boundaries are exposed.",
+"What dollar amount or time burden becomes meaningful enough to require Roundtable approval when customer happiness is not involved."
+]
+},
+"observedPatterns": [
+{
+"patternId": "gawain_pattern_001",
+"pattern": "Automation is acceptable when evidenced, logged, observable, and reversible.",
+"sourceDecisionIds": [
+"gawain_onboarding_scenario_1",
+"gawain_onboarding_scenario_7",
+"gawain_onboarding_scenario_12"
+]
+},
+{
+"patternId": "gawain_pattern_002",
+"pattern": "Trust architecture overrides short-term revenue.",
+"sourceDecisionIds": [
+"gawain_onboarding_scenario_3",
+"gawain_onboarding_scenario_6",
+"gawain_onboarding_scenario_20",
+"gawain_onboarding_scenario_21"
+]
+},
+{
+"patternId": "gawain_pattern_003",
+"pattern": "Execution requires route, evidence, checkpoints, and rollback; polished strategy alone is not actionable.",
+"sourceDecisionIds": [
+"gawain_onboarding_scenario_9",
+"gawain_onboarding_scenario_12",
+"gawain_onboarding_scenario_13"
+]
+},
+{
+"patternId": "gawain_pattern_004",
+"pattern": "Major uncertainty should be documented and escalated, not hidden or flattened.",
+"sourceDecisionIds": [
+"gawain_onboarding_scenario_13",
+"gawain_onboarding_scenario_15",
+"gawain_onboarding_scenario_19"
+]
+},
+{
+"patternId": "gawain_pattern_005",
+"pattern": "Gawain supports momentum, but scale requires business model, traceability, and proof.",
+"sourceDecisionIds": [
+"gawain_onboarding_scenario_22",
+"gawain_onboarding_scenario_24"
+]
+},
+{
+"patternId": "gawain_pattern_006",
+"pattern": "Roundtable time should be protected; routine local decisions belong to the Kingdom owner unless customer happiness or high-consequence areas are affected.",
+"sourceDecisionIds": [
+"gawain_onboarding_scenario_22",
+"gawain_onboarding_scenario_23",
+"gawain_gap_review_major_threshold_001"
+]
+},
+{
+"patternId": "gawain_pattern_007",
+"pattern": "Cross-Kingdom infrastructure can be shared, but brand, data, presentation, audience, and trust boundaries must remain separate.",
+"sourceDecisionIds": [
+"gawain_onboarding_scenario_10"
+]
+},
+{
+"patternId": "gawain_pattern_008",
+"pattern": "Profile updates require either direct correction or repeated behavior; one weak behavior mismatch is not enough.",
+"sourceDecisionIds": [
+"gawain_onboarding_scenario_18_corrected"
+]
+},
+{
+"patternId": "gawain_pattern_009",
+"pattern": "Customer happiness is the broad trigger for full Roundtable approval.",
+"sourceDecisionIds": [
+"gawain_gap_review_major_threshold_001"
+]
+},
+{
+"patternId": "gawain_pattern_010",
+"pattern": "Gawain prefers owner-level plain-language rules over developer-style thresholds when defining governance behavior.",
+"sourceDecisionIds": [
+"gawain_gap_plain_language_translation_001",
+"gawain_gap_closure_001"
+]
+},
+{
+"patternId": "gawain_pattern_011",
+"pattern": "Underperforming Kingdoms can receive positioning/message fixes and targeted build work at the same time when both are tied to measurable learning.",
+"sourceDecisionIds": [
+"gawain_gap_closure_001"
+]
+}
+],
+"decisionHistory": [
+{
+"sourceDecisionId": "gawain_onboarding_scenario_1",
+"decision": "Approve cross-Kingdom routing if the routing has evidence, logs, and rollback.",
+"profileImpact": "Automation-tolerant when observable, evidenced, and reversible."
+},
+{
+"sourceDecisionId": "gawain_onboarding_scenario_2",
+"decision": "Discuss and approve an early contractor-facing offer if it provides a discount, is a good product/service, and includes affiliate payout.",
+"profileImpact": "Opportunity-forward when customer value and monetization path are real."
+},
+{
+"sourceDecisionId": "gawain_onboarding_scenario_3",
+"decision": "Block paid ranking in TradeScout.",
+"profileImpact": "Trust architecture overrides pay-to-play monetization."
+},
+{
+"sourceDecisionId": "gawain_onboarding_scenario_4",
+"decision": "Block all guessed fields; verified facts only.",
+"profileImpact": "Strict no-fabrication rule."
+},
+{
+"sourceDecisionId": "gawain_onboarding_scenario_5",
+"decision": "Block merch or physical product offer until margin and fulfillment are proven.",
+"profileImpact": "Operational viability required before product launch."
+},
+{
+"sourceDecisionId": "gawain_onboarding_scenario_6",
+"decision": "Require full Roundtable discussion for aggressive outreach because tone affects brand trust.",
+"profileImpact": "Brand-risk outreach escalates."
+},
+{
+"sourceDecisionId": "gawain_onboarding_scenario_7",
+"decision": "Ship usable but imperfect system if core function works, risks are known, and rollback exists.",
+"profileImpact": "Ship-oriented and risk-aware."
+},
+{
+"sourceDecisionId": "gawain_onboarding_scenario_8",
+"decision": "Escalate to full Roundtable and require approve/block/defer from each Knight when AI/High Court approve but one Knight has unresolved concern.",
+"profileImpact": "Human governance cannot be overridden by AI or advisory review."
+},
+{
+"sourceDecisionId": "gawain_onboarding_scenario_9",
+"decision": "Accept polished strategic memo as brainstorming only; block execution until rewritten through routing doctrine.",
+"profileImpact": "Route-first execution standard."
+},
+{
+"sourceDecisionId": "gawain_onboarding_scenario_10",
+"decision": "Allow shared backend infrastructure and reuse if UX improves, but maintain separate brands, data boundaries, presentation, and trust rules.",
+"profileImpact": "Practical shared infrastructure with strict Kingdom boundaries."
+},
+{
+"sourceDecisionId": "gawain_onboarding_scenario_11",
+"decision": "Layered A/B/C/D response: defer to Dylan/Levon when customer value, proof, failure conditions, KPI ownership, and rollback are clear; block or escalate when customer value remains unclear.",
+"profileImpact": "Collaborative but value-gated."
+},
+{
+"sourceDecisionId": "gawain_onboarding_scenario_12",
+"decision": "Allow AI to draft the packet, but execution waits for packet review.",
+"profileImpact": "AI can prepare route, not skip route."
+},
+{
+"sourceDecisionId": "gawain_onboarding_scenario_13",
+"decision": "Escalate major decisions with incomplete evidence to full Roundtable with a written risk record.",
+"profileImpact": "Momentum-aware but governance-gated."
+},
+{
+"sourceDecisionId": "gawain_onboarding_scenario_14",
+"decision": "Escalate underperforming Kingdom because weak adoption may require repositioning rather than more features.",
+"profileImpact": "Anti-feature-bloat and market-reality oriented."
+},
+{
+"sourceDecisionId": "gawain_onboarding_scenario_15",
+"decision": "Allow recommendation under conflicting evidence if both evidence paths and uncertainty are shown; perform best-effort verification because two things can be true at once.",
+"profileImpact": "Nuanced, verification-driven uncertainty handling."
+},
+{
+"sourceDecisionId": "gawain_onboarding_scenario_16",
+"decision": "Require all three Knights to trial workflow changes before official adoption; approve if time-saving and fallback to old workflow exists.",
+"profileImpact": "Human adoption proof required for process changes."
+},
+{
+"sourceDecisionId": "gawain_onboarding_scenario_17",
+"decision": "Outside expertise may advise, but outsiders are not in the Albion system; escalate if external input would change doctrine, governance, or Kingdom boundaries.",
+"profileImpact": "Outside input is advisory evidence, not authority."
+},
+{
+"sourceDecisionId": "gawain_onboarding_scenario_18_corrected",
+"correctionOf": "gawain_onboarding_scenario_18",
+"decision": "Treat behavior as temporary unless it repeats across multiple decisions.",
+"profileImpact": "Do not update profile from one weak behavior mismatch."
+},
+{
+"sourceDecisionId": "gawain_onboarding_scenario_19",
+"decision": "Ask Merlin to rewrite confident blended output with facts / assumptions / unknowns / recommendation.",
+"profileImpact": "AI output must separate evidence classes before decision use."
+},
+{
+"sourceDecisionId": "gawain_onboarding_scenario_20",
+"decision": "Escalate confusing UX if it affects trust, money, safety, or governance.",
+"profileImpact": "Consequence-aware UX review."
+},
+{
+"sourceDecisionId": "gawain_onboarding_scenario_21",
+"decision": "Rewrite strong public claims into weaker truthful claims supported by available evidence.",
+"profileImpact": "Evidence-aligned public copy rule."
+},
+{
+"sourceDecisionId": "gawain_onboarding_scenario_22",
+"decision": "Allow continued local use, but block scaling until logging/evidence is fixed; responsible Kingdom should fix this itself.",
+"profileImpact": "Scale requires traceability; local repair should stay with the Kingdom."
+},
+{
+"sourceDecisionId": "gawain_onboarding_scenario_23",
+"decision": "Push routine decisions back to the Kingdom owner with clear approval boundaries.",
+"profileImpact": "Distributed ownership; Roundtable should not become a bottleneck."
+},
+{
+"sourceDecisionId": "gawain_onboarding_scenario_24",
+"decision": "Keep momentum, but require a business model test before scaling.",
+"profileImpact": "Attention is signal, not business model."
+},
+{
+"sourceDecisionId": "gawain_onboarding_scenario_25",
+"decision": "Escalate manual workarounds if they touch money, trust, safety, routing, governance, or evidence.",
+"profileImpact": "Speed-tolerant but consequence-gated."
+},
+{
+"sourceDecisionId": "gawain_onboarding_scenario_26",
+"decision": "Run the system: require Albion routing for strategically-right systems without clear KPI. Use a proxy KPI before testing and escalate if the system consumes major resources or changes doctrine.",
+"profileImpact": "System-routed and KPI-gated."
+},
+{
+"sourceDecisionId": "gawain_onboarding_scenario_27",
+"decision": "Block further forward movement from a Knight who repeatedly approves work but does not follow through until they catch up.",
+"profileImpact": "Commitment-accountability oriented."
+},
+{
+"sourceDecisionId": "gawain_onboarding_scenario_28",
+"decision": "Pause or contain doctrine-violating part, escalate to Roundtable with risk record, and split profitable compliant piece into a clean route.",
+"profileImpact": "Doctrine-first but revenue-preserving when compliant."
+},
+{
+"sourceDecisionId": "gawain_onboarding_scenario_29",
+"decision": "Require compressed decision-first output, with long detail only after short decision summary.",
+"profileImpact": "Decision-first output required."
+},
+{
+"sourceDecisionId": "gawain_gap_review_major_threshold_001",
+"decision": "Nothing passes without all three Knights on board. Major means any issue involving customer happiness.",
+"profileImpact": "Customer happiness is the broad major-decision trigger. Customer-impacting changes require 3/3 Knight alignment."
+},
+{
+"sourceDecisionId": "gawain_gap_plain_language_translation_001",
+"decision": "Thomas clarified that technical gap language was not useful because he is not a developer.",
+"profileImpact": "Gawain profile should use plain-language owner judgment rules instead of developer-style jargon where possible."
+},
+{
+"sourceDecisionId": "gawain_gap_closure_001",
+"decision": "Approved test rule, affiliate offer rule, public beta rule, and resource rule. Corrected build-more rule: positioning/message fixes and targeted build work can happen at the same time.",
+"profileImpact": "Final onboarding gaps closed enough for first Gawain profile."
+}
+],
+"profileUpdateTriggers": [
+"approval_with_reason",
+"block_with_reason",
+"deferral_to_other_knight",
+"correction_of_ai_assumption",
+"repeated_question_pattern",
+"format_rejection",
+"kingdom_focus_shift",
+"new_evidence_requirement"
+],
+"profileUpdateRules": [
+"Do not update from a single weak signal unless the Knight explicitly confirms it.",
+"Do update from repeated decision behavior.",
+"Do update from direct correction.",
+"Every update must include sourceRunId or sourceDecisionId.",
+"Never overwrite prior profile history; append versioned changes.",
+"Treat one behavior mismatch as temporary unless it repeats across multiple decisions.",
+"Every profile correction must preserve the prior decision record and cite the correction source.",
+"Use plain-language owner rules when technical wording blocks clear governance."
+],
+"lastUpdatedFromRunId": "gawain_onboarding_initial_run_2026-06-06",
+"profileStatus": "ready_for_roundtable_alignment"
 }
