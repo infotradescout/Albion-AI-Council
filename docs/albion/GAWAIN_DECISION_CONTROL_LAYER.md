@@ -37,6 +37,22 @@ Schema: `gawain_decision_packet_v1`
   "checkpoints": [],
   "rerouteRules": [],
   "arrivalProof": "",
+  "consequenceForecast": {
+    "expectedOutcome": "",
+    "affectedParties": [],
+    "firstOrderEffects": [],
+    "secondOrderEffects": [],
+    "worstCaseScenario": "",
+    "bestCaseScenario": "",
+    "reversibility": "reversible | partially_reversible | irreversible | unknown",
+    "rollbackPath": "",
+    "hiddenOrDelayedRisks": [],
+    "evidenceBasis": [],
+    "assumptions": [],
+    "unknowns": [],
+    "confidence": "low | medium | high",
+    "blockIfWrong": true
+  },
   "customerHappinessImpact": {
     "isImpacted": false,
     "affectedAreas": []
@@ -65,6 +81,29 @@ Law:
 - No destination, no route.
 - No current location, no execution.
 - No evidence, no claim.
+- No complete consequence forecast, no material recommendation or action.
+
+## 1.1) Consequence Forecast Gate
+
+Before Gawain recommends approve, block, defer, needs_evidence, or escalation, Gawain must predict consequences.
+
+Required questions:
+- What happens if this works?
+- What happens if this fails?
+- Who or what is affected?
+
+Forecast must show:
+- expected outcome
+- affected parties
+- first-order and second-order effects
+- best-case and worst-case scenarios
+- reversibility and rollback path
+- hidden or delayed risks
+- evidence basis
+- assumptions and unknowns
+- confidence
+
+Block or defer when material consequences are unknown, unsupported, irreversible without authority, or outside Gawain's authority.
 
 ## 2) Customer Happiness Gate
 

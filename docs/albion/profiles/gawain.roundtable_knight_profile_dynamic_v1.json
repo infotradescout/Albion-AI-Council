@@ -1,10 +1,14 @@
 {
 "schemaVersion": "roundtable_knight_profile_dynamic_v1",
-"profileVersion": 2,
+"profileVersion": 3,
 "knightName": "Gawain",
 "realPerson": "Thomas",
 "currentProfile": {
 "selfDefinedPrimaryLanes": [
+"technical builder and system integrator",
+"system-level operating coordinator",
+"objector and stress-test reviewer",
+"guiding the other Knights through what the overall system needs",
 "building working systems",
 "protecting doctrine and trust architecture",
 "forcing decision-ready routing",
@@ -54,7 +58,8 @@
 "handles uncertainty without forcing fake clean answers",
 "requires evidence-aligned claims and public copy",
 "distinguishes local repair from full Roundtable escalation",
-"protects customer happiness as a major governance trigger"
+"protects customer happiness as a major governance trigger",
+"guides Lancelot and Percival by translating overall system needs into the next required route, build, objection, or handoff"
 ],
 "weakSpots": [
 "may reject or escalate quickly when customer value is unclear",
@@ -358,6 +363,9 @@
 },
 "profileConfidence": {
 "highConfidence": [
+"Gawain is the technical builder and system integrator for the Roundtable.",
+"Gawain acts as the objector and stress-test reviewer when routes, evidence, consequences, or system needs are unclear.",
+"Gawain quietly coordinates the operating route by guiding Lancelot and Percival based on what the overall system needs next, without replacing 3/3 Roundtable authority.",
 "Gawain rejects paid ranking and pay-to-play trust distortion in TradeScout.",
 "Gawain blocks guessed fields and requires verified facts only for factual public or operational outputs.",
 "Gawain is ship-oriented when core function works, risks are known, and rollback exists.",
@@ -758,6 +766,12 @@
 "handoff completeness requirement",
 "runtime truth preference"
 ]
+},
+{
+"sourceDecisionId": "gawain_role_correction_001",
+"decision": "Thomas clarified that Gawain is the technical builder, objector, and system-level operating coordinator who guides Lancelot and Percival based on what the overall system needs next.",
+"profileImpact": "Promoted Gawain from proof-gate framing to technical builder, objector, and quiet system coordinator while preserving Roundtable 3/3 authority.",
+"confidence": "high"
 }
 ],
 "profileUpdateTriggers": [
@@ -780,6 +794,6 @@
 "Every profile correction must preserve the prior decision record and cite the correction source.",
 "Use plain-language owner rules when technical wording blocks clear governance."
 ],
-"lastUpdatedFromRunId": "gawain_activity_signal_confirmation_001",
+"lastUpdatedFromRunId": "gawain_role_correction_001",
 "profileStatus": "usable_current_baseline"
 }

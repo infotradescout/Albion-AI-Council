@@ -10,6 +10,7 @@ The Authority Matrix determines who can approve what, and when Roundtable 3/3 is
 
 ## Roundtable 3/3 Required
 The following require unanimous approval from Gawain, Lancelot, and Percival:
+- AI strategy, AI agent behavior, AI authority, AI execution, AI safety, or AI-governance changes
 - production release
 - cross-Kingdom access
 - pricing or business model changes
@@ -26,6 +27,14 @@ The following require unanimous approval from Gawain, Lancelot, and Percival:
 - non-release research
 - constituent onboarding
 - backlog organization
+
+Single sponsor or 2/3 authority is never sufficient for AI-related decisions.
+
+## AI Unanimity Law
+- Any decision that changes, authorizes, delegates, deploys, or materially directs AI behavior requires Roundtable 3/3.
+- The AI Council advises, challenges, prepares options, and records consequence forecasts before the Roundtable decides.
+- All Knights must approve before AI work can pass to Merlin or any executing agent.
+- Approved AI work must execute through the appropriate agents, guilds, or routers; no single actor may unilaterally bypass the Council, Roundtable, or Merlin route.
 
 ## Knight Block Law
 - Any one Knight rejection blocks passage.

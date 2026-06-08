@@ -13,6 +13,7 @@ Required fields:
 - Current Location
 - Selected Route
 - Traffic / Roadblocks
+- Consequence Forecast
 - Reroutes
 - Checkpoints
 - Arrival Proof
@@ -22,15 +23,17 @@ Required fields:
 
 ## Evidence Law
 - Every checkpoint must include evidence.
+- Every consequence forecast must include evidence basis, assumptions, and unknowns.
 - Arrival claims must include proof artifacts.
 - Drift must be explicitly logged with remediation notes.
 
 ## Output Contract
 - The Scribe prepares evidence for:
-  - high_court_recommendation_packet
-  - roundtable_mandate_v0
-  - albion_action_manifest_v0
-- Merlin receives route outcome reporting through Albion output packets.
+  - high_court_recommendation_packet_v1
+  - roundtable_mandate_v1
+  - albion_action_manifest_v1
+- Merlin receives approved route outcome reporting through Albion output packets.
+- Merlin rejects incomplete routes and sends them back to Council or human review.
 
 ## Preserved Constraints
 - No packet, no action.

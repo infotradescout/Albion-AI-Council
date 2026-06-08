@@ -72,8 +72,10 @@ Every material update must cite sourceRunId or sourceDecisionId.
 6. Refresh alignment when any profile changes materially.
 
 ## Preserved Albion Laws
-- Merlin is separate and user-facing.
-- Albion serves Merlin.
+- Albion is the full Kingdom operating system.
+- Merlin is the OR / Operational Router inside Albion.
+- Merlin executes approved routes only.
+- Merlin cannot invent missing facts, approve final authority, or override Knights.
 - No packet, no action.
 - No evidence, no claim.
 - No destination/current location, no route.

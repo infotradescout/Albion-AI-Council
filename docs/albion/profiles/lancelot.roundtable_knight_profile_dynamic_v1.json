@@ -1,12 +1,16 @@
 {
   "schemaVersion": "roundtable_knight_profile_dynamic_v1",
-  "profileVersion": 1,
+  "profileVersion": 2,
   "knightName": "Lancelot",
   "realPerson": "Levon",
   "currentProfile": {
     "selfDefinedPrimaryLanes": [
       "Public voice and mouthpiece of the organization",
-      "Strategic vision and offer-building",
+      "Sales",
+      "Outreach",
+      "Sales messaging",
+      "Relationship-driven follow-up",
+      "Offer framing for sales use",
       "Selling the vision",
       "Messaging, content, ads, and public perception",
       "People orchestration",
@@ -31,7 +35,6 @@
       "Giveaway strategy",
       "Outreach strategy",
       "Local relationship building",
-      "Physical product monetization through ScoutFitters",
       "AI-assisted operating system design"
     ],
     "sharedLanes": [
@@ -191,6 +194,9 @@
       "Content concepts and public messaging drafts",
       "Offer framing",
       "Sales messaging",
+      "Sales and outreach campaigns",
+      "Direct outreach scripts",
+      "Follow-up language",
       "Community-facing narratives",
       "Giveaway framing",
       "Local outreach language",
@@ -220,7 +226,7 @@
     "defersToOtherKnightsWhen": [
       "Defers to Gwaine / Thomas on technical execution, scripts, programs, architecture, tool choice, and code-level decisions",
       "Defers to Gwaine / Thomas on Merlin handoff mechanics, execution-routing failure handling, and system architecture details until Thomas defines them",
-      "Trusts Percival / Dylan on operations, material purchasing, ScoutFitters fulfillment, physical production, and grounded execution decisions",
+      "Trusts Percival / Dylan on operations, merchandising, material purchasing, manufacturing of marketing and sales materials, ScoutFitters fulfillment, physical production, and grounded execution decisions",
       "Defers when another Knight clearly owns the execution lane and the decision does not violate mission, trust, or major company direction"
     ],
     "overlapWithOtherKnights": [
@@ -280,6 +286,7 @@
   },
   "profileConfidence": {
     "highConfidence": [
+      "Levon is primarily sales and outreach, not the default idea lead.",
       "Levon is Lancelot",
       "Levon is the public voice and mouthpiece of the organization",
       "Levon protects mission, trust, leverage, and public belief",
@@ -287,7 +294,7 @@
       "Levon prefers human, blunt, local messaging over corporate sales language",
       "Levon wants AI to challenge him directly when practicality, timeline, or leverage is weak",
       "Levon defers technical execution to Thomas",
-      "Levon trusts Dylan on operational and material execution",
+      "Levon trusts Dylan on merchandising, manufacturing, operational, and material execution",
       "Levon wants all Kingdoms connected to the larger Albion mission",
       "Levon sees MealScout as likely the fastest current cash-flow path",
       "Levon wants the digital Lancelot to preserve his voice, opinion, ego, leverage instinct, and mission conviction"
@@ -297,7 +304,7 @@
       "Levon's strongest approval process is emotional and strategic walkthrough rather than formal evidence review",
       "Levon prefers all major decisions to return to full Roundtable approval",
       "Levon is comfortable with AI offering wild-route strategies as long as assumptions are labeled",
-      "Levon views ScoutFitters and physical products as important mission-funding mechanisms",
+      "Levon views ScoutFitters and physical products as important mission-funding mechanisms, but Dylan/Percival owns merchandising and manufacturing execution",
       "Levon wants disagreement preserved and categorized rather than prematurely softened",
       "Levon wants self-improving Kingdom systems and may want gamified goodwill mechanics in the future"
     ],
@@ -551,6 +558,17 @@
         "Added observedPatterns from ChatGPT activity",
         "Strengthened confidence in public voice, monetization, and ecosystem strategy lanes"
       ]
+    },
+    {
+      "sourceDecisionId": "lancelot_role_correction_001",
+      "type": "direct_role_correction",
+      "summary": "Thomas clarified that Levon/Lancelot is mostly sales and outreach, not the default idea lead.",
+      "profileImpact": [
+        "Promoted sales and outreach to primary lanes",
+        "Reduced idea-lead framing",
+        "Clarified that physical product and marketing-material manufacturing execution belongs to Percival/Dylan"
+      ],
+      "confidence": "high"
     }
   ],
   "profileUpdateTriggers": [
@@ -575,6 +593,6 @@
     "Do not treat this profile as permanent truth.",
     "Update the profile when real approvals, blocks, deferrals, corrections, repeated questions, or format rejections reveal better information."
   ],
-  "lastUpdatedFromRunId": null,
+  "lastUpdatedFromRunId": "lancelot_role_correction_001",
   "profileStatus": "ready_for_roundtable_alignment"
 }

@@ -56,6 +56,21 @@ Required fields:
 	- roadblocks
 	- requiredCheckpoints
 	- rerouteRules
+- consequenceForecast:
+	- expectedOutcome
+	- affectedParties[]
+	- firstOrderEffects[]
+	- secondOrderEffects[]
+	- worstCaseScenario
+	- bestCaseScenario
+	- reversibility: reversible | partially_reversible | irreversible | unknown
+	- rollbackPath
+	- hiddenOrDelayedRisks[]
+	- evidenceBasis[]
+	- assumptions[]
+	- unknowns[]
+	- confidence: low | medium | high
+	- blockIfWrong
 - triage:
 	- priority: P0 | P1 | P2 | P3 | P4
 	- urgencyReason
@@ -99,6 +114,7 @@ Required fields:
 - currentLocation
 - routeOptions[]
 - selectedRoute
+- consequenceForecast
 - requiredCheckpoints[]
 - roadblocks[]
 - reroutePlan
@@ -133,12 +149,14 @@ Minimum fields:
 - findings[]
 - objections[]
 - recommendations[]
+- consequenceForecast
 - reviewNotes[]
 - reviewQuestionsAnswered[]
 - evidence[]
 
 Authority rule:
 - Advisory only. Not final approval.
+- Forecast confidence cannot become approval authority.
 
 ## 6) roundtable_mandate_v1
 Purpose: Final Roundtable authority packet when approval is required.
@@ -155,6 +173,7 @@ Fields:
 - blockedBy[]
 - conditions[]
 - decisionNotes[]
+- consequenceForecast
 - mandateStatus: passed_3_of_3 | blocked_not_unanimous | pending
 - authority:
 	- approvalRequired
@@ -272,6 +291,21 @@ Required fields:
 - checkpoints[]
 - rerouteRules[]
 - arrivalProof
+- consequenceForecast:
+	- expectedOutcome
+	- affectedParties[]
+	- firstOrderEffects[]
+	- secondOrderEffects[]
+	- worstCaseScenario
+	- bestCaseScenario
+	- reversibility: reversible | partially_reversible | irreversible | unknown
+	- rollbackPath
+	- hiddenOrDelayedRisks[]
+	- evidenceBasis[]
+	- assumptions[]
+	- unknowns[]
+	- confidence: low | medium | high
+	- blockIfWrong
 - customerHappinessImpact:
 	- isImpacted
 	- affectedAreas[]
@@ -295,6 +329,7 @@ Gate rules:
 - No destination, no route.
 - No current location, no execution.
 - No evidence, no claim.
+- No complete consequence forecast, no material recommendation or action.
 - If customerHappinessImpact.isImpacted is true, requiresRoundtable must be true.
 
 ## 6.4) profile_update_ledger_entry_v1
@@ -332,6 +367,7 @@ Required fields:
 	- blockers[]
 	- nextActions[]
 	- approvalStatus
+- consequenceForecast
 - rollback
 - contradictions[]
 - evidence[]
@@ -343,6 +379,36 @@ Gate rules:
 - blocked_by_roundtable when not unanimous or any Knight reject.
 - No output proceeds to Merlin on blocked status.
 - Merlin receives one of: arrival report, blocked route report, reroute request.
+- Material actions cannot proceed when consequenceForecast is incomplete.
+
+## Consequence Forecast Contract
+Purpose: Required pre-action prediction object for recommendations, approvals, and execution routes.
+
+Shared object:
+```json
+{
+  "expectedOutcome": "",
+  "affectedParties": [],
+  "firstOrderEffects": [],
+  "secondOrderEffects": [],
+  "worstCaseScenario": "",
+  "bestCaseScenario": "",
+  "reversibility": "reversible | partially_reversible | irreversible | unknown",
+  "rollbackPath": "",
+  "hiddenOrDelayedRisks": [],
+  "evidenceBasis": [],
+  "assumptions": [],
+  "unknowns": [],
+  "confidence": "low | medium | high",
+  "blockIfWrong": true
+}
+```
+
+Gate rules:
+- Forecasts must separate verified facts, assumptions, unknowns, and risks.
+- Agents may not hide important consequences from users, Knights, High Court, Roundtable, or Merlin.
+- Material actions block when affectedParties, reversibility, rollbackPath, worstCaseScenario, evidenceBasis, assumptions, or unknowns are missing.
+- Low-risk local planning may continue with forecast gaps only when no execution, approval, customer-facing promise, money movement, data change, or cross-Kingdom effect occurs.
 
 ## 8) albion_release_packet_v1
 Purpose: Release-sensitive packet for deploy-facing work.
@@ -363,3 +429,4 @@ Required fields:
 - No approved output to Merlin without valid Roundtable mandate when approval is required.
 - No packet claim is valid without evidence entries.
 - No Knight role assumption is valid without onboarding profile packets.
+- No material recommendation, approval request, or execution route proceeds without a complete consequenceForecast.

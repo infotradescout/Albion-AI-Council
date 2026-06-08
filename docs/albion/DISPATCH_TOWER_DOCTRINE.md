@@ -1,11 +1,11 @@
 # Dispatch Tower Doctrine
 
 ## Purpose
-Dispatch Tower is Albion's first gate after Merlin.
-It decides whether work should run, how deep to route, and whether Kingdom execution is needed.
+Dispatch Tower is Albion's first route-classification gate.
+It decides whether work should run, how deep to route, and whether Kingdom execution is needed before Merlin can execute an approved route.
 
 ## Position in Flow
-User -> Merlin -> Albion Dispatch Tower -> Kingdom Registry Check -> Routing Doctrine -> Authority Matrix -> execution lanes
+Input -> Albion Dispatch Tower -> Kingdom Registry Check -> Routing Doctrine -> Squires -> AI Council -> Authority Matrix -> Knights -> Merlin Operational Router
 
 ## Dispatch Question
 Before Kingdom routing, classify the input as:
@@ -54,6 +54,7 @@ Before Kingdom routing, classify the input as:
 3. blocked_or_ambiguous must return clarification or escalation, not random execution.
 4. security_incident routes to security controls and mandatory awareness lanes.
 5. cross_kingdom_action cannot proceed without explicit authorization path.
+6. Merlin cannot execute incomplete or unapproved routes.
 
 ## Required Packet
 Dispatch decisions must be recorded in dispatch_classification_packet_v1.

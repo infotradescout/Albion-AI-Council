@@ -1,9 +1,13 @@
 # Founder Onboarding
 
 ## What Albion Is
-- Merlin is the user-facing system.
-- Albion is separate from Merlin.
-- Albion is Merlin's orchestration layer for one-input/action processing.
+- Albion is the full Kingdom operating system.
+- Merlin is the OR / Operational Router inside Albion.
+- Squires gather information.
+- AI Council organizes, challenges, and prepares routes.
+- Knights approve or deny.
+- Merlin executes approved routes only.
+- Do not describe Albion as the OR.
 
 ## Routing Doctrine Primer
 Albion runs like route navigation:
@@ -40,7 +44,7 @@ For decisions that require approval:
 - All 3 Knights must approve.
 - Any one Knight rejection blocks passage.
 - Blocked work returns for revision or human discussion.
-- No approved Albion output goes to Merlin without Roundtable 3/3.
+- No approved route goes to Merlin without Roundtable 3/3.
 
 ## High Court Composition
 - ChatGPT = High Court Chair/Clerk
@@ -68,7 +72,7 @@ Profile lifecycle rule:
 5. Scribe route summary and evidence packet assembled
 6. High Court advisory route review
 7. Roundtable mandate decision
-8. Merlin receives arrival report, blocked route report, or reroute request
+8. Merlin executes the approved route or rejects incomplete work back to Council/human review
 
 ## Routing Laws (Founder Baseline)
 1. No destination = no route.
@@ -80,7 +84,9 @@ Profile lifecycle rule:
 7. Every route needs checkpoints.
 8. Every checkpoint needs evidence.
 9. Arrival requires proof, not confidence.
-10. Merlin receives route outcome reporting.
+10. No approval = no execution.
+11. Merlin receives route outcome reporting.
+12. Merlin cannot invent missing facts, approve final authority, or override Knights.
 
 ## Non-Negotiable Laws
 - No packet, no action.

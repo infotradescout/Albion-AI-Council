@@ -33,6 +33,13 @@ No additional founder/Roundtable Knight seats are active.
   - Percival = approve
 - Any single reject blocks passage.
 
+## AI Unanimity Law
+- AI-related decisions always require Roundtable 3/3 unanimous approval.
+- This includes AI strategy, AI agent behavior, AI authority, AI execution, AI safety, and AI-governance changes.
+- Individual Knight authority and 2/3 approval are not valid for AI-related decisions.
+- The AI Council must advise, challenge, prepare route options, and surface consequence forecasts before the Roundtable decides.
+- Once unanimously approved, AI work executes through the appropriate agents, guilds, or Merlin route rather than by unilateral action.
+
 ## Outcomes
 - 3 approves: passed_3_of_3
 - Any reject or not unanimous: blocked_not_unanimous
@@ -61,8 +68,9 @@ Roundtable decisions are recorded as roundtable_mandate_v1 and must include:
   - approvedForMerlin
 
 ## Enforcement
-- No approved Albion output goes to Merlin without Roundtable 3/3 when approval is required.
+- No approved route goes to Merlin without Roundtable 3/3 when approval is required.
 - Blocked items return for revision or human discussion.
+- No AI-related route goes to Merlin or any executing agent without Roundtable 3/3.
 
 ## Route Governance Rules
 - The destination cannot change without Roundtable authorization.

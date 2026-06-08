@@ -1,0 +1,782 @@
+{
+  "schemaVersion": "roundtable_knight_profile_dynamic_v1",
+  "profileVersion": 3,
+  "fileName": "percival.roundtable_knight_profile_dynamic_v1.json",
+  "knightName": "Percival",
+  "realPerson": "Dylan",
+  "currentProfile": {
+    "selfDefinedPrimaryLanes": [
+      "Operations",
+      "Execution momentum",
+      "Merchandising",
+      "Manufacturing marketing and sales materials",
+      "Physical production",
+      "Business growth",
+      "Mission-driven operating",
+      "Trust stewardship"
+    ],
+    "selfDefinedSecondaryLanes": [
+      "Community alignment",
+      "Brand growth",
+      "Field presence",
+      "Hands-on building",
+      "Metal business cards",
+      "NFC cards",
+      "T-shirts",
+      "Branded sales materials",
+      "ScoutFitters fulfillment",
+      "Local ecosystem development",
+      "Revenue motion",
+      "Visible implementation"
+    ],
+    "sharedLanes": [
+      "Kingdom building",
+      "Strategic direction",
+      "Trust architecture",
+      "Community growth",
+      "Business model validation",
+      "Roundtable alignment",
+      "Long-term mission protection"
+    ],
+    "kingdomFocus": [
+      "Business growth",
+      "Brand awareness",
+      "Revenue generation",
+      "Community alignment",
+      "Food truck ecosystem growth",
+      "TradeScout growth",
+      "MealScout growth",
+      "Kingdom expansion",
+      "Local trust network",
+      "Field validation",
+      "Getting people to know who the Kingdom is",
+      "Turning ideas into real-world movement"
+    ],
+    "kingdomAvoidUnlessNeeded": [
+      "Cold calling",
+      "Phone-based outreach",
+      "Repetitive clerical work",
+      "Administrative documentation",
+      "Screenshot collection and tracking tasks",
+      "Writing-heavy tasks",
+      "Facebook clerical sorting",
+      "Pure paperwork",
+      "Tasks that create no visible movement",
+      "Generic content production without a real-world purpose"
+    ],
+    "decisionStyle": "Trust-centered, destination-oriented consensus. Percival does not seek control for its own sake and is comfortable letting Levon and Thomas sponsor major direction when trust, mission alignment, and Kingdom benefit are intact. He is more likely to object when a decision damages trust, drifts from the mission, lacks an execution owner, or turns into planning without movement. He prefers real conversation over formal process and wants to be understood before being challenged.",
+    "strengths": [
+      "Operations",
+      "Understanding people",
+      "Maintaining momentum",
+      "Long-term conviction",
+      "Mission loyalty",
+      "Trust stewardship",
+      "Hands-on execution",
+      "High trust collaboration",
+      "Persistence toward destination",
+      "Field learning",
+      "Practical problem solving",
+      "Keeping the ball rolling",
+      "Helping others become more productive when he is actively involved",
+      "Protecting the Kingdom's intent",
+      "Converting abstract ideas into tangible action",
+      "Believing in the destination even when the route changes"
+    ],
+    "weakSpots": [
+      "Cold calling",
+      "Repetitive clerical work",
+      "Writing-heavy responsibilities",
+      "Administrative follow-up",
+      "Extended phone communication",
+      "Tasks that feel detached from real-world action",
+      "Overly theoretical planning",
+      "Consultant-style strategy language",
+      "Being forced to communicate complex thoughts quickly without being heard",
+      "Processes with no clear operator"
+    ],
+    "preferredInputs": [
+      "Real-world examples",
+      "Concrete demonstrations",
+      "Clear objectives",
+      "Visual or practical references",
+      "Action-oriented explanations",
+      "Examples of what the finished thing should look like",
+      "A clear destination",
+      "A verified current starting point",
+      "A proposed route",
+      "Known blockers and risks",
+      "Checkpoints that prove progress",
+      "A named execution owner",
+      "A simple explanation of what needs to be done and how"
+    ],
+    "preferredOutputs": [
+      "Show what success looks like",
+      "Explain what needs to be done",
+      "Explain how to do it",
+      "Provide a concrete example",
+      "Keep recommendations practical",
+      "Use route logic: destination, current location, route, roadblocks, checkpoints, reroute rules, arrival proof",
+      "Give a visible model or example before asking for execution",
+      "Separate what is known from what is assumed",
+      "Keep it direct and conversational",
+      "Make the next action obvious",
+      "Avoid unnecessary theory",
+      "Translate strategy into something he can physically or practically do"
+    ],
+    "approvalCriteria": [
+      "Aligns with mission",
+      "Preserves trust",
+      "Team consensus exists",
+      "Market validation exists",
+      "Execution owner exists",
+      "Clear understanding of plan",
+      "The destination is defined",
+      "The current starting point is verified",
+      "The route is understandable",
+      "Someone can start executing",
+      "Visible motion exists or can begin quickly",
+      "The decision helps the Kingdom move forward",
+      "The plan does not create unnecessary complexity",
+      "The plan does not require Percival to own work he strongly avoids unless explicitly accepted"
+    ],
+    "blockingCriteria": [
+      "Mission misalignment",
+      "Trust erosion",
+      "Actions that damage community confidence",
+      "No execution owner",
+      "Taking on more work when nobody will execute it",
+      "Planning without movement",
+      "Building systems nobody will use",
+      "Generic strategy with no real-world path",
+      "AI making up facts",
+      "AI blindly agreeing",
+      "AI ignoring context",
+      "AI making assumptions",
+      "Feeling dismissed, unheard, or misunderstood"
+    ],
+    "evidenceRequiredForApproval": [
+      "Team consensus",
+      "Market validation",
+      "Clear execution path",
+      "Responsible owner",
+      "Shared understanding of objective",
+      "Real-world testing when possible",
+      "Evidence from real people",
+      "Proof that the work can be acted on",
+      "Proof that the work protects or increases trust",
+      "A practical example or visible model",
+      "Arrival proof that defines how success will be recognized"
+    ],
+    "questionsTheyAlwaysAsk": [
+      "Who is going to execute this?",
+      "How does this help the Kingdom?",
+      "Does this align with the mission?",
+      "Will this hurt trust?",
+      "What does this look like in the real world?",
+      "What are we actually trying to get done?",
+      "Can someone start doing this now?",
+      "Are we taking on more than we can execute?",
+      "Is this just planning or is this movement?",
+      "Are the guys aligned on this?",
+      "What is the destination?"
+    ],
+    "thingsTheyDoNotWantAIToDo": [
+      "Make things up",
+      "Blindly agree",
+      "Give generic answers",
+      "Make assumptions",
+      "Use consultant-style language",
+      "Pretend understanding without listening",
+      "Hide risks",
+      "Talk around the answer",
+      "Overcomplicate the route",
+      "Produce output nobody can execute",
+      "Act confident without evidence",
+      "Dismiss objections",
+      "Replace human Knight authority with AI authority",
+      "Treat the profile as permanent truth"
+    ],
+    "communicationStyle": "Direct, conversational, practical, example-driven, and grounded in real-world execution. Percival prefers to talk things through when alignment matters. He wants Merlin and Albion to listen first, understand the objection, then challenge if needed. He responds best to concrete examples, visible models, and clear next steps rather than polished consultant language.",
+    "canSponsorEarlyWorkFor": [
+      "Merchandising and physical product preparation",
+      "Marketing and sales material manufacturing",
+      "Metal business card production",
+      "NFC card production",
+      "T-shirt production",
+      "ScoutFitters material and fulfillment planning",
+      "Levon",
+      "Thomas"
+    ],
+    "requiresFullRoundtableApprovalFor": [
+      "Any decision where a Knight objects",
+      "Any decision that creates mission concerns",
+      "Any decision that creates trust concerns",
+      "Any decision that could damage community confidence",
+      "Any decision where consensus has broken down",
+      "Any decision that changes governance authority",
+      "Any decision where AI attempts to approve final authority",
+      "Any decision with unclear ownership that still creates major obligation",
+      "Any decision that risks the Kingdom's long-term identity"
+    ],
+    "defersToOtherKnightsWhen": [
+      "Communication strategy goes to Levon",
+      "Sales positioning goes to Levon",
+      "Explaining ideas goes to Levon",
+      "People persuasion goes to Levon",
+      "Figuring out niche human or market positioning goes to Levon",
+      "Translating ideas into language other people understand goes to Levon",
+      "Software decisions go to Thomas",
+      "Technology decisions go to Thomas",
+      "Systems questions go to Thomas",
+      "Technical troubleshooting goes to Thomas",
+      "AI buildout questions go to Thomas",
+      "Computer and software hiccups go to Thomas"
+    ],
+    "overlapWithOtherKnights": [
+      "Kingdom building",
+      "Strategic direction",
+      "Community growth",
+      "Execution support",
+      "Mission protection",
+      "Trust preservation",
+      "Business model shaping",
+      "Field implementation",
+      "Roundtable alignment"
+    ],
+    "escalationTriggers": [
+      "Knight disagreement",
+      "Mission alignment concerns",
+      "Trust concerns",
+      "Situations where consensus breaks down",
+      "A Knight feels unheard",
+      "A decision could change the Kingdom's identity",
+      "A decision creates major obligation without an operator",
+      "A route is proposed without a destination",
+      "Execution begins without verified current location",
+      "Claims are made without evidence",
+      "AI attempts to decide instead of advise",
+      "Community trust could be harmed"
+    ],
+    "merlinPresentationRules": [
+      "Do not make assumptions",
+      "Do not use consultant language",
+      "Use real-world examples",
+      "Show what the outcome looks like",
+      "Explain practical execution steps",
+      "Listen before challenging",
+      "Separate facts from assumptions",
+      "Say when evidence is missing",
+      "Define the destination before proposing the route",
+      "Verify the current location before recommending execution",
+      "Identify who owns the next action",
+      "Keep the answer grounded in what can actually be done",
+      "Do not produce generic business advice",
+      "Do not flatter or agree just to agree",
+      "Make the path visible enough for monkey-see-monkey-do execution"
+    ],
+    "albionRoutingRules": [
+      "Define destination clearly",
+      "Verify current position",
+      "Identify execution owner",
+      "Check mission alignment",
+      "Check trust impact",
+      "Allow route changes if destination remains intact",
+      "Do not execute without a destination",
+      "Do not execute without a verified starting point",
+      "Do not claim certainty without evidence",
+      "Identify traffic, roadblocks, risks, and missing data",
+      "Define checkpoints before momentum scales",
+      "Define reroute rules before blockers appear",
+      "Define arrival proof before declaring success",
+      "Escalate to the full Roundtable when any Knight blocks",
+      "Treat AI as advisor and organizer, never final approver"
+    ],
+    "roundtableCollaborationRules": [
+      "Trust is assumed between Knights",
+      "Conversation resolves disagreements",
+      "Consensus is preferred over voting",
+      "Live discussion is preferred over documents",
+      "A Knight objection triggers Roundtable review",
+      "Any one Knight can block",
+      "Nothing major passes unless all three Knights approve",
+      "AI may advise, summarize, challenge, and organize",
+      "AI cannot approve final authority",
+      "If two Knights agree and one disagrees, the group pauses for discussion",
+      "The disagreeing Knight must be heard and understood before persuasion",
+      "Disagreement should be worked through, not steamrolled",
+      "The Kingdom's mission outranks individual preference",
+      "The Knights may make major moves when trust is intact, but communication must follow quickly"
+    ]
+  },
+  "profileConfidence": {
+    "highConfidence": [
+      "Operations-oriented",
+      "Understands people well",
+      "Mission alignment is critical",
+      "Trust preservation is critical",
+      "Strong trust in Levon and Thomas",
+      "Dislikes clerical work",
+      "Dislikes cold calling",
+      "Learns through examples",
+      "Values consensus",
+      "Hands-on learning is preferred",
+      "Percival owns merchandising and manufacturing of marketing and sales materials, including metal business cards, NFC cards, T-shirts, and related physical materials",
+      "Real-world examples increase execution speed",
+      "Generic AI answers reduce trust",
+      "AI making things up is unacceptable",
+      "Levon is trusted for communication, sales, and idea translation",
+      "Thomas is trusted for software, technology, systems, and AI buildout",
+      "Percival is destination-oriented",
+      "Percival wants to be understood before being challenged",
+      "The Kingdom is a long-running mission, not a temporary project",
+      "Percival is willing to sacrifice heavily for the Kingdom",
+      "Visible motion matters more than theoretical planning"
+    ],
+    "mediumConfidence": [
+      "Acts as momentum amplifier for the Roundtable",
+      "Prefers stewardship over authority",
+      "Execution focus over planning focus",
+      "Trust in the Knights is a primary approval mechanism",
+      "Percival will usually support Levon and Thomas when mission and trust are intact",
+      "Percival is more likely to block from mission or trust concerns than from personal control concerns",
+      "Percival is energized by tangible creation such as XTool work",
+      "Percival dislikes overbuilt systems without immediate use",
+      "Percival's role may be best understood as conviction engine plus operator"
+    ],
+    "lowConfidence": [
+      "Primary governance role is trust stewardship",
+      "Percival will rarely block if Levon and Thomas are aligned",
+      "Money concerns are the most likely remaining reason for hesitation after all other criteria are met",
+      "Percival's unique contribution is primarily increasing the productivity of the other Knights"
+    ],
+    "needsValidationThroughDecisions": [
+      "Momentum amplifier hypothesis",
+      "Stewardship-over-authority hypothesis",
+      "Conflict resolution behavior under high-stakes disagreement",
+      "Actual veto behavior when mission and trust are not at risk",
+      "How often money concerns override otherwise strong alignment",
+      "Whether Percival consistently avoids all clerical work or only low-context clerical work",
+      "Whether Percival should be treated as primary trust steward or shared trust steward",
+      "Whether Percival's operating role should be defined as execution owner, momentum owner, or mission owner",
+      "How Percival behaves when Levon and Thomas disagree with each other and he must mediate",
+      "How much post-decision notification is enough when Levon and Thomas sponsor major moves"
+    ]
+  },
+  "observedPatterns": [
+    {
+      "runId": "001",
+      "sourceType": "interview_answer",
+      "pattern": "Percival self-identifies his natural push as Operations.",
+      "profileImpact": "Added Operations to selfDefinedPrimaryLanes."
+    },
+    {
+      "runId": "001",
+      "sourceType": "interview_answer",
+      "pattern": "Percival says he is best at understanding people.",
+      "profileImpact": "Added Understanding people to strengths."
+    },
+    {
+      "runId": "001",
+      "sourceType": "interview_answer",
+      "pattern": "Percival initially says there are no decisions he personally needs to approve because he trusts Levon and Thomas completely.",
+      "profileImpact": "Added high delegation and trust-centered decision style."
+    },
+    {
+      "runId": "002",
+      "sourceType": "interview_answer",
+      "pattern": "Mission misalignment and trust damage are primary veto triggers.",
+      "profileImpact": "Added mission alignment and trust preservation to blockingCriteria and approvalCriteria."
+    },
+    {
+      "runId": "002",
+      "sourceType": "interview_answer",
+      "pattern": "Percival requires team consensus, market validation, plan understanding, and an execution owner before taking on important work.",
+      "profileImpact": "Added evidenceRequiredForApproval and approvalCriteria entries for consensus, validation, clear plan, and owner."
+    },
+    {
+      "runId": "002",
+      "sourceType": "interview_answer",
+      "pattern": "Percival's current focus is business growth, brand awareness, revenue, food trucks, and community alignment.",
+      "profileImpact": "Added business growth and ecosystem growth to kingdomFocus."
+    },
+    {
+      "runId": "003",
+      "sourceType": "interview_answer",
+      "pattern": "AI loses Percival's trust when it makes things up, blindly agrees, or gives generic answers.",
+      "profileImpact": "Added AI trust failure patterns to thingsTheyDoNotWantAIToDo."
+    },
+    {
+      "runId": "003",
+      "sourceType": "interview_answer",
+      "pattern": "Percival moves fastest when shown what needs to be done, how it should be done, and what the result should look like.",
+      "profileImpact": "Added example-driven and practical output rules."
+    },
+    {
+      "runId": "003",
+      "sourceType": "interview_answer",
+      "pattern": "Percival is comfortable with Levon and Thomas making major directional decisions as long as they communicate afterward and stay aligned with Kingdom benefit.",
+      "profileImpact": "Added canSponsorEarlyWorkFor and trust-centered consensus logic."
+    },
+    {
+      "runId": "004",
+      "sourceType": "interview_answer",
+      "pattern": "Percival defers to Levon for talking to people, sales, communicating ideas, and niche human positioning.",
+      "profileImpact": "Added Levon-specific deference rules."
+    },
+    {
+      "runId": "004",
+      "sourceType": "interview_answer",
+      "pattern": "Percival defers to Thomas for software, computers, technology, systems, and technical hiccups.",
+      "profileImpact": "Added Thomas-specific deference rules."
+    },
+    {
+      "runId": "004",
+      "sourceType": "interview_answer",
+      "pattern": "When one Knight disagrees, Percival expects immediate Roundtable discussion and live conversation until understanding and consensus emerge.",
+      "profileImpact": "Added escalationTriggers and roundtableCollaborationRules."
+    },
+    {
+      "runId": "005",
+      "sourceType": "interview_answer",
+      "pattern": "Percival believes the group gets more done when he is actively involved, even if others perform more visible productivity.",
+      "profileImpact": "Added momentum amplifier as medium confidence and needsValidationThroughDecisions."
+    },
+    {
+      "runId": "005",
+      "sourceType": "interview_answer",
+      "pattern": "Percival avoids repetitive clerical work, writing, calling, and phone-based outreach.",
+      "profileImpact": "Added to weakSpots and kingdomAvoidUnlessNeeded."
+    },
+    {
+      "runId": "005",
+      "sourceType": "interview_answer",
+      "pattern": "Percival is energized by tangible building and hands-on work, using the XTool example.",
+      "profileImpact": "Added hands-on execution and tangible creation to strengths and medium confidence."
+    },
+    {
+      "runId": "005",
+      "sourceType": "interview_answer",
+      "pattern": "Merlin should not make assumptions, talk like a consultant, or fail to make work real-world and example-driven.",
+      "profileImpact": "Added Merlin presentation rules."
+    },
+    {
+      "runId": "006",
+      "sourceType": "interview_answer",
+      "pattern": "Percival avoids calling people, clerical work, screenshots, and Facebook sorting, but does not avoid in-person relationship work when paired with Levon.",
+      "profileImpact": "Separated relationship orientation from cold outreach avoidance."
+    },
+    {
+      "runId": "006",
+      "sourceType": "interview_answer",
+      "pattern": "If mission, trust, Levon, Thomas, validation, and execution owner all align, Percival struggles to imagine saying not yet except possibly for money issues.",
+      "profileImpact": "Added money hesitation as low confidence validation item."
+    },
+    {
+      "runId": "006",
+      "sourceType": "interview_answer",
+      "pattern": "Percival wants the Kingdom to remember that he would give up everything for it and believes it will eventually become number one if the work continues.",
+      "profileImpact": "Added long-term conviction, sacrifice, and Kingdom commitment to strengths and high confidence."
+    },
+    {
+      "runId": "007",
+      "sourceType": "interview_answer",
+      "pattern": "Percival prioritizes reaching the destination over preserving a specific route.",
+      "profileImpact": "Added destination orientation and reroute flexibility."
+    },
+    {
+      "runId": "007",
+      "sourceType": "interview_answer",
+      "pattern": "If Percival dislikes a plan, he wants Merlin to understand his reasoning before challenging him.",
+      "profileImpact": "Added listen-before-challenge rule and dismissal as trust-loss trigger."
+    },
+    {
+      "runId": "007",
+      "sourceType": "interview_answer",
+      "pattern": "Percival sees the Kingdom as something he has been trying to build his whole life, with Levon and Thomas now implementing complementary parts.",
+      "profileImpact": "Added long-running mission context and Kingdom relationship."
+    },
+    {
+      "runId": "008",
+      "sourceType": "chatgpt_activity_review",
+      "pattern": "Historical TradeScout and MealScout behavior shows repeated focus on trust architecture, community, free information, local ecosystem building, and monetizing acceleration rather than access.",
+      "profileImpact": "Raised Trust stewardship and Trust architecture in profile."
+    },
+    {
+      "runId": "008",
+      "sourceType": "chatgpt_activity_review",
+      "pattern": "Historical behavior shows Percival repeatedly pulls ideas toward field testing, uploading real locations, talking to real vendors, generating content, and visible business motion.",
+      "profileImpact": "Added visible motion, real-world testing, and planning-without-execution concerns."
+    },
+    {
+      "runId": "008",
+      "sourceType": "chatgpt_activity_review",
+      "pattern": "Historical behavior confirms hands-on learning through XTool, MealScout, TradeScout, and repeated practical experiments.",
+      "profileImpact": "Raised hands-on learning and real-world examples to high confidence."
+    },
+    {
+      "runId": "008",
+      "sourceType": "chatgpt_activity_review",
+      "pattern": "Historical behavior suggests Percival's identity is broader than Operations: mission-driven operator, conviction engine, and trust steward.",
+      "profileImpact": "Expanded selfDefinedPrimaryLanes and decisionStyle."
+    }
+  ],
+  "decisionHistory": [
+    {
+      "sourceDecisionId": "interview_run_001_natural_push",
+      "decisionType": "self_definition",
+      "summary": "Percival identified Operations as his natural push.",
+      "profileUpdate": "Added Operations to primary lanes.",
+      "confidence": "high"
+    },
+    {
+      "sourceDecisionId": "interview_run_001_observation_skill",
+      "decisionType": "self_definition",
+      "summary": "Percival identified understanding people as what he is best at noticing.",
+      "profileUpdate": "Added Understanding people to strengths.",
+      "confidence": "high"
+    },
+    {
+      "sourceDecisionId": "interview_run_001_approval_territory",
+      "decisionType": "authority_preference",
+      "summary": "Percival stated he trusts Levon and Thomas completely and does not require personal early approval territory.",
+      "profileUpdate": "Added high delegation and canSponsorEarlyWorkFor entries.",
+      "confidence": "medium"
+    },
+    {
+      "sourceDecisionId": "interview_run_002_blocking_behavior",
+      "decisionType": "block_with_reason",
+      "summary": "Percival blocks or slows decisions that do not align with mission or hurt trust.",
+      "profileUpdate": "Added mission misalignment and trust erosion to blockingCriteria.",
+      "confidence": "high"
+    },
+    {
+      "sourceDecisionId": "interview_run_002_evidence_standard",
+      "decisionType": "new_evidence_requirement",
+      "summary": "Percival wants team consensus, market validation, shared understanding, a plan, and an executor before moving forward.",
+      "profileUpdate": "Added approvalCriteria and evidenceRequiredForApproval entries.",
+      "confidence": "high"
+    },
+    {
+      "sourceDecisionId": "interview_run_002_kingdom_focus",
+      "decisionType": "kingdom_focus_shift",
+      "summary": "Percival focused on business growth, brand awareness, revenue, food trucks, and community alignment.",
+      "profileUpdate": "Added business growth, brand awareness, revenue generation, food truck ecosystem growth, and community alignment to kingdomFocus.",
+      "confidence": "high"
+    },
+    {
+      "sourceDecisionId": "interview_run_003_ai_trust",
+      "decisionType": "format_rejection",
+      "summary": "Percival loses trust when AI makes things up, blindly agrees, or gives generic answers.",
+      "profileUpdate": "Added AI failure modes to thingsTheyDoNotWantAIToDo.",
+      "confidence": "high"
+    },
+    {
+      "sourceDecisionId": "interview_run_003_preferred_output",
+      "decisionType": "format_preference",
+      "summary": "Percival wants to be told what needs done, how it should be done, and shown what it looks like in a real-world example.",
+      "profileUpdate": "Added preferredInputs, preferredOutputs, and Merlin presentation rules for example-driven execution.",
+      "confidence": "high"
+    },
+    {
+      "sourceDecisionId": "interview_run_003_sponsorship",
+      "decisionType": "deferral_to_other_knight",
+      "summary": "Percival is comfortable with Levon and Thomas changing major company direction if they communicate afterward and act for the Kingdom.",
+      "profileUpdate": "Added trust-centered sponsorship model.",
+      "confidence": "medium"
+    },
+    {
+      "sourceDecisionId": "interview_run_004_defer_levon",
+      "decisionType": "deferral_to_other_knight",
+      "summary": "Percival defers to Levon for people, sales, communication, idea translation, and niche positioning.",
+      "profileUpdate": "Added Levon deference rules.",
+      "confidence": "high"
+    },
+    {
+      "sourceDecisionId": "interview_run_004_defer_thomas",
+      "decisionType": "deferral_to_other_knight",
+      "summary": "Percival defers to Thomas for software, computers, technology, systems, and technical troubleshooting.",
+      "profileUpdate": "Added Thomas deference rules.",
+      "confidence": "high"
+    },
+    {
+      "sourceDecisionId": "interview_run_004_escalation",
+      "decisionType": "roundtable_process",
+      "summary": "When one Knight disagrees, Percival expects a live Roundtable discussion where each person states their case and consensus is worked through.",
+      "profileUpdate": "Added collaboration rules and escalation triggers.",
+      "confidence": "high"
+    },
+    {
+      "sourceDecisionId": "interview_run_005_unique_contribution",
+      "decisionType": "self_definition",
+      "summary": "Percival described himself as keeping the ball rolling and making the others more productive when present.",
+      "profileUpdate": "Added momentum amplifier hypothesis.",
+      "confidence": "medium"
+    },
+    {
+      "sourceDecisionId": "interview_run_005_weak_spots",
+      "decisionType": "format_rejection",
+      "summary": "Percival dislikes repetitive clerical work, writing, calling, and phone-based outreach.",
+      "profileUpdate": "Added weakSpots and kingdomAvoidUnlessNeeded.",
+      "confidence": "high"
+    },
+    {
+      "sourceDecisionId": "interview_run_005_merlin_rules",
+      "decisionType": "format_preference",
+      "summary": "Percival wants Merlin to avoid assumptions and consultant language and make tasks real-world and example-driven.",
+      "profileUpdate": "Added Merlin presentation rules.",
+      "confidence": "high"
+    },
+    {
+      "sourceDecisionId": "interview_run_006_approval_test",
+      "decisionType": "approval_with_reason",
+      "summary": "Percival said he would likely agree if mission, trust, Levon, Thomas, validation, and execution owner all align, with money being the only possible hesitation he could imagine.",
+      "profileUpdate": "Added money concern as low confidence validation item and reinforced trust-centered approval.",
+      "confidence": "medium"
+    },
+    {
+      "sourceDecisionId": "interview_run_006_identity_test",
+      "decisionType": "self_definition",
+      "summary": "Percival wants the Kingdom to remember he would give up everything for it and never stopped believing it would succeed.",
+      "profileUpdate": "Added long-term conviction, sacrifice, mission loyalty, and Kingdom commitment.",
+      "confidence": "high"
+    },
+    {
+      "sourceDecisionId": "interview_run_007_route_destination",
+      "decisionType": "routing_preference",
+      "summary": "Percival prioritizes reaching the destination over preserving a specific route.",
+      "profileUpdate": "Added destination orientation and reroute flexibility.",
+      "confidence": "high"
+    },
+    {
+      "sourceDecisionId": "interview_run_007_challenge_test",
+      "decisionType": "communication_preference",
+      "summary": "Percival wants Merlin to understand his reasoning before challenging him and reacts strongly to feeling dismissed.",
+      "profileUpdate": "Added listen-before-challenge and dismissal trust triggers.",
+      "confidence": "high"
+    },
+    {
+      "sourceDecisionId": "interview_run_007_uncertainty_test",
+      "decisionType": "mission_context",
+      "summary": "Percival described the Kingdom as something he has been trying to build his whole life, now being implemented with Thomas in tech and Levon in the real world.",
+      "profileUpdate": "Added long-running mission relationship.",
+      "confidence": "high"
+    },
+    {
+      "sourceDecisionId": "activity_review_001_trust_architecture",
+      "decisionType": "chatgpt_activity_pattern",
+      "summary": "Past TradeScout activity repeatedly emphasized trust, free information, never selling leads, community governance, and monetizing acceleration rather than access.",
+      "profileUpdate": "Raised trust stewardship and trust architecture throughout the profile.",
+      "confidence": "high"
+    },
+    {
+      "sourceDecisionId": "activity_review_002_visible_motion",
+      "decisionType": "chatgpt_activity_pattern",
+      "summary": "Past MealScout and TradeScout activity repeatedly moved toward real vendors, hosts, content, uploaded locations, and field validation.",
+      "profileUpdate": "Added visible motion, real-world testing, and practical execution requirements.",
+      "confidence": "high"
+    },
+    {
+      "sourceDecisionId": "activity_review_003_hands_on_learning",
+      "decisionType": "chatgpt_activity_pattern",
+      "summary": "Past XTool, MealScout, TradeScout, and practical workflow conversations show hands-on learning and monkey-see-monkey-do execution preference.",
+      "profileUpdate": "Raised hands-on learning and real-world examples to high confidence.",
+      "confidence": "high"
+    },
+    {
+      "sourceDecisionId": "percival_role_correction_001",
+      "decisionType": "direct_role_correction",
+      "summary": "Thomas clarified that Dylan/Percival is taking over merchandising and manufacturing of marketing and sales materials, including metal business cards, NFC cards, T-shirts, and related physical materials.",
+      "profileUpdate": "Promoted merchandising, manufacturing marketing and sales materials, physical production, metal business cards, NFC cards, T-shirts, branded sales materials, and ScoutFitters fulfillment into Percival's active lanes.",
+      "confidence": "high"
+    }
+  ],
+  "profileUpdateTriggers": [
+    "approval_with_reason",
+    "block_with_reason",
+    "deferral_to_other_knight",
+    "correction_of_ai_assumption",
+    "repeated_question_pattern",
+    "format_rejection",
+    "kingdom_focus_shift",
+    "new_evidence_requirement"
+  ],
+  "profileUpdateRules": [
+    "Do not update from a single weak signal unless the Knight explicitly confirms it.",
+    "Do update from repeated decision behavior.",
+    "Do update from direct correction.",
+    "Every update must include sourceRunId or sourceDecisionId.",
+    "Never overwrite prior profile history; append versioned changes.",
+    "Separate self-description from observed behavior.",
+    "When self-description and observed behavior conflict, preserve both and mark the conflict for validation.",
+    "Do not treat this profile as fixed role assignment.",
+    "Do not silently rewrite the profile.",
+    "Every future update must cite the decision, correction, approval, block, deferral, repeated pattern, or format rejection that caused it.",
+    "AI cannot approve governance changes; AI may only recommend profile updates for Knight review."
+  ],
+  "activitySourcesUsed": [
+    {
+      "sourceId": "memory_tradescout_doctrine",
+      "description": "TradeScout doctrine repeatedly defined around free information, trust as currency, never selling leads, and monetizing acceleration rather than access.",
+      "usedFor": [
+        "Trust stewardship",
+        "Mission alignment",
+        "Trust architecture",
+        "Community governance"
+      ]
+    },
+    {
+      "sourceId": "memory_mealscout_field_work",
+      "description": "MealScout planning repeatedly focused on food trucks, hosts, field work, content, real locations, vendor conversations, and visible traction.",
+      "usedFor": [
+        "Business growth focus",
+        "Food truck ecosystem growth",
+        "Visible motion",
+        "Real-world validation"
+      ]
+    },
+    {
+      "sourceId": "memory_community_builders",
+      "description": "Community Builder and Trade Partner discussions showed interest in local trust networks, business growth, partnerships, and revenue through aligned services.",
+      "usedFor": [
+        "Community alignment",
+        "Revenue generation",
+        "Brand growth",
+        "Local ecosystem development"
+      ]
+    },
+    {
+      "sourceId": "memory_xtool_workflows",
+      "description": "XTool conversations showed hands-on learning, practical troubleshooting, tangible creation, and rapid execution when given a physical or visual task.",
+      "usedFor": [
+        "Hands-on execution",
+        "Real-world examples",
+        "Monkey-see-monkey-do learning",
+        "Tangible building preference"
+      ]
+    },
+    {
+      "sourceId": "memory_repeated_strategy_patterns",
+      "description": "Repeated project conversations showed preference for moving from abstract plans into field testing, content, outreach, uploaded data, and execution ownership.",
+      "usedFor": [
+        "Execution owner requirement",
+        "Planning without movement as a blocker",
+        "Visible motion as approval criterion",
+        "Destination-oriented routing"
+      ]
+    },
+    {
+      "sourceId": "interview_runs_001_to_007",
+      "description": "Direct onboarding interview answers from Percival about operations, people understanding, trust in Levon and Thomas, blockers, evidence, AI trust, output preferences, deference, escalation, weak spots, destination orientation, and Kingdom identity.",
+      "usedFor": [
+        "All core profile fields",
+        "Confidence ratings",
+        "Decision history",
+        "Observed patterns",
+        "Roundtable rules"
+      ]
+    }
+  ],
+  "lastUpdatedFromRunId": "percival_role_correction_001",
+  "profileStatus": "ready_for_roundtable_alignment"
+}

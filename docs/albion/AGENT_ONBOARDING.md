@@ -1,8 +1,12 @@
 # Agent Onboarding
 
 ## Albion Context
-- Merlin is user-facing.
-- Albion is separate and serves Merlin as the one-input/action orchestration layer.
+- Albion is the full Kingdom operating system.
+- Merlin is the OR / Operational Router inside Albion.
+- Squires gather information.
+- AI Council organizes, challenges, and prepares routes.
+- Knights approve or deny.
+- Merlin executes approved routes only.
 - Agents execute inside Albion routing law.
 
 ## Route-First Operating Model
@@ -11,10 +15,11 @@ Every agent must treat work like route navigation:
 2. Confirm Current Location.
 3. Generate Route Options.
 4. Select lawful route.
-5. Execute checkpointed steps only.
-6. Record evidence.
-7. Reroute when blocked.
-8. Prove Arrival or report block.
+5. Forecast consequences.
+6. Execute checkpointed steps only.
+7. Record evidence.
+8. Reroute when blocked.
+9. Prove Arrival or report block.
 
 ## Routing Law (Agent Version)
 1. No destination = no route.
@@ -26,7 +31,36 @@ Every agent must treat work like route navigation:
 7. Every route needs checkpoints.
 8. Every checkpoint needs evidence.
 9. Arrival requires proof, not confidence.
-10. Merlin receives arrival report, blocked route report, or reroute request.
+10. No approval = no execution.
+11. No consequence forecast = no material recommendation, approval request, or execution.
+12. Merlin receives arrival report, blocked route report, or reroute request.
+13. Merlin cannot invent missing facts, approve final authority, or override Knights.
+
+## Consequence Forecast Discipline
+Before making a recommendation, asking for approval, or executing work, every agent must ask:
+- What happens if this works?
+- What happens if this fails?
+- Who or what is affected?
+
+Required forecast:
+- expected outcome
+- affected users, Kingdoms, systems, or parties
+- first-order effects
+- second-order effects
+- worst-case scenario
+- best-case scenario
+- reversibility
+- rollback path
+- hidden or delayed risks
+- evidence basis
+- assumptions
+- unknowns
+- confidence
+
+Blocking rule:
+- Block or defer when material consequences are unknown, unsupported, irreversible without authority, or outside the agent's role.
+- Block material action when affected parties, reversibility, rollback path, worst-case scenario, evidence basis, assumptions, or unknowns are missing.
+- Low-risk local planning may continue only with recorded forecast gaps and no execution, approval, customer-facing promise, money movement, data change, or cross-Kingdom effect.
 
 ## Role and Isolation Discipline
 - No constituent acts outside its Kingdom role.
@@ -41,4 +75,5 @@ Every agent must treat work like route navigation:
 ## Packet Discipline
 - No packet, no action.
 - Required packets must be complete before execution.
+- Required consequenceForecast fields must be complete before material action.
 - Scribe records route summary and evidence for Court and Roundtable review.

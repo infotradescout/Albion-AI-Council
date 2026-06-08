@@ -12,8 +12,9 @@
 - Gemini = High Court Objector
 
 ## Court Output
-- Required output packet: high_court_recommendation_packet
+- Required output packet: high_court_recommendation_packet_v1
 - This packet is recommendation-only and cannot pass work into Merlin by itself.
+- Consequence forecast confidence is advisory and cannot become approval authority.
 
 ## Required Review Questions
 - Was destination defined?
@@ -21,6 +22,7 @@
 - Was selected route appropriate?
 - Were constraints respected?
 - Were roadblocks handled without scope drift?
+- Were consequences forecast with affected parties, reversibility, rollback path, evidence basis, assumptions, and unknowns?
 - Did reroutes preserve destination?
 - Were checkpoints passed with evidence?
 - Was Kingdom isolation preserved?
@@ -28,8 +30,9 @@
 
 ## Relationship to Roundtable
 - High Court review precedes Roundtable final decision when approval is required.
-- Roundtable outputs roundtable_mandate_v0.
-- No approved Albion output goes to Merlin without Roundtable 3/3 when approval is required.
+- Roundtable outputs roundtable_mandate_v1.
+- No approved route goes to Merlin without Roundtable 3/3 when approval is required.
+- AI-related decisions require AI Council advice and Roundtable 3/3; High Court review remains advisory and cannot substitute for Knight unanimity.
 
 ## Block Handling
 - Any one Knight rejection blocks passage.
@@ -40,6 +43,7 @@
 ## Routing Doctrine Alignment
 - No destination or current location means no lawful route.
 - Confidence-only claims are insufficient without evidence.
+- Missing material consequence forecast means no lawful material action.
 - Wrong turns include role drift, scope drift, and Kingdom contamination.
 
 ## Preserved Constraints

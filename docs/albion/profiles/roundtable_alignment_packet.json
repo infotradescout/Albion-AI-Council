@@ -1,49 +1,384 @@
 {
   "schemaVersion": "roundtable_alignment_packet_dynamic_v1",
-  "alignmentVersion": 1,
-  "requiredKnights": ["Gawain", "Percival", "Lancelot"],
-  "missingProfiles": ["Percival"],
+  "alignmentVersion": 5,
+  "requiredKnights": [
+    "Gawain",
+    "Percival",
+    "Lancelot"
+  ],
+  "missingProfiles": [],
   "profilesSummarized": {
     "Gawain": {
       "profileSource": "gawain.roundtable_knight_profile_dynamic_v1.json",
-      "status": "present_valid_json"
+      "status": "present_valid_json",
+      "realPerson": "Thomas",
+      "primaryLanes": [
+        "technical builder",
+        "system-level operating coordinator",
+        "objector and stress-test reviewer",
+        "overall system guidance",
+        "working systems",
+        "doctrine and trust architecture",
+        "decision-ready routing",
+        "testable business routes",
+        "execution quality before scale",
+        "customer happiness through 3/3 alignment"
+      ]
     },
     "Percival": {
       "profileSource": "percival.roundtable_knight_profile_dynamic_v1.json",
-      "status": "missing"
+      "status": "present_valid_json",
+      "realPerson": "Dylan",
+      "primaryLanes": [
+        "operations",
+        "execution momentum",
+        "merchandising",
+        "manufacturing marketing and sales materials",
+        "physical production",
+        "business growth",
+        "mission-driven operating",
+        "trust stewardship"
+      ]
     },
     "Lancelot": {
       "profileSource": "lancelot.roundtable_knight_profile_dynamic_v1.json",
-      "status": "present_valid_json"
+      "status": "present_valid_json",
+      "realPerson": "Levon",
+      "primaryLanes": [
+        "public voice",
+        "sales",
+        "outreach",
+        "sales messaging",
+        "relationship-driven follow-up",
+        "selling the vision",
+        "public persuasion",
+        "objection handling",
+        "public trust framing"
+      ]
     }
   },
-  "universalRoundtableLaw": [],
-  "gawainSpecificRules": [],
+  "universalRoundtableLaw": [
+    "Nothing major passes without unanimous 3/3 approval.",
+    "Any Knight can block.",
+    "AI recommendations are advisory only.",
+    "Knight profiles are living and updated from observed decisions.",
+    "No destination, no route.",
+    "No verified current location, no execution.",
+    "No evidence, no claim.",
+    "No complete consequence forecast, no material action."
+  ],
+  "gawainSpecificRules": [
+    "Gawain is the technical builder, objector, and system-level operating coordinator for Albion routes.",
+    "Gawain guides Lancelot and Percival based on what the overall system needs next while preserving Roundtable 3/3 authority.",
+    "Gawain controls routing quality, evidence separation, doctrine protection, technical build direction, and customer happiness escalation.",
+    "Gawain blocks customer-impacting changes without 3/3 alignment.",
+    "Gawain requires facts, assumptions, unknowns, risks, recommendation, next action, rollback, and consequence forecast to be visible before material movement."
+  ],
   "sharedAuthorityRules": [
     "Nothing major passes without unanimous 3/3 approval.",
     "Any Knight can block.",
-    "AI recommendations are advisory only."
+    "AI recommendations are advisory only.",
+    "Knight profiles are living and updated from observed decisions.",
+    "A Knight objection triggers Roundtable review and must be heard before persuasion.",
+    "Forecast confidence cannot substitute for evidence or approval."
   ],
-  "primaryLaneMap": {},
-  "secondaryLaneMap": {},
-  "overlapZones": [],
-  "knownTensionZones": [],
-  "leadSupportMap": [],
-  "requiresUnanimousApproval": [],
-  "singleKnightSponsorshipAllowedFor": [],
-  "evidenceRequirementsByKnight": {},
-  "blockingCriteriaByKnight": {},
-  "escalationTriggers": [],
-  "merlinPresentationRules": [],
-  "albionRoutingRules": [],
-  "antiSpiralRules": [],
+  "primaryLaneMap": {
+    "Gawain": [
+      "technical builder",
+      "system coordinator",
+      "objector",
+      "overall route guidance",
+      "systems",
+      "software and AI buildout",
+      "route control",
+      "evidence gates",
+      "doctrine enforcement",
+      "customer happiness risk"
+    ],
+    "Percival": [
+      "operations",
+      "field execution",
+      "merchandising",
+      "manufacturing marketing and sales materials",
+      "physical production",
+      "metal business cards",
+      "NFC cards",
+      "T-shirts",
+      "branded sales materials",
+      "business growth",
+      "community alignment",
+      "visible movement",
+      "execution ownership"
+    ],
+    "Lancelot": [
+      "public voice",
+      "sales",
+      "outreach",
+      "sales positioning",
+      "messaging",
+      "content",
+      "people persuasion",
+      "offer and value packaging"
+    ]
+  },
+  "secondaryLaneMap": {
+    "Gawain": [
+      "revenue model review",
+      "public claim truth-checking",
+      "workflow adoption review",
+      "Kingdom boundary review"
+    ],
+    "Percival": [
+      "brand growth",
+      "hands-on building",
+      "ScoutFitters fulfillment",
+      "material purchasing",
+      "sales material production",
+      "local ecosystem development",
+      "revenue motion"
+    ],
+    "Lancelot": [
+      "creative direction",
+      "community goodwill",
+      "local relationship building",
+      "sales follow-up",
+      "outreach campaign language",
+      "public perception review"
+    ]
+  },
+  "overlapZones": [
+    "Kingdom building",
+    "strategic direction",
+    "mission protection",
+    "trust architecture",
+    "community growth",
+    "business model validation",
+    "Roundtable alignment",
+    "public trust and customer happiness"
+  ],
+  "knownTensionZones": [
+    "Planning without visible execution",
+    "Growth acceleration that could damage trust",
+    "Public-facing promises without evidence",
+    "Customer-facing UX or pricing changes",
+    "Major obligations without a named execution owner",
+    "AI confidence presented as authority",
+    "Two Knights aligned while one Knight feels unheard",
+    "Lancelot's sales and outreach instinct moving faster than Gawain's evidence gate",
+    "Gawain's structure needs slowing Percival's visible execution momentum",
+    "Percival's trust in Thomas and Levon allowing early sponsorship but creating delayed-communication risk",
+    "Lancelot and Percival aligning on sales/outreach plus field movement before Gawain has proof, rollback, or consequence visibility",
+    "Gawain and Lancelot refining strategy or language while Percival sees planning without movement",
+    "Gawain and Percival narrowing execution while Lancelot sees missed sales/outreach opportunity or weak public pull",
+    "Lancelot creating demand before Percival has material production, fulfillment, or inventory readiness",
+    "Percival manufacturing sales materials before Lancelot has confirmed sales/outreach message and target use case"
+  ],
+  "relationshipStressTest": {
+    "stressTestVersion": 1,
+    "summary": "The Roundtable relationship is complementary but can lose efficiency when evidence, visible movement, and leverage are not sequenced. Adjustments clarify who leads each phase, what each Knight must see before passing, and when disagreement becomes live human review.",
+    "pairwiseGaps": [
+      {
+        "pair": "Gawain-Lancelot",
+        "gap": "Gawain sees the whole system route and technical/build requirements. Lancelot sees sales, outreach, persuasion, public voice, and likely public reaction.",
+        "inefficiencyRisk": "Sales/outreach may create demand before the system is ready, or the system route may stall before it is turned into a testable sales motion.",
+        "adjustment": "Lancelot sponsors sales/outreach language, follow-up, public voice, and offer framing for selling. Gawain guides the system route, objects when the build/proof/consequence path is weak, and owns release readiness before public/material action."
+      },
+      {
+        "pair": "Gawain-Percival",
+        "gap": "Gawain knows the system route, technical build needs, objections, and next required handoff. Percival moves fastest through practical examples, visible models, and clear execution ownership.",
+        "inefficiencyRisk": "Gawain can see what the system needs before the practical path is obvious to Percival; Percival can push visible movement before the system route is ready.",
+        "adjustment": "Gawain translates system needs into plain owner rules, practical examples, and the next required build/route/handoff. Percival validates whether the route can actually be executed and whether the owner is real."
+      },
+      {
+        "pair": "Percival-Lancelot",
+        "gap": "Lancelot owns sales/outreach and persuasion. Percival owns merchandising, manufacturing, materials, fulfillment, and grounded execution.",
+        "inefficiencyRisk": "Sales/outreach can outrun material readiness, or materials can be produced before the sales message, target use case, and outreach path are clear.",
+        "adjustment": "Lancelot owns sales/outreach voice, scripts, follow-up, and persuasion. Percival owns production readiness for metal business cards, NFC cards, T-shirts, branded materials, fulfillment, and operational practicality."
+      },
+      {
+        "pair": "All Knights",
+        "gap": "All three protect trust and mission, which can duplicate review effort and over-escalate routine work.",
+        "inefficiencyRisk": "Roundtable becomes a bottleneck for low-risk preparation, drafts, evidence repair, or local work.",
+        "adjustment": "Use single-Knight sponsorship for reversible, low-risk preparation. Escalate only when material triggers appear: customer happiness, public promise, money, data, cross-Kingdom boundaries, mission, trust, governance, safety, legal, reputation, irreversible action, or Knight objection."
+      }
+    ],
+    "phaseOwnership": {
+      "systemDirection": "Gawain leads by identifying what the overall system needs next, what must be built, what must be objected to, and which Knight should carry the next lane.",
+      "salesAndOutreach": "Lancelot leads sales, outreach, public voice, follow-up language, and persuasion; Gawain converts it into system route, proof needs, and objections; Percival checks whether field execution and materials can support the promise.",
+      "merchandisingAndMaterials": "Percival leads merchandising and manufacturing of marketing/sales materials, including metal business cards, NFC cards, T-shirts, branded sales materials, material purchasing, and fulfillment; Lancelot supports sales use case and messaging; Gawain checks system fit, proof, and consequences.",
+      "routeAndEvidence": "Gawain leads route, evidence, technical build direction, objections, and consequence gates; Percival checks execution owner and practical path; Lancelot checks public meaning and objection handling.",
+      "fieldExecution": "Percival leads visible execution; Gawain keeps the work aligned to the system route and technical constraints; Lancelot supports language, relationship framing, and public trust.",
+      "publicRelease": "Lancelot leads voice and emotional fit; Gawain approves system readiness, proof level, consequence forecast, and release route; Percival confirms operational readiness and community trust.",
+      "conflictResolution": "The objecting Knight states the objection first, the sponsoring Knight restates it to confirm understanding, then the Roundtable chooses approve, block, defer, needs_evidence, or human_discussion_required."
+    },
+    "inefficiencyControls": [
+      "Every major proposal must name one lead Knight and two support lenses.",
+      "Every route must identify the execution owner before approval.",
+      "Every public-facing sales/outreach move must pass Lancelot voice/reaction, Gawain proof/consequence, and Percival operational/material readiness when physical materials are involved.",
+      "Every marketing or sales material production route must name the sales use case, production owner, inventory or fulfillment expectation, proof level, and rollback/stop rule.",
+      "Every unresolved objection moves to live Roundtable discussion instead of repeated AI debate.",
+      "Every debate that repeats twice must be converted into a missing evidence item, a value disagreement, an ownership gap, or a doctrine question.",
+      "Every low-risk preparation task should stay out of full Roundtable unless a material trigger appears."
+    ],
+    "validationGapsToWatch": [
+      "How often Percival's trust in Levon and Thomas allows early movement that still needs explicit post-decision communication.",
+      "How much evidence Gawain requires before Lancelot's sales/outreach moves can be tested.",
+      "Whether Lancelot's sales/outreach motion creates practical execution or production debt for Percival.",
+      "Whether Gawain's routing requirements feel usable enough for Percival without slowing visible movement.",
+      "Whether routine work is being escalated because trust language is too broad.",
+      "Whether Percival's material production cadence can keep pace with Lancelot's outreach cadence.",
+      "Whether sales materials are being manufactured before the target use case and message are clear."
+    ]
+  },
+  "leadSupportMap": [
+    {
+      "lane": "software, systems, AI buildout, and doctrine routing",
+      "lead": "Gawain",
+      "support": [
+        "Percival for operational usefulness and execution owner reality",
+        "Lancelot for public meaning, user-facing language, and persuasion"
+      ]
+    },
+    {
+      "lane": "operations, field execution, local ecosystem movement, and visible implementation",
+      "lead": "Percival",
+      "support": [
+        "Gawain for route, evidence, and system controls",
+        "Lancelot for outreach language, public voice, and relationship framing"
+      ]
+    },
+    {
+      "lane": "merchandising, manufacturing, physical production, and marketing/sales materials",
+      "lead": "Percival",
+      "support": [
+        "Lancelot for sales use case, public voice, outreach message, and persuasion",
+        "Gawain for system fit, route evidence, consequence forecast, and release readiness"
+      ]
+    },
+    {
+      "lane": "sales, outreach, sales positioning, public voice, content, and value packaging",
+      "lead": "Lancelot",
+      "support": [
+        "Gawain for truth, trust, and customer happiness gates",
+        "Percival for real-world practicality, material readiness, fulfillment, and community trust"
+      ]
+    }
+  ],
+  "requiresUnanimousApproval": [
+    "Anything involving customer happiness.",
+    "Any public-facing promise, UX, pricing, lead-routing, or trust-surface change.",
+    "Any decision where a Knight objects.",
+    "Any mission, trust, governance, doctrine, legal, safety, or reputation risk.",
+    "Any major growth acceleration or spending decision.",
+    "Any major obligation without a clear execution owner.",
+    "Any cross-Kingdom boundary change.",
+    "Any decision where AI attempts to approve final authority."
+  ],
+  "singleKnightSponsorshipAllowedFor": [
+    "Kingdom-local preparation.",
+    "Evidence repair.",
+    "Draft work.",
+    "Non-release research.",
+    "Low-risk internal planning with no execution, approval, customer-facing promise, money movement, data change, or cross-Kingdom effect.",
+    "Early work sponsored by the Knight whose lane owns the work, provided blockers and forecast gaps are recorded."
+  ],
+  "evidenceRequirementsByKnight": {
+    "Gawain": [
+      "verified current state",
+      "evidence classification",
+      "customer happiness impact",
+      "rollback path",
+      "consequence forecast",
+      "checkpoint and arrival proof"
+    ],
+    "Percival": [
+      "team consensus",
+      "market validation",
+      "clear execution path",
+      "responsible owner",
+      "real-world testing or visible model",
+      "proof the work protects or increases trust"
+    ],
+    "Lancelot": [
+      "clear value story",
+      "audience and emotional fit",
+      "mission alignment",
+      "objection handling",
+      "public trust framing",
+      "believable outcome path"
+    ]
+  },
+  "blockingCriteriaByKnight": {
+    "Gawain": [
+      "customer-impacting change without 3/3 alignment",
+      "unsupported claims",
+      "missing evidence",
+      "money, trust, safety, routing, governance, or doctrine risk without escalation",
+      "incomplete consequence forecast"
+    ],
+    "Percival": [
+      "mission misalignment",
+      "trust erosion",
+      "no execution owner",
+      "planning without movement",
+      "generic strategy with no real-world path",
+      "feeling dismissed, unheard, or misunderstood"
+    ],
+    "Lancelot": [
+      "mission drift",
+      "trust risk",
+      "charging for leads",
+      "weak or stale public messaging",
+      "unclear user experience impact",
+      "major reputation risk"
+    ]
+  },
+  "escalationTriggers": [
+    "customer happiness impact",
+    "Knight disagreement",
+    "mission alignment concern",
+    "trust concern",
+    "money, safety, legal, governance, doctrine, or reputation risk",
+    "public-facing content or promise",
+    "major growth acceleration",
+    "unclear execution owner",
+    "route proposed without destination or verified current location",
+    "claims made without evidence",
+    "incomplete consequence forecast"
+  ],
+  "merlinPresentationRules": [
+    "Start with decision, why it matters, route, risk, next action, and executor-ready prompt when relevant.",
+    "Use plain, direct, practical language.",
+    "Separate facts, assumptions, unknowns, risks, recommendation, and consequence forecast.",
+    "Show what success looks like with concrete examples or visible models.",
+    "Avoid consultant-style language and generic business advice.",
+    "Listen before challenging when a Knight objects.",
+    "Never present AI output as final authority."
+  ],
+  "albionRoutingRules": [
+    "Define destination before route.",
+    "Verify current location before execution.",
+    "Identify owner, roadblocks, checkpoints, reroute rules, arrival proof, rollback, and consequence forecast.",
+    "Escalate when customer happiness, trust, mission, governance, doctrine, money, safety, legal, reputation, or cross-Kingdom boundaries are affected.",
+    "Low-risk local planning may continue with recorded gaps only when no material action occurs.",
+    "Blocked routes reroute without changing destination unless the Roundtable authorizes a destination change."
+  ],
+  "antiSpiralRules": [
+    "Do not force static departments onto the Knights.",
+    "Do not erase overlap when shared authority is supported by profiles.",
+    "Do not turn every concern into a full strategic rewrite.",
+    "Convert concerns into approve, block, defer, needs_evidence, or human_discussion_required.",
+    "Use live discussion when a Knight feels unheard.",
+    "Preserve visible movement while blocking material risk."
+  ],
   "profileUpdatePolicy": {
     "whenToRefreshAlignment": [
       "any Knight profile changes materially",
       "a Knight blocks for a new reason",
       "a repeated conflict appears",
       "a Kingdom focus changes",
-      "Merlin presentation rules change"
+      "Merlin presentation rules change",
+      "a consequence forecast rule changes"
     ],
     "changeRequiresRoundtableConfirmation": true
   },
@@ -51,5 +386,5 @@
     "passingRule": "unanimous_3_of_3",
     "failureRule": "any_rejection_blocks"
   },
-  "alignmentStatus": "blocked_waiting_for_valid_profiles"
+  "alignmentStatus": "ready"
 }

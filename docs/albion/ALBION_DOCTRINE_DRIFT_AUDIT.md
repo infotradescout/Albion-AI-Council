@@ -69,8 +69,8 @@ Scope: Read-only terminology and doctrine drift audit across docs/albion
 ### File: docs/albion/KINGDOM_REGISTRY_V0.md
 - Exact stale phrase: "- Merlin" in Active Kingdoms list
 - Location: line 23
-- Why it conflicts: Current doctrine says Merlin is separate and user-facing, while this entry implies Merlin is a Kingdom entity inside the registry.
-- Recommended correction: Clarify Merlin as external user-facing layer and remove Kingdom listing unless explicitly modeled as a special exception with clear boundary law.
+- Why it conflicts: Current doctrine says Merlin is the OR / Operational Router inside Albion, while this entry implies Merlin is a Kingdom entity inside the registry.
+- Recommended correction: Clarify Merlin as the Operational Router, not a Kingdom, and remove Kingdom listing unless explicitly modeled as a special exception with clear boundary law.
 - Severity: blocker
 - Patch required: yes
 
@@ -113,7 +113,7 @@ No doctrine files were modified during this audit. Only this audit report file w
 - Exact drift resolved:
 	- Replaced roundtable_knight_profile_v1 with roundtable_knight_profile_dynamic_v1 in active doctrine references.
 	- Replaced roundtable_alignment_packet_v1 with roundtable_alignment_packet_dynamic_v1 in active doctrine references.
-	- Removed Merlin from Kingdom Registry active Kingdom list and added explicit Merlin boundary rules.
+	- Removed Merlin from Kingdom Registry active Kingdom list and added explicit Merlin OR rules.
 	- Added dynamic lifecycle language in founder onboarding: starting profile only, update triggers, sourceRunId/sourceDecisionId, and alignment refresh after material changes.
 - Validation grep results:
 	- roundtable_knight_profile_v1: no matches in active doctrine docs under docs/albion (except harmless historical/deprecated contexts if present).
@@ -126,3 +126,16 @@ No doctrine files were modified during this audit. Only this audit report file w
 	- Albien: no matches.
 - Remaining harmless historical references if any:
 	- None identified in current active doctrine files.
+
+## Superseding Merlin OR Correction
+Thomas clarified after this audit that Merlin is not separate from Albion in the old boundary wording. Albion is the full Kingdom operating system. Merlin is the OR / Operational Router inside Albion.
+
+Correct model:
+- Albion = full Kingdom operating system.
+- Merlin = OR / Operational Router.
+- Squires = gather information.
+- AI Council = organizes, challenges, and prepares routes.
+- Knights = approve or deny.
+- Merlin = executes approved routes only.
+
+Do not describe Albion as the OR. Merlin is the OR.

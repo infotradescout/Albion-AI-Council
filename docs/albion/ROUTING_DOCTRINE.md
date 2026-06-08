@@ -1,17 +1,20 @@
 # Routing Doctrine
 
 ## Purpose
-Albion solves work like Google Maps routing:
+Albion is the full Kingdom operating system. Merlin is the OR / Operational Router inside Albion.
+
+Merlin executes approved work like Google Maps routing:
 - define the destination
 - verify the current location
 - map route options
 - identify traffic and roadblocks
+- forecast consequences
 - choose the safest lawful route
 - validate checkpoints
 - reroute when blocked
 - prove arrival
 
-Routing starts only after Dispatch Tower classification.
+Routing starts only after Dispatch Tower classification. Merlin executes only after the route is complete and approved.
 
 ## Routing Terms
 - Destination = end goal and desired state
@@ -22,6 +25,7 @@ Routing starts only after Dispatch Tower classification.
 - Road Closure = hard blocker
 - Detour = workaround
 - Checkpoint = validation and test gate
+- Consequence Forecast = predicted effects, affected parties, reversibility, rollback path, and evidence basis
 - Arrival = successful output packet
 - Wrong Turn = role drift, scope drift, Kingdom contamination
 - Rerouting = remediation path
@@ -36,18 +40,46 @@ Routing starts only after Dispatch Tower classification.
 7. Every route needs checkpoints.
 8. Every checkpoint needs evidence.
 9. Arrival requires proof, not confidence.
-10. Merlin receives an arrival report, blocked route report, or reroute request.
+10. No approval = no execution.
+11. No consequence forecast = no material recommendation, approval request, or execution.
+12. Merlin receives an arrival report, blocked route report, or reroute request.
+13. Merlin cannot invent missing facts, approve final authority, or override Knights.
 
-## Albion Routing Flow
+## Consequence Forecast Law
+Every agent must forecast likely consequences before recommendation, approval request, or execution.
+
+Forecasts must include:
+- expected outcome
+- affected users, Kingdoms, systems, or parties
+- first-order effects
+- second-order effects
+- worst-case scenario
+- best-case scenario
+- reversibility
+- rollback path
+- hidden or delayed risks
+- evidence basis
+- assumptions
+- unknowns
+- confidence
+
+Blocking rule:
+- Material actions block when affected parties, reversibility, rollback path, worst-case scenario, evidence basis, assumptions, or unknowns are missing.
+- Low-risk local planning may continue with recorded gaps only when no execution, approval, customer-facing promise, money movement, data change, or cross-Kingdom effect occurs.
+- Forecast confidence is not proof and cannot substitute for evidence or approval.
+
+## Albion-to-Merlin Routing Flow
 1. Dispatch Tower classifies the input and route depth.
 2. Intake declares Destination and Current Location.
 3. Kingdom routing validates scope and isolation.
-4. Constituents and Guilds generate Route Options.
-5. Selected Route is recorded with required Checkpoints.
-6. Scribe records route summary and evidence.
-7. High Court performs advisory route-lawfulness review when required.
-8. Roundtable issues final mandate when required by authority level.
-9. Albion sends Merlin one of: arrival report, blocked route report, reroute request.
+4. Squires gather missing information.
+5. AI Council organizes, challenges, and prepares Route Options.
+6. Consequence forecast is recorded and challenged.
+7. Selected Route is recorded with required Checkpoints.
+8. Scribe records route summary and evidence.
+9. High Court performs advisory route-lawfulness review when required.
+10. Roundtable issues final mandate when required by authority level.
+11. Merlin executes the approved route or rejects incomplete work back to Council/human review.
 
 ## Route Depth Model
 - Depth 0: Merlin answers directly (no Albion run)
@@ -72,6 +104,8 @@ If route prerequisites fail, Albion must return a no-run state:
 - Drift requires remediation before route completion.
 - No route may violate Kingdom isolation law.
 - No route may proceed without packet evidence.
+- No route may proceed without required consequence forecast.
+- No route may proceed to Merlin without required approval.
 
 ## Authority Alignment
 - High Court is advisory only.

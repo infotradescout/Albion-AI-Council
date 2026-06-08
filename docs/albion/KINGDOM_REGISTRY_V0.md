@@ -23,20 +23,21 @@ No unregistered Kingdom receives work.
 - AutoBott
 - Albion Core
 
-Merlin boundary rule:
-- Merlin is separate and user-facing.
+Merlin OR rule:
+- Merlin is the OR / Operational Router inside Albion.
 - Merlin is not a Kingdom.
 - Merlin is not listed in the Kingdom Registry.
-- Albion serves Merlin and returns clean action/release packets to Merlin.
+- Merlin receives and executes approved complete routes only.
+- Merlin cannot invent missing facts, approve final authority, or override Knights.
 
 ## Governance Flow
 1. Intake packet with kingdomId
 2. Kingdom routing and constituent checks
 3. Guild execution preparation
 4. Scribe packaging
-5. High Court advisory review (high_court_recommendation_packet)
-6. Roundtable final mandate (roundtable_mandate_v0)
-7. Clean output to Merlin when approved
+5. High Court advisory review (high_court_recommendation_packet_v1)
+6. Roundtable final mandate (roundtable_mandate_v1)
+7. Approved complete route to Merlin for execution
 
 ## Approval Separation
 - High Court is advisory only.
@@ -55,6 +56,6 @@ Merlin boundary rule:
 - No constituent acts outside its Kingdom role.
 - No Guild executes without approved blueprint.
 - No Scribe votes or deploys.
-- Merlin is separate and user-facing.
-- Albion serves Merlin.
-- Albion returns clean output to Merlin.
+- Albion is the full Kingdom operating system.
+- Merlin is the OR / Operational Router inside Albion.
+- Merlin executes approved routes only.
