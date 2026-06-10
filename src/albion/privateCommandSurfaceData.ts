@@ -18,6 +18,11 @@ import {
   buildApprovalActionPacket,
   type AlbionApprovalActionPacket,
 } from "./albionApprovalActionPackets";
+import {
+  appendActionPacketToQueue,
+  createActionPacketQueue,
+  replayActionPacketQueue,
+} from "./albionActionPacketQueue";
 
 export interface LocalRunFixture {
   runId: string;
@@ -42,6 +47,8 @@ export interface PrivateCommandSurfaceRun extends AlbionRunLedgerEntry {
     packet: AlbionApprovalActionPacket;
     applied: boolean;
     handoffEligible: boolean;
+    queuedPacketCount: number;
+    replayed: boolean;
   };
 }
 
@@ -237,11 +244,23 @@ function buildHandoffActionPacketPreview(input: {
     packet,
     appBaseUrl: input.appBaseUrl,
   });
+  const queued = appendActionPacketToQueue({
+    queue: createActionPacketQueue(),
+    packet,
+  });
+  const replayed = replayActionPacketQueue({
+    queue: queued.queue,
+    ledger: input.ledger,
+    appBaseUrl: input.appBaseUrl,
+    expectedRunId: input.entry.run.runId,
+  });
 
   return {
     packet,
     applied: result.applied,
     handoffEligible:
       result.resultingRunPreview?.merlinHandoffEligibility.eligible ?? false,
+    queuedPacketCount: queued.queue.packets.length,
+    replayed: replayed.replayed,
   };
 }

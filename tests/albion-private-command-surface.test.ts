@@ -71,6 +71,10 @@ describe("Albion OS private command surface read model", () => {
       actorAuthority: "merlin_preview_only",
       executionAllowed: false,
     });
+    expect(aiRun?.actionPacketPreview).toMatchObject({
+      queuedPacketCount: 1,
+      replayed: true,
+    });
   });
 });
 
@@ -97,6 +101,8 @@ describe("Albion OS private command surface rendering", () => {
     expect(html).toContain("Discord Alert Preview");
     expect(html).toContain("Action Packet Preview");
     expect(html).toContain("Execution Allowed");
+    expect(html).toContain("Queued Packets");
+    expect(html).toContain("Replay Preview");
     expect(html).toContain("/Albion OS/Runs/tradescout-public-copy-002/evidence");
   });
 });

@@ -149,6 +149,8 @@ function renderRunDetail(item: PrivateCommandSurfaceRun): string {
           ${renderFact("Mutation Allowed", item.actionPacketPreview.packet.mutationAllowed ? "Yes" : "No")}
           ${renderFact("Execution Allowed", item.actionPacketPreview.packet.executionAllowed ? "Yes" : "No")}
           ${renderFact("Applied Locally", item.actionPacketPreview.applied ? "Yes" : "No")}
+          ${renderFact("Queued Packets", String(item.actionPacketPreview.queuedPacketCount))}
+          ${renderFact("Replay Preview", item.actionPacketPreview.replayed ? "Ready" : "Blocked")}
         </dl>
       </section>
 
