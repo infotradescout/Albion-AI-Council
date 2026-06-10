@@ -67,6 +67,13 @@ export interface AlbionEvidencePacketPreviewMetadata {
   rejectedPacketCount: number;
   ledgerPreviewHash: string;
   deterministicSummary: string;
+  exportHandoffCopy: {
+    handoffTitle: string;
+    handoffSummary: string;
+    wouldExportTo: string[];
+    wouldExportArtifacts: string[];
+    requiredFutureApproval: string;
+  };
   exportAllowed: false;
   mutationAllowed: false;
   executionAllowed: false;
@@ -314,6 +321,13 @@ function toEvidencePacketPreviewMetadata(
     rejectedPacketCount: packet.rejectedPacketCount,
     ledgerPreviewHash: packet.ledgerPreviewHash,
     deterministicSummary: packet.deterministicSummary,
+    exportHandoffCopy: {
+      handoffTitle: packet.exportHandoffPreview.handoffTitle,
+      handoffSummary: packet.exportHandoffPreview.handoffSummary,
+      wouldExportTo: packet.exportHandoffPreview.wouldExportTo,
+      wouldExportArtifacts: packet.exportHandoffPreview.wouldExportArtifacts,
+      requiredFutureApproval: packet.exportHandoffPreview.requiredFutureApproval,
+    },
     exportAllowed: packet.exportAllowed,
     mutationAllowed: packet.mutationAllowed,
     executionAllowed: packet.executionAllowed,

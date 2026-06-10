@@ -88,6 +88,15 @@ describe("Albion queue replay evidence packet", () => {
     expect(first.packet?.mutationAllowed).toBe(false);
     expect(first.packet?.exportAllowed).toBe(false);
     expect(first.packet?.liveIntegrationAllowed).toBe(false);
+    expect(first.packet?.exportHandoffPreview).toMatchObject({
+      handoffTitle: "Albion Evidence Export Handoff Preview",
+      guardrails: {
+        exportAllowed: false,
+        mutationAllowed: false,
+        executionAllowed: false,
+        liveIntegrationAllowed: false,
+      },
+    });
     expect(first.packet?.ledgerPreviewHash).toBe(second.packet?.ledgerPreviewHash);
     expect(first.packet?.deterministicSummary).toBe(second.packet?.deterministicSummary);
     expect(

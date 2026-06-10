@@ -98,6 +98,7 @@ describe("Albion queue replay evidence packet snapshot contract", () => {
     expect(second.created).toBe(true);
     expect(first.packet?.deterministicSummary).toBe(second.packet?.deterministicSummary);
     expect(first.packet?.ledgerPreviewHash).toBe(second.packet?.ledgerPreviewHash);
+    expect(first.packet?.exportHandoffPreview).toEqual(second.packet?.exportHandoffPreview);
   });
 
   it("serializes identically for repeated generation from same replay", () => {
@@ -157,6 +158,9 @@ describe("Albion queue replay evidence packet snapshot contract", () => {
       aiRun?.actionPacketPreview.evidencePacketPreviewMetadata,
     ).toMatchObject({
       runId: "albion-ai-governance-001",
+      exportHandoffCopy: {
+        handoffTitle: "Albion Evidence Export Handoff Preview",
+      },
       exportAllowed: false,
       mutationAllowed: false,
       executionAllowed: false,

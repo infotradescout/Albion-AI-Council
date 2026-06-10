@@ -81,6 +81,9 @@ describe("Albion OS private command surface read model", () => {
       packetCount: 1,
       acceptedPacketCount: 1,
       rejectedPacketCount: 0,
+      exportHandoffCopy: {
+        handoffTitle: "Albion Evidence Export Handoff Preview",
+      },
       exportAllowed: false,
       mutationAllowed: false,
       executionAllowed: false,
@@ -118,6 +121,7 @@ describe("Albion OS private command surface rendering", () => {
     expect(html).toContain("Discord Alert Preview");
     expect(html).toContain("Action Packet Preview");
     expect(html).toContain("Evidence Export Preview");
+    expect(html).toContain("Export Handoff Copy");
     expect(html).toContain("Execution Allowed");
     expect(html).toContain("Export Allowed");
     expect(html).toContain("Live Integration Allowed");

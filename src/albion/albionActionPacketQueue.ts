@@ -46,10 +46,25 @@ export interface AlbionQueueReplayEvidencePacket {
   merlinHandoffPreview?: AlbionRunLedgerEntry["merlinHandoffEligibility"];
   ledgerPreviewHash: string;
   deterministicSummary: string;
+  exportHandoffPreview: AlbionEvidencePacketExportHandoffPreview;
   exportAllowed: false;
   mutationAllowed: false;
   executionAllowed: false;
   liveIntegrationAllowed: false;
+}
+
+export interface AlbionEvidencePacketExportHandoffPreview {
+  handoffTitle: string;
+  handoffSummary: string;
+  wouldExportTo: string[];
+  wouldExportArtifacts: string[];
+  requiredFutureApproval: string;
+  guardrails: {
+    exportAllowed: false;
+    mutationAllowed: false;
+    executionAllowed: false;
+    liveIntegrationAllowed: false;
+  };
 }
 
 export interface QueueReplayEvidencePacketResult {
@@ -310,6 +325,12 @@ export function createAlbionQueueReplayEvidencePacket(input: {
         recomputedRunPreview.run.mandate?.mandateStatus ?? "pending",
         recomputedRunPreview.merlinHandoffEligibility.eligible ? "eligible" : "blocked",
       ].join("|"),
+      exportHandoffPreview: buildAlbionEvidencePacketExportHandoffPreview({
+        runId: input.runId,
+        evidencePacketId: input.evidencePacketId,
+        replayId: input.replayId,
+        queueId: input.queueId ?? `queue-${input.runId}`,
+      }),
       exportAllowed: false,
       mutationAllowed: false,
       executionAllowed: false,
@@ -420,4 +441,36 @@ function stableSortValue(value: unknown): unknown {
   }
 
   return value;
+}
+
+function buildAlbionEvidencePacketExportHandoffPreview(input: {
+  runId: string;
+  evidencePacketId: string;
+  replayId: string;
+  queueId: string;
+}): AlbionEvidencePacketExportHandoffPreview {
+  return {
+    handoffTitle: "Albion Evidence Export Handoff Preview",
+    handoffSummary:
+      "Preview only. This packet describes what would be exported after explicit founder approval.",
+    wouldExportTo: [
+      "Google Sheets (not enabled)",
+      "Google Drive (not enabled)",
+      "Discord (not enabled)",
+    ],
+    wouldExportArtifacts: [
+      `Evidence packet snapshot ${input.evidencePacketId}`,
+      `Replay trace ${input.replayId} from ${input.queueId}`,
+      `Run approval preview for ${input.runId}`,
+      `Merlin handoff eligibility preview for ${input.runId}`,
+    ],
+    requiredFutureApproval:
+      "Explicit approval is required before any external export path can be enabled.",
+    guardrails: {
+      exportAllowed: false,
+      mutationAllowed: false,
+      executionAllowed: false,
+      liveIntegrationAllowed: false,
+    },
+  };
 }
