@@ -76,8 +76,7 @@ describe("Albion OS private command surface read model", () => {
       replayed: true,
       evidencePacketCreated: true,
     });
-    expect(aiRun?.actionPacketPreview.evidencePacketPreview).toMatchObject({
-      schemaVersion: "albion_queue_replay_evidence_packet_v1",
+    expect(aiRun?.actionPacketPreview.evidencePacketPreviewMetadata).toMatchObject({
       runId: "albion-ai-governance-001",
       packetCount: 1,
       acceptedPacketCount: 1,
@@ -87,6 +86,12 @@ describe("Albion OS private command surface read model", () => {
       executionAllowed: false,
       liveIntegrationAllowed: false,
     });
+    expect(
+      aiRun?.actionPacketPreview.evidencePacketPreviewMetadata,
+    ).not.toHaveProperty("resultingLedgerPreview");
+    expect(
+      aiRun?.actionPacketPreview.evidencePacketPreviewMetadata,
+    ).not.toHaveProperty("runApprovalPreview");
   });
 });
 

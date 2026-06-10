@@ -52,8 +52,25 @@ export interface PrivateCommandSurfaceRun extends AlbionRunLedgerEntry {
     queuedPacketCount: number;
     replayed: boolean;
     evidencePacketCreated: boolean;
-    evidencePacketPreview?: AlbionQueueReplayEvidencePacket;
+    evidencePacketPreviewMetadata?: AlbionEvidencePacketPreviewMetadata;
   };
+}
+
+export interface AlbionEvidencePacketPreviewMetadata {
+  evidencePacketId: string;
+  queueId: string;
+  replayId: string;
+  runId: string;
+  createdAt: string;
+  packetCount: number;
+  acceptedPacketCount: number;
+  rejectedPacketCount: number;
+  ledgerPreviewHash: string;
+  deterministicSummary: string;
+  exportAllowed: false;
+  mutationAllowed: false;
+  executionAllowed: false;
+  liveIntegrationAllowed: false;
 }
 
 export const LOCAL_RUN_FIXTURES: LocalRunFixture[] = [
@@ -277,6 +294,29 @@ function buildHandoffActionPacketPreview(input: {
     queuedPacketCount: queued.queue.packets.length,
     replayed: replayed.replayed,
     evidencePacketCreated: evidence.created,
-    evidencePacketPreview: evidence.packet,
+    evidencePacketPreviewMetadata: evidence.packet
+      ? toEvidencePacketPreviewMetadata(evidence.packet)
+      : undefined,
+  };
+}
+
+function toEvidencePacketPreviewMetadata(
+  packet: AlbionQueueReplayEvidencePacket,
+): AlbionEvidencePacketPreviewMetadata {
+  return {
+    evidencePacketId: packet.evidencePacketId,
+    queueId: packet.queueId,
+    replayId: packet.replayId,
+    runId: packet.runId,
+    createdAt: packet.createdAt,
+    packetCount: packet.packetCount,
+    acceptedPacketCount: packet.acceptedPacketCount,
+    rejectedPacketCount: packet.rejectedPacketCount,
+    ledgerPreviewHash: packet.ledgerPreviewHash,
+    deterministicSummary: packet.deterministicSummary,
+    exportAllowed: packet.exportAllowed,
+    mutationAllowed: packet.mutationAllowed,
+    executionAllowed: packet.executionAllowed,
+    liveIntegrationAllowed: packet.liveIntegrationAllowed,
   };
 }

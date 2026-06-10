@@ -152,11 +152,11 @@ function renderRunDetail(item: PrivateCommandSurfaceRun): string {
           ${renderFact("Queued Packets", String(item.actionPacketPreview.queuedPacketCount))}
           ${renderFact("Replay Preview", item.actionPacketPreview.replayed ? "Ready" : "Blocked")}
           ${renderFact("Evidence Packet", item.actionPacketPreview.evidencePacketCreated ? "Ready" : "Blocked")}
-          ${renderFact("Export Allowed", item.actionPacketPreview.evidencePacketPreview?.exportAllowed ? "Yes" : "No")}
-          ${renderFact("Live Integration Allowed", item.actionPacketPreview.evidencePacketPreview?.liveIntegrationAllowed ? "Yes" : "No")}
+          ${renderFact("Export Allowed", item.actionPacketPreview.evidencePacketPreviewMetadata?.exportAllowed ? "Yes" : "No")}
+          ${renderFact("Live Integration Allowed", item.actionPacketPreview.evidencePacketPreviewMetadata?.liveIntegrationAllowed ? "Yes" : "No")}
         </dl>
         <h4>Evidence Export Preview</h4>
-        <pre>${escapeHtml(JSON.stringify(item.actionPacketPreview.evidencePacketPreview, null, 2))}</pre>
+        <pre>${escapeHtml(JSON.stringify(item.actionPacketPreview.evidencePacketPreviewMetadata, null, 2))}</pre>
       </section>
 
       <section class="detail-section" aria-label="Drive vault plan preview">

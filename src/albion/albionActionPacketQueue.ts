@@ -58,6 +58,12 @@ export interface QueueReplayEvidencePacketResult {
   packet?: AlbionQueueReplayEvidencePacket;
 }
 
+export function serializeAlbionQueueReplayEvidencePacket(
+  packet: AlbionQueueReplayEvidencePacket,
+): string {
+  return `${stableStringify(packet)}\n`;
+}
+
 export type QueueRejectedReason =
   | "duplicate_packet_id"
   | "missing_packet_id"
@@ -393,4 +399,25 @@ function hashString(value: string): string {
   }
 
   return `fnv1a32:${(hash >>> 0).toString(16).padStart(8, "0")}`;
+}
+
+function stableStringify(value: unknown): string {
+  return JSON.stringify(stableSortValue(value), null, 2);
+}
+
+function stableSortValue(value: unknown): unknown {
+  if (Array.isArray(value)) {
+    return value.map((item) => stableSortValue(item));
+  }
+
+  if (value && typeof value === "object") {
+    const objectValue = value as Record<string, unknown>;
+    const sortedEntries = Object.keys(objectValue)
+      .sort((a, b) => a.localeCompare(b))
+      .map((key) => [key, stableSortValue(objectValue[key])] as const);
+
+    return Object.fromEntries(sortedEntries);
+  }
+
+  return value;
 }

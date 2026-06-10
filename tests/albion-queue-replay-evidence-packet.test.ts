@@ -3,6 +3,7 @@ import {
   createAlbionQueueReplayEvidencePacket,
   createActionPacketQueue,
   replayActionPacketQueue,
+  serializeAlbionQueueReplayEvidencePacket,
 } from "../src/albion/albionActionPacketQueue";
 import { buildApprovalActionPacket } from "../src/albion/albionApprovalActionPackets";
 import {
@@ -89,6 +90,9 @@ describe("Albion queue replay evidence packet", () => {
     expect(first.packet?.liveIntegrationAllowed).toBe(false);
     expect(first.packet?.ledgerPreviewHash).toBe(second.packet?.ledgerPreviewHash);
     expect(first.packet?.deterministicSummary).toBe(second.packet?.deterministicSummary);
+    expect(
+      serializeAlbionQueueReplayEvidencePacket(first.packet!),
+    ).toBe(serializeAlbionQueueReplayEvidencePacket(second.packet!));
     expect(
       serializeAlbionRunLedger(first.packet!.resultingLedgerPreview),
     ).toBe(serializeAlbionRunLedger(second.packet!.resultingLedgerPreview));
