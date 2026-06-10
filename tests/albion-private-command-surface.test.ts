@@ -1,0 +1,93 @@
+import { describe, expect, it } from "vitest";
+import {
+  createPrivateCommandSurfaceState,
+  renderPrivateCommandSurface,
+} from "../src/albion/privateCommandSurface";
+import { buildPrivateCommandSurfaceRuns } from "../src/albion/privateCommandSurfaceData";
+
+describe("Albion OS private command surface read model", () => {
+  const runs = buildPrivateCommandSurfaceRuns({
+    appBaseUrl: "https://albion.example.test",
+  });
+
+  it("displays AI-related routes as Roundtable 3/3 approval work", () => {
+    const aiRun = runs.find(
+      (candidate) => candidate.run.runId === "albion-ai-governance-001",
+    );
+
+    expect(aiRun?.run.approvalRequirement).toMatchObject({
+      approvalRequired: true,
+      approvalLevel: "roundtable_3_of_3",
+      requiredKnights: ["Gawain", "Lancelot", "Percival"],
+    });
+    expect(aiRun?.run.mandate?.highCourtCanApprove).toBe(false);
+    expect(aiRun?.run.mandate?.mandateStatus).toBe("pending");
+    expect(aiRun?.merlinHandoffEligibility).toEqual({
+      eligible: false,
+      blockers: ["required_approval_not_satisfied"],
+    });
+    expect(aiRun?.alertType).toBe("approval_needed");
+  });
+
+  it("keeps High Court recommendations advisory and blocks handoff on Knight rejection", () => {
+    const rejectedRun = runs.find(
+      (candidate) => candidate.run.runId === "tradescout-public-copy-002",
+    );
+
+    expect(rejectedRun?.run.mandate).toMatchObject({
+      roundtableDecision: "blocked",
+      blockedBy: ["Gawain"],
+      mandateStatus: "blocked_not_unanimous",
+      approvedForMerlin: false,
+      highCourtCanApprove: false,
+    });
+    expect(rejectedRun?.merlinHandoffEligibility.blockers).toContain(
+      "required_approval_not_satisfied",
+    );
+    expect(rejectedRun?.merlinHandoffEligibility.blockers).toContain(
+      "knight_rejection_active",
+    );
+    expect(rejectedRun?.alertType).toBe("blocked");
+  });
+
+  it("shows Drive and Discord outputs as deterministic previews only", () => {
+    const aiRun = runs[0];
+
+    expect(aiRun?.driveVaultPlan.folders).toEqual([
+      "/Albion OS/Runs/albion-ai-governance-001/packets",
+      "/Albion OS/Runs/albion-ai-governance-001/evidence",
+      "/Albion OS/Runs/albion-ai-governance-001/court-review",
+      "/Albion OS/Runs/albion-ai-governance-001/roundtable-mandate",
+      "/Albion OS/Runs/albion-ai-governance-001/merlin-handoff",
+    ]);
+    expect(aiRun?.discordAlertPreview).toMatchObject({
+      runId: "albion-ai-governance-001",
+      alertType: "approval_needed",
+      appRunUrl:
+        "https://albion.example.test/runs/albion-ai-governance-001",
+    });
+  });
+});
+
+describe("Albion OS private command surface rendering", () => {
+  it("renders run list, run detail, approvals, handoff, and previews", () => {
+    const html = renderPrivateCommandSurface(
+      createPrivateCommandSurfaceState({
+        appBaseUrl: "https://albion.example.test",
+        activeRunId: "tradescout-public-copy-002",
+      }),
+    );
+
+    expect(html).toContain("Albion OS Private Command Surface P0");
+    expect(html).toContain("Run Control");
+    expect(html).toContain("tradescout-public-copy-002");
+    expect(html).toContain("Approval State");
+    expect(html).toContain("High Court Binding");
+    expect(html).toContain("No");
+    expect(html).toContain("Merlin Handoff");
+    expect(html).toContain("Not eligible");
+    expect(html).toContain("Drive Vault Plan Preview");
+    expect(html).toContain("Discord Alert Preview");
+    expect(html).toContain("/Albion OS/Runs/tradescout-public-copy-002/evidence");
+  });
+});
