@@ -66,6 +66,11 @@ describe("Albion OS private command surface read model", () => {
       appRunUrl:
         "https://albion.example.test/runs/albion-ai-governance-001",
     });
+    expect(aiRun?.actionPacketPreview.packet).toMatchObject({
+      actionType: "merlin_handoff_preview_requested",
+      actorAuthority: "merlin_preview_only",
+      executionAllowed: false,
+    });
   });
 });
 
@@ -90,6 +95,8 @@ describe("Albion OS private command surface rendering", () => {
     expect(html).toContain("Not eligible");
     expect(html).toContain("Drive Vault Plan Preview");
     expect(html).toContain("Discord Alert Preview");
+    expect(html).toContain("Action Packet Preview");
+    expect(html).toContain("Execution Allowed");
     expect(html).toContain("/Albion OS/Runs/tradescout-public-copy-002/evidence");
   });
 });

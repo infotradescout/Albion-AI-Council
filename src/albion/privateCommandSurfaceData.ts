@@ -13,6 +13,11 @@ import {
   type AlbionRunLedgerEntry,
   type AlbionRunLedgerRecord,
 } from "./albionRunLedger";
+import {
+  applyApprovalActionPacket,
+  buildApprovalActionPacket,
+  type AlbionApprovalActionPacket,
+} from "./albionApprovalActionPackets";
 
 export interface LocalRunFixture {
   runId: string;
@@ -32,7 +37,13 @@ export interface LocalRunFixture {
   advisoryNotes: AdvisoryNote[];
 }
 
-export type PrivateCommandSurfaceRun = AlbionRunLedgerEntry;
+export interface PrivateCommandSurfaceRun extends AlbionRunLedgerEntry {
+  actionPacketPreview: {
+    packet: AlbionApprovalActionPacket;
+    applied: boolean;
+    handoffEligible: boolean;
+  };
+}
 
 export const LOCAL_RUN_FIXTURES: LocalRunFixture[] = [
   {
@@ -162,12 +173,21 @@ export function buildPrivateCommandSurfaceRuns(input: {
   appBaseUrl: string;
   fixtures?: LocalRunFixture[];
 }): PrivateCommandSurfaceRun[] {
+  const ledger = createAlbionRunLedger(
+    (input.fixtures ?? LOCAL_RUN_FIXTURES).map(toLedgerRecord),
+  );
+
   return buildAlbionRunLedgerEntries({
-    ledger: createAlbionRunLedger(
-      (input.fixtures ?? LOCAL_RUN_FIXTURES).map(toLedgerRecord),
-    ),
+    ledger,
     appBaseUrl: input.appBaseUrl,
-  });
+  }).map((entry) => ({
+    ...entry,
+    actionPacketPreview: buildHandoffActionPacketPreview({
+      entry,
+      ledger,
+      appBaseUrl: input.appBaseUrl,
+    }),
+  }));
 }
 
 export function buildPrivateCommandSurfaceLedgerRecords(
@@ -193,5 +213,35 @@ function toLedgerRecord(fixture: LocalRunFixture): AlbionRunLedgerRecord {
     approvals: fixture.approvals,
     evidence: fixture.evidence,
     advisoryNotes: fixture.advisoryNotes,
+  };
+}
+
+function buildHandoffActionPacketPreview(input: {
+  entry: AlbionRunLedgerEntry;
+  ledger: ReturnType<typeof createAlbionRunLedger>;
+  appBaseUrl: string;
+}): PrivateCommandSurfaceRun["actionPacketPreview"] {
+  const packet = buildApprovalActionPacket({
+    packetId: `packet-preview-${input.entry.run.runId}-merlin-handoff`,
+    runId: input.entry.run.runId,
+    actor: "Merlin",
+    actionType: "merlin_handoff_preview_requested",
+    createdAt: "2026-06-10T10:35:00.000-05:00",
+    payload: {
+      requestedBy: "Merlin",
+      reason: "Preview local handoff readiness only.",
+    },
+  });
+  const result = applyApprovalActionPacket({
+    ledger: input.ledger,
+    packet,
+    appBaseUrl: input.appBaseUrl,
+  });
+
+  return {
+    packet,
+    applied: result.applied,
+    handoffEligible:
+      result.resultingRunPreview?.merlinHandoffEligibility.eligible ?? false,
   };
 }

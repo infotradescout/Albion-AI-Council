@@ -139,6 +139,19 @@ function renderRunDetail(item: PrivateCommandSurfaceRun): string {
         </div>
       </section>
 
+      <section class="detail-section" aria-label="Action packet preview">
+        <h3>Action Packet Preview</h3>
+        <dl class="fact-grid">
+          ${renderFact("Packet", item.actionPacketPreview.packet.packetId)}
+          ${renderFact("Action", item.actionPacketPreview.packet.actionType)}
+          ${renderFact("Actor", item.actionPacketPreview.packet.actor)}
+          ${renderFact("Authority", item.actionPacketPreview.packet.actorAuthority)}
+          ${renderFact("Mutation Allowed", item.actionPacketPreview.packet.mutationAllowed ? "Yes" : "No")}
+          ${renderFact("Execution Allowed", item.actionPacketPreview.packet.executionAllowed ? "Yes" : "No")}
+          ${renderFact("Applied Locally", item.actionPacketPreview.applied ? "Yes" : "No")}
+        </dl>
+      </section>
+
       <section class="detail-section" aria-label="Drive vault plan preview">
         <h3>Drive Vault Plan Preview</h3>
         <ul class="folder-list">
