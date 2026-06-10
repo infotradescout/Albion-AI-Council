@@ -20,8 +20,10 @@ import {
 } from "./albionApprovalActionPackets";
 import {
   appendActionPacketToQueue,
+  createAlbionQueueReplayEvidencePacket,
   createActionPacketQueue,
   replayActionPacketQueue,
+  type AlbionQueueReplayEvidencePacket,
 } from "./albionActionPacketQueue";
 
 export interface LocalRunFixture {
@@ -49,6 +51,8 @@ export interface PrivateCommandSurfaceRun extends AlbionRunLedgerEntry {
     handoffEligible: boolean;
     queuedPacketCount: number;
     replayed: boolean;
+    evidencePacketCreated: boolean;
+    evidencePacketPreview?: AlbionQueueReplayEvidencePacket;
   };
 }
 
@@ -254,6 +258,16 @@ function buildHandoffActionPacketPreview(input: {
     appBaseUrl: input.appBaseUrl,
     expectedRunId: input.entry.run.runId,
   });
+  const evidence = createAlbionQueueReplayEvidencePacket({
+    queue: queued.queue,
+    queueReplayResult: replayed,
+    evidencePacketId: `evidence-${input.entry.run.runId}-queue-replay`,
+    queueId: `queue-${input.entry.run.runId}`,
+    replayId: `replay-${input.entry.run.runId}`,
+    runId: input.entry.run.runId,
+    createdAt: "2026-06-10T10:36:00.000-05:00",
+    appBaseUrl: input.appBaseUrl,
+  });
 
   return {
     packet,
@@ -262,5 +276,7 @@ function buildHandoffActionPacketPreview(input: {
       result.resultingRunPreview?.merlinHandoffEligibility.eligible ?? false,
     queuedPacketCount: queued.queue.packets.length,
     replayed: replayed.replayed,
+    evidencePacketCreated: evidence.created,
+    evidencePacketPreview: evidence.packet,
   };
 }

@@ -74,6 +74,18 @@ describe("Albion OS private command surface read model", () => {
     expect(aiRun?.actionPacketPreview).toMatchObject({
       queuedPacketCount: 1,
       replayed: true,
+      evidencePacketCreated: true,
+    });
+    expect(aiRun?.actionPacketPreview.evidencePacketPreview).toMatchObject({
+      schemaVersion: "albion_queue_replay_evidence_packet_v1",
+      runId: "albion-ai-governance-001",
+      packetCount: 1,
+      acceptedPacketCount: 1,
+      rejectedPacketCount: 0,
+      exportAllowed: false,
+      mutationAllowed: false,
+      executionAllowed: false,
+      liveIntegrationAllowed: false,
     });
   });
 });
@@ -100,7 +112,10 @@ describe("Albion OS private command surface rendering", () => {
     expect(html).toContain("Drive Vault Plan Preview");
     expect(html).toContain("Discord Alert Preview");
     expect(html).toContain("Action Packet Preview");
+    expect(html).toContain("Evidence Export Preview");
     expect(html).toContain("Execution Allowed");
+    expect(html).toContain("Export Allowed");
+    expect(html).toContain("Live Integration Allowed");
     expect(html).toContain("Queued Packets");
     expect(html).toContain("Replay Preview");
     expect(html).toContain("/Albion OS/Runs/tradescout-public-copy-002/evidence");
