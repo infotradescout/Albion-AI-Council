@@ -122,6 +122,7 @@ function renderRunDetail(item: PrivateCommandSurfaceRun): string {
           ${renderVote("Lancelot", mandate?.approvals.Lancelot ?? "pending")}
           ${renderVote("Percival", mandate?.approvals.Percival ?? "pending")}
         </div>
+        ${renderAdvisoryNotes(item.ledgerRecord.advisoryNotes)}
       </section>
 
       <section class="detail-section split" aria-label="Merlin handoff and previews">
@@ -162,6 +163,29 @@ function renderVote(label: string, value: string): string {
     <div class="vote ${escapeHtml(value)}">
       <span>${escapeHtml(label)}</span>
       <strong>${escapeHtml(value)}</strong>
+    </div>
+  `;
+}
+
+function renderAdvisoryNotes(
+  notes: PrivateCommandSurfaceRun["ledgerRecord"]["advisoryNotes"],
+): string {
+  if (notes.length === 0) {
+    return `<p class="advisory-list empty">No advisory notes.</p>`;
+  }
+
+  return `
+    <div class="advisory-list" aria-label="Advisory notes">
+      ${notes
+        .map(
+          (note) => `
+            <article>
+              <span>${escapeHtml(note.source)}</span>
+              <p>${escapeHtml(note.summary)}</p>
+            </article>
+          `,
+        )
+        .join("")}
     </div>
   `;
 }

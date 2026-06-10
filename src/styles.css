@@ -248,6 +248,29 @@ dd {
   background: #fff9df;
 }
 
+.advisory-list {
+  display: grid;
+  gap: 0.7rem;
+  margin-top: 1rem;
+}
+
+.advisory-list article {
+  border-left: 3px solid #8fbc8f;
+  padding-left: 0.8rem;
+}
+
+.advisory-list span {
+  color: #405143;
+  display: block;
+  font-size: 0.78rem;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+.advisory-list p {
+  margin: 0.2rem 0 0;
+}
+
 .handoff {
   width: fit-content;
   margin-bottom: 12px;

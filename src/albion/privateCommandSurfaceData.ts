@@ -1,17 +1,18 @@
-import {
-  buildDiscordAlertPayload,
-  buildDriveFolderPlan,
-  canCreateMerlinHandoff,
-  classifyApprovalRequirement,
-  evaluateRoundtableMandate,
-  type ApprovalVote,
-  type DiscordAlertType,
-  type EvidenceRecord,
-  type KnightName,
-  type RouteClassificationInput,
-  type RouteStatus,
-  type RunRecord,
+import type {
+  ApprovalVote,
+  EvidenceRecord,
+  KnightName,
+  RouteClassificationInput,
+  RouteStatus,
+  RunRecord,
 } from "./albionRunFlow";
+import {
+  buildAlbionRunLedgerEntries,
+  createAlbionRunLedger,
+  type AdvisoryNote,
+  type AlbionRunLedgerEntry,
+  type AlbionRunLedgerRecord,
+} from "./albionRunLedger";
 
 export interface LocalRunFixture {
   runId: string;
@@ -28,16 +29,10 @@ export interface LocalRunFixture {
   classification: RouteClassificationInput;
   approvals: Record<KnightName, ApprovalVote>;
   evidence: EvidenceRecord[];
-  highCourtRecommendation?: "approved" | "blocked" | "needs_revision";
+  advisoryNotes: AdvisoryNote[];
 }
 
-export interface PrivateCommandSurfaceRun {
-  run: RunRecord;
-  alertType: DiscordAlertType;
-  merlinHandoffEligibility: ReturnType<typeof canCreateMerlinHandoff>;
-  driveVaultPlan: ReturnType<typeof buildDriveFolderPlan>;
-  discordAlertPreview: ReturnType<typeof buildDiscordAlertPayload>;
-}
+export type PrivateCommandSurfaceRun = AlbionRunLedgerEntry;
 
 export const LOCAL_RUN_FIXTURES: LocalRunFixture[] = [
   {
@@ -73,7 +68,16 @@ export const LOCAL_RUN_FIXTURES: LocalRunFixture[] = [
         addedAt: "2026-06-09T20:46:23.000-05:00",
       },
     ],
-    highCourtRecommendation: "approved",
+    advisoryNotes: [
+      {
+        noteId: "high-court-albion-ai-governance-001",
+        source: "High Court",
+        recommendation: "approved",
+        summary:
+          "Advisory review says the route is lawful, but Roundtable approval is still incomplete.",
+        addedAt: "2026-06-09T20:47:00.000-05:00",
+      },
+    ],
   },
   {
     runId: "tradescout-public-copy-002",
@@ -108,7 +112,16 @@ export const LOCAL_RUN_FIXTURES: LocalRunFixture[] = [
         addedAt: "2026-06-09T20:50:00.000-05:00",
       },
     ],
-    highCourtRecommendation: "approved",
+    advisoryNotes: [
+      {
+        noteId: "high-court-tradescout-public-copy-002",
+        source: "High Court",
+        recommendation: "approved",
+        summary:
+          "Advisory review does not override Gawain's rejection of unsupported public claims.",
+        addedAt: "2026-06-09T20:51:00.000-05:00",
+      },
+    ],
   },
   {
     runId: "scoutfitters-materials-003",
@@ -133,6 +146,15 @@ export const LOCAL_RUN_FIXTURES: LocalRunFixture[] = [
       Percival: "approve",
     },
     evidence: [],
+    advisoryNotes: [
+      {
+        noteId: "scribe-scoutfitters-materials-003",
+        source: "Scribe",
+        summary:
+          "Preparation may continue locally, but Merlin handoff needs a complete forecast and evidence.",
+        addedAt: "2026-06-09T20:54:00.000-05:00",
+      },
+    ],
   },
 ];
 
@@ -140,67 +162,36 @@ export function buildPrivateCommandSurfaceRuns(input: {
   appBaseUrl: string;
   fixtures?: LocalRunFixture[];
 }): PrivateCommandSurfaceRun[] {
-  return (input.fixtures ?? LOCAL_RUN_FIXTURES).map((fixture) => {
-    const approvalRequirement = classifyApprovalRequirement(
-      fixture.classification,
-    );
-    const mandate = evaluateRoundtableMandate({
-      approvalRequired: approvalRequirement.approvalRequired,
-      approvalLevel: approvalRequirement.approvalLevel,
-      approvals: fixture.approvals,
-      highCourtRecommendation: fixture.highCourtRecommendation
-        ? {
-            recommendedDecision: fixture.highCourtRecommendation,
-          }
-        : undefined,
-    });
-
-    const run: RunRecord = {
-      runId: fixture.runId,
-      kingdomId: fixture.kingdomId,
-      destination: fixture.destination,
-      currentLocationSummary: fixture.currentLocationSummary,
-      routeDepth: fixture.routeDepth,
-      priority: fixture.priority,
-      status: fixture.status,
-      sponsor: fixture.sponsor,
-      nextAction: fixture.nextAction,
-      currentLocationVerified: fixture.currentLocationVerified,
-      consequenceForecastComplete: fixture.consequenceForecastComplete,
-      evidence: fixture.evidence,
-      approvalRequirement,
-      mandate,
-    };
-
-    const merlinHandoffEligibility = canCreateMerlinHandoff(run);
-    const alertType = selectDiscordAlertType(run, merlinHandoffEligibility);
-
-    return {
-      run,
-      alertType,
-      merlinHandoffEligibility,
-      driveVaultPlan: buildDriveFolderPlan(fixture.runId),
-      discordAlertPreview: buildDiscordAlertPayload({
-        alertType,
-        runId: fixture.runId,
-        appBaseUrl: input.appBaseUrl,
-        status: fixture.status,
-      }),
-    };
+  return buildAlbionRunLedgerEntries({
+    ledger: createAlbionRunLedger(
+      (input.fixtures ?? LOCAL_RUN_FIXTURES).map(toLedgerRecord),
+    ),
+    appBaseUrl: input.appBaseUrl,
   });
 }
 
-function selectDiscordAlertType(
-  run: RunRecord,
-  merlinHandoffEligibility: ReturnType<typeof canCreateMerlinHandoff>,
-): DiscordAlertType {
-  if (merlinHandoffEligibility.eligible) {
-    return "merlin_ready";
-  }
+export function buildPrivateCommandSurfaceLedgerRecords(
+  fixtures: LocalRunFixture[] = LOCAL_RUN_FIXTURES,
+): AlbionRunLedgerRecord[] {
+  return fixtures.map(toLedgerRecord);
+}
 
-  if (run.mandate?.roundtableDecision === "blocked") {
-    return "blocked";
-  }
-
-  return "approval_needed";
+function toLedgerRecord(fixture: LocalRunFixture): AlbionRunLedgerRecord {
+  return {
+    runId: fixture.runId,
+    kingdomId: fixture.kingdomId,
+    destination: fixture.destination,
+    currentLocationSummary: fixture.currentLocationSummary,
+    routeDepth: fixture.routeDepth,
+    priority: fixture.priority,
+    status: fixture.status,
+    sponsor: fixture.sponsor,
+    nextAction: fixture.nextAction,
+    currentLocationVerified: fixture.currentLocationVerified,
+    consequenceForecastComplete: fixture.consequenceForecastComplete,
+    classification: fixture.classification,
+    approvals: fixture.approvals,
+    evidence: fixture.evidence,
+    advisoryNotes: fixture.advisoryNotes,
+  };
 }

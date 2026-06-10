@@ -84,6 +84,8 @@ describe("Albion OS private command surface rendering", () => {
     expect(html).toContain("Approval State");
     expect(html).toContain("High Court Binding");
     expect(html).toContain("No");
+    expect(html).toContain("Advisory notes");
+    expect(html).toContain("High Court");
     expect(html).toContain("Merlin Handoff");
     expect(html).toContain("Not eligible");
     expect(html).toContain("Drive Vault Plan Preview");
