@@ -85,7 +85,11 @@ describe("Albion OS private command surface read model", () => {
         handoffTitle: "Albion Evidence Export Handoff Preview",
       },
       exportHandoffReviewContractPreview: {
-        reviewContractId: "review-evidence-albion-ai-governance-001-queue-replay",
+        reviewArtifactId: "review-evidence-albion-ai-governance-001-queue-replay",
+        reviewerIdentity: "founder.albion",
+        policyVersion: "albion_export_review_policy_v1",
+        decision: "approved",
+        exportEligible: true,
         exportAllowed: false,
         mutationAllowed: false,
         executionAllowed: false,

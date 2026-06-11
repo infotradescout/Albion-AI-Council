@@ -7,7 +7,7 @@
     "dev": "vite --host 127.0.0.1",
     "build": "vite build",
     "test": "vitest run",
-    "test:contracts": "vitest run tests/albion-os-mvp-run-flow.contract.test.ts tests/albion-queue-replay-evidence-packet.contract.test.ts",
+    "test:contracts": "vitest run tests/albion-os-mvp-run-flow.contract.test.ts tests/albion-queue-replay-evidence-packet.contract.test.ts tests/albion-export-review-contract.test.ts",
     "test:ui": "vitest run tests/albion-private-command-surface.test.ts",
     "typecheck": "tsc --noEmit"
   },

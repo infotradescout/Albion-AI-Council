@@ -5,8 +5,17 @@ Albion OS moves from a doctrine-first repository into a working MVP run flow. Th
 
 The MVP is a coordination and approval operating system. It is not an AI executor.
 
+P4-P7 governance status (current):
+- P4: Queue Replay Evidence Packet is deterministic and fail-closed.
+- P5: Snapshot serialization and hash outputs are deterministic and contract-tested.
+- P6: Export handoff is preview metadata only.
+- P7: Export Review Contract enforces deny-by-default eligibility before any future export can be considered.
+
 Core flow:
 Intake -> Dispatch classification -> Packet checklist -> Evidence and consequence forecast -> High Court advisory review when required -> Roundtable approval when required -> Merlin handoff only after approval.
+
+Governance chain:
+Queue Replay -> Evidence Packet -> Deterministic Snapshot -> Export Handoff Preview -> Export Review Contract
 
 ## MVP Goal
 Build the minimum reliable operating path that can:
@@ -141,6 +150,45 @@ Merlin handoff is allowed only when:
 
 No approved mandate means no Merlin handoff.
 
+## P7 Governance Export Review Contract
+Purpose:
+- Bind export eligibility to a reviewed deterministic snapshot.
+- Keep authority fail-closed while export remains disabled.
+
+P7 artifact fields:
+- reviewer identity
+- review timestamp
+- reviewed snapshot hash
+- policy version
+- decision (`approved` or `rejected`)
+- reason code
+- optional reviewer note
+- approval expiration timestamp
+- revocation status
+
+P7 deny-by-default doctrine:
+- missing review artifact -> denied
+- stale review artifact -> denied
+- expired review artifact -> denied
+- revoked review artifact -> denied
+- snapshot hash mismatch -> denied
+- policy version mismatch -> denied
+- rejected decision -> denied
+- malformed reviewer identity -> denied
+- malformed timestamp -> denied
+
+Eligibility evaluator constraints:
+- pure read-only evaluation
+- no export execution
+- no mutation behavior
+- returns metadata-only eligibility decision and reason code
+
+Approval validity and revocation behavior:
+- approvals are time-bounded via expiration timestamp
+- revocation immediately invalidates eligibility
+- snapshot changes invalidate prior approvals via hash mismatch
+- policy version drift invalidates prior approvals
+
 ## Test Plan
 Contract tests must verify:
 - AI-related routes always require `roundtable_3_of_3`.
@@ -158,11 +206,23 @@ Contract tests must verify:
 - No direct AI execution.
 - No Google API calls.
 - No Discord API calls.
+- No Google Sheets integration.
+- No Google Drive integration.
+- No Discord integration.
+- No live export route.
+- No mutation authority.
+- No execution authority.
+- No webhook dispatch.
 - No generated or sample production data.
 - No Discord-only approval.
 - No High Court approval authority.
 - No Merlin handoff without required approval.
 - No cross-wiring Albion with TradeScout, MealScout, Trader's Corner, or other Kingdoms.
+
+P7 explicit non-goals:
+- No connector implementation work of any kind.
+- No credential or environment setup for external providers.
+- No runtime export behavior while governance-only milestone is active.
 
 ## Assumptions
 - TypeScript + Vitest is the minimal test foundation for contract coverage.

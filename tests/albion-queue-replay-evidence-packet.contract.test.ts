@@ -1,8 +1,11 @@
 import { describe, expect, it } from "vitest";
 import {
+  buildAlbionDeterministicSnapshotMetadata,
+  buildAlbionExportPreviewMetadata,
   createAlbionExportHandoffReviewContract,
   createAlbionQueueReplayEvidencePacket,
   createActionPacketQueue,
+  evaluateAlbionExportEligibility,
   replayActionPacketQueue,
   serializeAlbionExportHandoffReviewContract,
   serializeAlbionQueueReplayEvidencePacket,
@@ -164,7 +167,9 @@ describe("Albion queue replay evidence packet snapshot contract", () => {
         handoffTitle: "Albion Evidence Export Handoff Preview",
       },
       exportHandoffReviewContractPreview: {
-        reviewContractId: "review-evidence-albion-ai-governance-001-queue-replay",
+        reviewArtifactId: "review-evidence-albion-ai-governance-001-queue-replay",
+        decision: "approved",
+        exportEligible: true,
       },
       exportAllowed: false,
       mutationAllowed: false,
@@ -192,21 +197,35 @@ describe("Albion queue replay evidence packet snapshot contract", () => {
       appBaseUrl,
     });
     const firstReview = createAlbionExportHandoffReviewContract({
-      reviewContractId: "review-contract-005",
-      createdAt: "2026-06-10T11:12:00.000-05:00",
+      reviewArtifactId: "review-contract-005",
       evidencePacket: packet.packet,
+      reviewerIdentity: "founder.albion",
+      reviewTimestamp: "2026-06-10T16:12:00.000Z",
+      policyVersion: "albion_export_review_policy_v1",
+      decision: "approved",
+      reasonCode: "snapshot_approved",
+      approvalValidForMinutes: 120,
     });
     const secondReview = createAlbionExportHandoffReviewContract({
-      reviewContractId: "review-contract-005",
-      createdAt: "2026-06-10T11:12:00.000-05:00",
+      reviewArtifactId: "review-contract-005",
       evidencePacket: packet.packet,
+      reviewerIdentity: "founder.albion",
+      reviewTimestamp: "2026-06-10T16:12:00.000Z",
+      policyVersion: "albion_export_review_policy_v1",
+      decision: "approved",
+      reasonCode: "snapshot_approved",
+      approvalValidForMinutes: 120,
     });
 
     expect(firstReview.created).toBe(true);
     expect(secondReview.created).toBe(true);
     expect(firstReview.contract).toMatchObject({
-      schemaVersion: "albion_export_handoff_review_contract_v1",
-      reviewContractId: "review-contract-005",
+      schemaVersion: "albion_export_review_contract_v1",
+      reviewArtifactId: "review-contract-005",
+      reviewerIdentity: "founder.albion",
+      policyVersion: "albion_export_review_policy_v1",
+      decision: "approved",
+      reasonCode: "snapshot_approved",
       exportAllowed: false,
       mutationAllowed: false,
       executionAllowed: false,
@@ -230,14 +249,64 @@ describe("Albion queue replay evidence packet snapshot contract", () => {
       appBaseUrl,
     });
     const blocked = createAlbionExportHandoffReviewContract({
-      reviewContractId: "review-contract-006",
-      createdAt: "2026-06-10T11:12:00.000-05:00",
+      reviewArtifactId: "review-contract-006",
       evidencePacket: packet.packet,
+      reviewerIdentity: "founder.albion",
+      reviewTimestamp: "2026-06-10T16:12:00.000Z",
+      policyVersion: "albion_export_review_policy_v1",
+      decision: "approved",
+      reasonCode: "snapshot_approved",
       exportAllowed: true,
     });
 
     expect(blocked.created).toBe(false);
     expect(blocked.rejectedReason).toBe("export_allowed_true");
     expect(blocked.contract).toBeUndefined();
+  });
+
+  it("evaluates approved review as eligible metadata only", () => {
+    const { queue, replayed } = testReplayInput();
+    const evidence = createAlbionQueueReplayEvidencePacket({
+      queue,
+      queueReplayResult: replayed,
+      evidencePacketId: "evidence-contract-007",
+      queueId: "queue-contract-007",
+      replayId: "replay-contract-007",
+      runId: "albion-ai-governance-001",
+      createdAt: "2026-06-10T11:10:00.000-05:00",
+      appBaseUrl,
+    });
+    const snapshot = buildAlbionDeterministicSnapshotMetadata({
+      evidencePacket: evidence.packet!,
+      policyVersion: "albion_export_review_policy_v1",
+    });
+    const review = createAlbionExportHandoffReviewContract({
+      reviewArtifactId: "review-contract-007",
+      evidencePacket: evidence.packet,
+      reviewerIdentity: "founder.albion",
+      reviewTimestamp: "2026-06-10T16:12:00.000Z",
+      policyVersion: "albion_export_review_policy_v1",
+      decision: "approved",
+      reasonCode: "snapshot_approved",
+      approvalExpiresAt: "2026-06-10T18:12:00.000Z",
+    });
+
+    const eligibility = evaluateAlbionExportEligibility({
+      exportPreview: buildAlbionExportPreviewMetadata(evidence.packet!),
+      snapshot,
+      reviewArtifact: review.contract,
+      now: "2026-06-10T16:30:00.000Z",
+    });
+
+    expect(eligibility).toMatchObject({
+      decision: "eligible_preview_only",
+      reasonCode: "eligible_preview_only",
+      exportEligible: true,
+      previewOnly: true,
+      exportAllowed: false,
+      mutationAllowed: false,
+      executionAllowed: false,
+      liveIntegrationAllowed: false,
+    });
   });
 });

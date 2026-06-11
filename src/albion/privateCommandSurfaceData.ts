@@ -20,9 +20,12 @@ import {
 } from "./albionApprovalActionPackets";
 import {
   appendActionPacketToQueue,
+  buildAlbionDeterministicSnapshotMetadata,
+  buildAlbionExportPreviewMetadata,
   createAlbionExportHandoffReviewContract,
   createAlbionQueueReplayEvidencePacket,
   createActionPacketQueue,
+  evaluateAlbionExportEligibility,
   replayActionPacketQueue,
   type AlbionQueueReplayEvidencePacket,
 } from "./albionActionPacketQueue";
@@ -76,10 +79,16 @@ export interface AlbionEvidencePacketPreviewMetadata {
     requiredFutureApproval: string;
   };
   exportHandoffReviewContractPreview?: {
-    reviewContractId: string;
-    reviewHash: string;
-    reviewSummary: string;
-    reviewFindings: string[];
+    reviewArtifactId: string;
+    reviewerIdentity: string;
+    reviewTimestamp: string;
+    policyVersion: string;
+    decision: "approved" | "rejected";
+    reasonCode: string;
+    approvalExpiresAt: string;
+    reviewArtifactHash: string;
+    exportEligible: boolean;
+    eligibilityReasonCode: string;
     exportAllowed: false;
     mutationAllowed: false;
     executionAllowed: false;
@@ -321,10 +330,30 @@ function buildHandoffActionPacketPreview(input: {
 function toEvidencePacketPreviewMetadata(
   packet: AlbionQueueReplayEvidencePacket,
 ): AlbionEvidencePacketPreviewMetadata {
+  const policyVersion = "albion_export_review_policy_v1";
+  const reviewTimestamp = new Date(packet.createdAt).toISOString();
   const reviewContract = createAlbionExportHandoffReviewContract({
-    reviewContractId: `review-${packet.evidencePacketId}`,
-    createdAt: packet.createdAt,
+    reviewArtifactId: `review-${packet.evidencePacketId}`,
     evidencePacket: packet,
+    reviewerIdentity: "founder.albion",
+    reviewTimestamp,
+    policyVersion,
+    decision: "approved",
+    reasonCode: "preview_handoff_verified",
+    approvalValidForMinutes: 180,
+    reviewerNote: "Preview-only approval metadata. Live export remains blocked.",
+  });
+
+  const snapshot = buildAlbionDeterministicSnapshotMetadata({
+    evidencePacket: packet,
+    policyVersion,
+  });
+  const exportPreview = buildAlbionExportPreviewMetadata(packet);
+  const eligibility = evaluateAlbionExportEligibility({
+    exportPreview,
+    snapshot,
+    reviewArtifact: reviewContract.contract,
+    now: reviewTimestamp,
   });
 
   return {
@@ -347,10 +376,16 @@ function toEvidencePacketPreviewMetadata(
     },
     exportHandoffReviewContractPreview: reviewContract.contract
       ? {
-          reviewContractId: reviewContract.contract.reviewContractId,
-          reviewHash: reviewContract.contract.reviewHash,
-          reviewSummary: reviewContract.contract.reviewSummary,
-          reviewFindings: reviewContract.contract.reviewFindings,
+          reviewArtifactId: reviewContract.contract.reviewArtifactId,
+          reviewerIdentity: reviewContract.contract.reviewerIdentity,
+          reviewTimestamp: reviewContract.contract.reviewTimestamp,
+          policyVersion: reviewContract.contract.policyVersion,
+          decision: reviewContract.contract.decision,
+          reasonCode: reviewContract.contract.reasonCode,
+          approvalExpiresAt: reviewContract.contract.approvalExpiresAt,
+          reviewArtifactHash: reviewContract.contract.reviewArtifactHash,
+          exportEligible: eligibility.exportEligible,
+          eligibilityReasonCode: eligibility.reasonCode,
           exportAllowed: reviewContract.contract.exportAllowed,
           mutationAllowed: reviewContract.contract.mutationAllowed,
           executionAllowed: reviewContract.contract.executionAllowed,
