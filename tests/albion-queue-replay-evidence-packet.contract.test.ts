@@ -1,8 +1,10 @@
 import { describe, expect, it } from "vitest";
 import {
+  createAlbionExportHandoffReviewContract,
   createAlbionQueueReplayEvidencePacket,
   createActionPacketQueue,
   replayActionPacketQueue,
+  serializeAlbionExportHandoffReviewContract,
   serializeAlbionQueueReplayEvidencePacket,
 } from "../src/albion/albionActionPacketQueue";
 import { buildApprovalActionPacket } from "../src/albion/albionApprovalActionPackets";
@@ -161,6 +163,9 @@ describe("Albion queue replay evidence packet snapshot contract", () => {
       exportHandoffCopy: {
         handoffTitle: "Albion Evidence Export Handoff Preview",
       },
+      exportHandoffReviewContractPreview: {
+        reviewContractId: "review-evidence-albion-ai-governance-001-queue-replay",
+      },
       exportAllowed: false,
       mutationAllowed: false,
       executionAllowed: false,
@@ -172,5 +177,67 @@ describe("Albion queue replay evidence packet snapshot contract", () => {
     expect(
       aiRun?.actionPacketPreview.evidencePacketPreviewMetadata,
     ).not.toHaveProperty("runApprovalPreview");
+  });
+
+  it("creates deterministic export handoff review contract with all authority flags false", () => {
+    const { queue, replayed } = testReplayInput();
+    const packet = createAlbionQueueReplayEvidencePacket({
+      queue,
+      queueReplayResult: replayed,
+      evidencePacketId: "evidence-contract-005",
+      queueId: "queue-contract-005",
+      replayId: "replay-contract-005",
+      runId: "albion-ai-governance-001",
+      createdAt: "2026-06-10T11:10:00.000-05:00",
+      appBaseUrl,
+    });
+    const firstReview = createAlbionExportHandoffReviewContract({
+      reviewContractId: "review-contract-005",
+      createdAt: "2026-06-10T11:12:00.000-05:00",
+      evidencePacket: packet.packet,
+    });
+    const secondReview = createAlbionExportHandoffReviewContract({
+      reviewContractId: "review-contract-005",
+      createdAt: "2026-06-10T11:12:00.000-05:00",
+      evidencePacket: packet.packet,
+    });
+
+    expect(firstReview.created).toBe(true);
+    expect(secondReview.created).toBe(true);
+    expect(firstReview.contract).toMatchObject({
+      schemaVersion: "albion_export_handoff_review_contract_v1",
+      reviewContractId: "review-contract-005",
+      exportAllowed: false,
+      mutationAllowed: false,
+      executionAllowed: false,
+      liveIntegrationAllowed: false,
+    });
+    expect(
+      serializeAlbionExportHandoffReviewContract(firstReview.contract!),
+    ).toBe(serializeAlbionExportHandoffReviewContract(secondReview.contract!));
+  });
+
+  it("fails closed when review contract attempts live export authority", () => {
+    const { queue, replayed } = testReplayInput();
+    const packet = createAlbionQueueReplayEvidencePacket({
+      queue,
+      queueReplayResult: replayed,
+      evidencePacketId: "evidence-contract-006",
+      queueId: "queue-contract-006",
+      replayId: "replay-contract-006",
+      runId: "albion-ai-governance-001",
+      createdAt: "2026-06-10T11:10:00.000-05:00",
+      appBaseUrl,
+    });
+    const blocked = createAlbionExportHandoffReviewContract({
+      reviewContractId: "review-contract-006",
+      createdAt: "2026-06-10T11:12:00.000-05:00",
+      evidencePacket: packet.packet,
+      exportAllowed: true,
+    });
+
+    expect(blocked.created).toBe(false);
+    expect(blocked.rejectedReason).toBe("export_allowed_true");
+    expect(blocked.contract).toBeUndefined();
   });
 });

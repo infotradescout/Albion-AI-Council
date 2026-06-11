@@ -20,6 +20,7 @@ import {
 } from "./albionApprovalActionPackets";
 import {
   appendActionPacketToQueue,
+  createAlbionExportHandoffReviewContract,
   createAlbionQueueReplayEvidencePacket,
   createActionPacketQueue,
   replayActionPacketQueue,
@@ -73,6 +74,16 @@ export interface AlbionEvidencePacketPreviewMetadata {
     wouldExportTo: string[];
     wouldExportArtifacts: string[];
     requiredFutureApproval: string;
+  };
+  exportHandoffReviewContractPreview?: {
+    reviewContractId: string;
+    reviewHash: string;
+    reviewSummary: string;
+    reviewFindings: string[];
+    exportAllowed: false;
+    mutationAllowed: false;
+    executionAllowed: false;
+    liveIntegrationAllowed: false;
   };
   exportAllowed: false;
   mutationAllowed: false;
@@ -310,6 +321,12 @@ function buildHandoffActionPacketPreview(input: {
 function toEvidencePacketPreviewMetadata(
   packet: AlbionQueueReplayEvidencePacket,
 ): AlbionEvidencePacketPreviewMetadata {
+  const reviewContract = createAlbionExportHandoffReviewContract({
+    reviewContractId: `review-${packet.evidencePacketId}`,
+    createdAt: packet.createdAt,
+    evidencePacket: packet,
+  });
+
   return {
     evidencePacketId: packet.evidencePacketId,
     queueId: packet.queueId,
@@ -328,6 +345,18 @@ function toEvidencePacketPreviewMetadata(
       wouldExportArtifacts: packet.exportHandoffPreview.wouldExportArtifacts,
       requiredFutureApproval: packet.exportHandoffPreview.requiredFutureApproval,
     },
+    exportHandoffReviewContractPreview: reviewContract.contract
+      ? {
+          reviewContractId: reviewContract.contract.reviewContractId,
+          reviewHash: reviewContract.contract.reviewHash,
+          reviewSummary: reviewContract.contract.reviewSummary,
+          reviewFindings: reviewContract.contract.reviewFindings,
+          exportAllowed: reviewContract.contract.exportAllowed,
+          mutationAllowed: reviewContract.contract.mutationAllowed,
+          executionAllowed: reviewContract.contract.executionAllowed,
+          liveIntegrationAllowed: reviewContract.contract.liveIntegrationAllowed,
+        }
+      : undefined,
     exportAllowed: packet.exportAllowed,
     mutationAllowed: packet.mutationAllowed,
     executionAllowed: packet.executionAllowed,

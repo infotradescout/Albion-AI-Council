@@ -159,6 +159,8 @@ function renderRunDetail(item: PrivateCommandSurfaceRun): string {
         <pre>${escapeHtml(JSON.stringify(item.actionPacketPreview.evidencePacketPreviewMetadata, null, 2))}</pre>
         <h4>Export Handoff Copy</h4>
         <pre>${escapeHtml(JSON.stringify(item.actionPacketPreview.evidencePacketPreviewMetadata?.exportHandoffCopy, null, 2))}</pre>
+        <h4>Export Handoff Review Contract</h4>
+        <pre>${escapeHtml(JSON.stringify(item.actionPacketPreview.evidencePacketPreviewMetadata?.exportHandoffReviewContractPreview, null, 2))}</pre>
       </section>
 
       <section class="detail-section" aria-label="Drive vault plan preview">

@@ -84,6 +84,13 @@ describe("Albion OS private command surface read model", () => {
       exportHandoffCopy: {
         handoffTitle: "Albion Evidence Export Handoff Preview",
       },
+      exportHandoffReviewContractPreview: {
+        reviewContractId: "review-evidence-albion-ai-governance-001-queue-replay",
+        exportAllowed: false,
+        mutationAllowed: false,
+        executionAllowed: false,
+        liveIntegrationAllowed: false,
+      },
       exportAllowed: false,
       mutationAllowed: false,
       executionAllowed: false,
@@ -122,6 +129,7 @@ describe("Albion OS private command surface rendering", () => {
     expect(html).toContain("Action Packet Preview");
     expect(html).toContain("Evidence Export Preview");
     expect(html).toContain("Export Handoff Copy");
+    expect(html).toContain("Export Handoff Review Contract");
     expect(html).toContain("Execution Allowed");
     expect(html).toContain("Export Allowed");
     expect(html).toContain("Live Integration Allowed");

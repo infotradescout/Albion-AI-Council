@@ -73,10 +73,39 @@ export interface QueueReplayEvidencePacketResult {
   packet?: AlbionQueueReplayEvidencePacket;
 }
 
+export interface AlbionExportHandoffReviewContract {
+  schemaVersion: "albion_export_handoff_review_contract_v1";
+  reviewContractId: string;
+  evidencePacketId: string;
+  runId: string;
+  queueId: string;
+  replayId: string;
+  createdAt: string;
+  reviewSummary: string;
+  reviewFindings: string[];
+  reviewHash: string;
+  exportAllowed: false;
+  mutationAllowed: false;
+  executionAllowed: false;
+  liveIntegrationAllowed: false;
+}
+
+export interface ExportHandoffReviewContractResult {
+  created: boolean;
+  rejectedReason?: ExportHandoffReviewRejectedReason;
+  contract?: AlbionExportHandoffReviewContract;
+}
+
 export function serializeAlbionQueueReplayEvidencePacket(
   packet: AlbionQueueReplayEvidencePacket,
 ): string {
   return `${stableStringify(packet)}\n`;
+}
+
+export function serializeAlbionExportHandoffReviewContract(
+  contract: AlbionExportHandoffReviewContract,
+): string {
+  return `${stableStringify(contract)}\n`;
 }
 
 export type QueueRejectedReason =
@@ -98,6 +127,15 @@ export type QueueReplayEvidenceRejectedReason =
   | "invalid_replay_result"
   | "missing_ledger_preview"
   | "run_preview_not_found"
+  | "export_allowed_true"
+  | "mutation_allowed_true"
+  | "execution_allowed_true"
+  | "live_integration_allowed_true";
+
+export type ExportHandoffReviewRejectedReason =
+  | "missing_review_contract_id"
+  | "missing_created_at"
+  | "missing_evidence_packet"
   | "export_allowed_true"
   | "mutation_allowed_true"
   | "execution_allowed_true"
@@ -331,6 +369,76 @@ export function createAlbionQueueReplayEvidencePacket(input: {
         replayId: input.replayId,
         queueId: input.queueId ?? `queue-${input.runId}`,
       }),
+      exportAllowed: false,
+      mutationAllowed: false,
+      executionAllowed: false,
+      liveIntegrationAllowed: false,
+    },
+  };
+}
+
+export function createAlbionExportHandoffReviewContract(input: {
+  reviewContractId: string;
+  createdAt: string;
+  evidencePacket?: AlbionQueueReplayEvidencePacket;
+  exportAllowed?: boolean;
+  mutationAllowed?: boolean;
+  executionAllowed?: boolean;
+  liveIntegrationAllowed?: boolean;
+}): ExportHandoffReviewContractResult {
+  if (!input.reviewContractId) {
+    return { created: false, rejectedReason: "missing_review_contract_id" };
+  }
+
+  if (!input.createdAt) {
+    return { created: false, rejectedReason: "missing_created_at" };
+  }
+
+  if (!input.evidencePacket) {
+    return { created: false, rejectedReason: "missing_evidence_packet" };
+  }
+
+  if (input.exportAllowed || input.evidencePacket.exportAllowed) {
+    return { created: false, rejectedReason: "export_allowed_true" };
+  }
+
+  if (input.mutationAllowed || input.evidencePacket.mutationAllowed) {
+    return { created: false, rejectedReason: "mutation_allowed_true" };
+  }
+
+  if (input.executionAllowed || input.evidencePacket.executionAllowed) {
+    return { created: false, rejectedReason: "execution_allowed_true" };
+  }
+
+  if (input.liveIntegrationAllowed || input.evidencePacket.liveIntegrationAllowed) {
+    return { created: false, rejectedReason: "live_integration_allowed_true" };
+  }
+
+  const reviewSummary =
+    "Read-only review: export handoff copy remains preview-only and cannot execute integrations.";
+  const reviewFindings = [
+    "No Google Sheets export path enabled.",
+    "No Google Drive export path enabled.",
+    "No Discord export path enabled.",
+    "No live export, mutation, or execution authority granted.",
+  ];
+  const reviewHash = hashString(
+    `${serializeAlbionQueueReplayEvidencePacket(input.evidencePacket)}${reviewSummary}|${reviewFindings.join("|")}`,
+  );
+
+  return {
+    created: true,
+    contract: {
+      schemaVersion: "albion_export_handoff_review_contract_v1",
+      reviewContractId: input.reviewContractId,
+      evidencePacketId: input.evidencePacket.evidencePacketId,
+      runId: input.evidencePacket.runId,
+      queueId: input.evidencePacket.queueId,
+      replayId: input.evidencePacket.replayId,
+      createdAt: input.createdAt,
+      reviewSummary,
+      reviewFindings,
+      reviewHash,
       exportAllowed: false,
       mutationAllowed: false,
       executionAllowed: false,
