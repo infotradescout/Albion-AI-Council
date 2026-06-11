@@ -10,6 +10,7 @@ Albion AI Council is the doctrine, governance, packet, and local execution surfa
 Core doctrine for this repo:
 - Preserve Albion authority boundaries.
 - Preserve Roundtable 3/3 requirements for AI-related authority, behavior, execution, safety, or governance changes.
+- The High Court remains strictly advisory and holds no execution or blocking authority.
 - Preserve brand and Kingdom isolation.
 - Preserve evidence law: no evidence, no claim; no test artifact, no test pass claim.
 - Keep product behavior changes separate from operating-doc or governance-document slices unless explicitly assigned.
