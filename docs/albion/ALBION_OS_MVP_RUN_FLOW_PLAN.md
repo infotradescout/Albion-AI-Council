@@ -5,17 +5,18 @@ Albion OS moves from a doctrine-first repository into a working MVP run flow. Th
 
 The MVP is a coordination and approval operating system. It is not an AI executor.
 
-P4-P7 governance status (current):
+P4-P8 governance status (current):
 - P4: Queue Replay Evidence Packet is deterministic and fail-closed.
 - P5: Snapshot serialization and hash outputs are deterministic and contract-tested.
 - P6: Export handoff is preview metadata only.
 - P7: Export Review Contract enforces deny-by-default eligibility before any future export can be considered.
+- P8: Revocation + Review History Contract enforces latest-valid-review eligibility with deterministic history and revocation tracking.
 
 Core flow:
 Intake -> Dispatch classification -> Packet checklist -> Evidence and consequence forecast -> High Court advisory review when required -> Roundtable approval when required -> Merlin handoff only after approval.
 
 Governance chain:
-Queue Replay -> Evidence Packet -> Deterministic Snapshot -> Export Handoff Preview -> Export Review Contract
+Queue Replay -> Evidence Packet -> Deterministic Snapshot -> Export Handoff Preview -> Export Review Contract -> Revocation + Review History Contract
 
 ## MVP Goal
 Build the minimum reliable operating path that can:
@@ -189,6 +190,49 @@ Approval validity and revocation behavior:
 - snapshot changes invalidate prior approvals via hash mismatch
 - policy version drift invalidates prior approvals
 
+## P8 Revocation + Review History Contract
+Purpose:
+- Evaluate export eligibility against the latest valid governance state, not a single artifact in isolation.
+- Preserve a deterministic historical record of approvals, rejections, revocations, and supersession.
+
+P8 artifacts:
+- deterministic revocation artifact:
+	- revoked review artifact hash
+	- revoker identity
+	- revocation timestamp
+	- reason code
+	- policy version
+	- deterministic revocation hash
+- deterministic review history artifact:
+	- reviewed snapshot hash
+	- policy version
+	- ordered review artifacts
+	- ordered revocation artifacts
+	- supersession state
+	- latest valid review reference
+	- deterministic history hash
+
+Latest-valid-review rule:
+- eligibility can be granted only when the latest valid approval is:
+	- approved
+	- unexpired
+	- unrecalled/unrevoked
+	- snapshot hash aligned
+	- policy version aligned
+
+P8 deny-by-default history behavior:
+- missing history -> denied
+- empty history -> denied
+- no approval in history -> denied
+- latest approval revoked -> denied
+- approval superseded by newer rejection -> denied
+- expired latest approval -> denied
+- snapshot hash mismatch -> denied
+- policy version mismatch -> denied
+- malformed history ordering -> denied
+- malformed revocation artifact -> denied
+- revoked artifact hash not found -> denied
+
 ## Test Plan
 Contract tests must verify:
 - AI-related routes always require `roundtable_3_of_3`.
@@ -223,6 +267,13 @@ P7 explicit non-goals:
 - No connector implementation work of any kind.
 - No credential or environment setup for external providers.
 - No runtime export behavior while governance-only milestone is active.
+
+P8 explicit non-goals:
+- No Google Sheets, Google Drive, or Discord connector introduction.
+- No webhook dispatch path.
+- No runtime live export route.
+- No mutation or execution authority surface.
+- No connector credential or environment requirements.
 
 ## Assumptions
 - TypeScript + Vitest is the minimal test foundation for contract coverage.
