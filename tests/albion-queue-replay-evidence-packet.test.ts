@@ -45,9 +45,10 @@ function testQueue() {
 describe("Albion queue replay evidence packet", () => {
   it("creates deterministic evidence packet from valid replay", () => {
     const queue = testQueue();
+    const ledger = testLedger();
     const replayed = replayActionPacketQueue({
       queue,
-      ledger: testLedger(),
+      ledger,
       appBaseUrl,
       expectedRunId: "albion-ai-governance-001",
     });
@@ -55,6 +56,7 @@ describe("Albion queue replay evidence packet", () => {
     const first = createAlbionQueueReplayEvidencePacket({
       queue,
       queueReplayResult: replayed,
+      previousLedger: ledger,
       evidencePacketId: "evidence-packet-001",
       queueId: "queue-albion-ai-governance-001",
       replayId: "replay-albion-ai-governance-001",
@@ -66,6 +68,7 @@ describe("Albion queue replay evidence packet", () => {
     const second = createAlbionQueueReplayEvidencePacket({
       queue,
       queueReplayResult: replayed,
+      previousLedger: ledger,
       evidencePacketId: "evidence-packet-001",
       queueId: "queue-albion-ai-governance-001",
       replayId: "replay-albion-ai-governance-001",
@@ -109,9 +112,10 @@ describe("Albion queue replay evidence packet", () => {
 
   it("refuses missing evidencePacketId", () => {
     const queue = testQueue();
+    const ledger = testLedger();
     const replayed = replayActionPacketQueue({
       queue,
-      ledger: testLedger(),
+      ledger,
       appBaseUrl,
       expectedRunId: "albion-ai-governance-001",
     });
@@ -119,6 +123,7 @@ describe("Albion queue replay evidence packet", () => {
     const result = createAlbionQueueReplayEvidencePacket({
       queue,
       queueReplayResult: replayed,
+      previousLedger: ledger,
       evidencePacketId: "",
       replayId: "replay-albion-ai-governance-001",
       runId: "albion-ai-governance-001",
@@ -132,9 +137,10 @@ describe("Albion queue replay evidence packet", () => {
 
   it("refuses replay and run mismatch", () => {
     const queue = testQueue();
+    const ledger = testLedger();
     const replayed = replayActionPacketQueue({
       queue,
-      ledger: testLedger(),
+      ledger,
       appBaseUrl,
       expectedRunId: "albion-ai-governance-001",
     });
@@ -142,6 +148,7 @@ describe("Albion queue replay evidence packet", () => {
     const result = createAlbionQueueReplayEvidencePacket({
       queue,
       queueReplayResult: replayed,
+      previousLedger: ledger,
       evidencePacketId: "evidence-packet-002",
       replayId: "replay-albion-ai-governance-001",
       runId: "tradescout-public-copy-002",
@@ -155,9 +162,10 @@ describe("Albion queue replay evidence packet", () => {
 
   it("refuses exportAllowed true", () => {
     const queue = testQueue();
+    const ledger = testLedger();
     const replayed = replayActionPacketQueue({
       queue,
-      ledger: testLedger(),
+      ledger,
       appBaseUrl,
       expectedRunId: "albion-ai-governance-001",
     });
@@ -165,6 +173,7 @@ describe("Albion queue replay evidence packet", () => {
     const result = createAlbionQueueReplayEvidencePacket({
       queue,
       queueReplayResult: replayed,
+      previousLedger: ledger,
       evidencePacketId: "evidence-packet-003",
       replayId: "replay-albion-ai-governance-001",
       runId: "albion-ai-governance-001",
@@ -179,9 +188,10 @@ describe("Albion queue replay evidence packet", () => {
 
   it("refuses mutationAllowed true", () => {
     const queue = testQueue();
+    const ledger = testLedger();
     const replayed = replayActionPacketQueue({
       queue,
-      ledger: testLedger(),
+      ledger,
       appBaseUrl,
       expectedRunId: "albion-ai-governance-001",
     });
@@ -189,6 +199,7 @@ describe("Albion queue replay evidence packet", () => {
     const result = createAlbionQueueReplayEvidencePacket({
       queue,
       queueReplayResult: replayed,
+      previousLedger: ledger,
       evidencePacketId: "evidence-packet-004",
       replayId: "replay-albion-ai-governance-001",
       runId: "albion-ai-governance-001",
@@ -203,9 +214,10 @@ describe("Albion queue replay evidence packet", () => {
 
   it("refuses executionAllowed true", () => {
     const queue = testQueue();
+    const ledger = testLedger();
     const replayed = replayActionPacketQueue({
       queue,
-      ledger: testLedger(),
+      ledger,
       appBaseUrl,
       expectedRunId: "albion-ai-governance-001",
     });
@@ -213,6 +225,7 @@ describe("Albion queue replay evidence packet", () => {
     const result = createAlbionQueueReplayEvidencePacket({
       queue,
       queueReplayResult: replayed,
+      previousLedger: ledger,
       evidencePacketId: "evidence-packet-005",
       replayId: "replay-albion-ai-governance-001",
       runId: "albion-ai-governance-001",
@@ -227,9 +240,10 @@ describe("Albion queue replay evidence packet", () => {
 
   it("refuses liveIntegrationAllowed true", () => {
     const queue = testQueue();
+    const ledger = testLedger();
     const replayed = replayActionPacketQueue({
       queue,
-      ledger: testLedger(),
+      ledger,
       appBaseUrl,
       expectedRunId: "albion-ai-governance-001",
     });
@@ -237,6 +251,7 @@ describe("Albion queue replay evidence packet", () => {
     const result = createAlbionQueueReplayEvidencePacket({
       queue,
       queueReplayResult: replayed,
+      previousLedger: ledger,
       evidencePacketId: "evidence-packet-006",
       replayId: "replay-albion-ai-governance-001",
       runId: "albion-ai-governance-001",

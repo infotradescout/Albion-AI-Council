@@ -1,5 +1,6 @@
 import { describe, expect, it } from "vitest";
 import {
+  type AlbionQueueReplayEvidencePacket,
   buildAlbionDeterministicSnapshotMetadata,
   buildAlbionExportPreviewMetadata,
   createAlbionExportHandoffReviewContract,
@@ -10,6 +11,7 @@ import {
   serializeAlbionExportHandoffReviewContract,
   serializeAlbionQueueReplayEvidencePacket,
 } from "../src/albion/albionActionPacketQueue";
+import { validateAlbionReplayEvidencePacket } from "../src/albion/albionReplayEvidenceContracts";
 import { buildApprovalActionPacket } from "../src/albion/albionApprovalActionPackets";
 import { createAlbionRunLedger } from "../src/albion/albionRunLedger";
 import { buildPrivateCommandSurfaceRuns } from "../src/albion/privateCommandSurfaceData";
@@ -23,6 +25,7 @@ function testLedger() {
 }
 
 function testReplayInput() {
+  const ledger = testLedger();
   const queue = createActionPacketQueue([
     buildApprovalActionPacket({
       packetId: "packet-contract-lancelot-approve",
@@ -35,12 +38,13 @@ function testReplayInput() {
   ]);
   const replayed = replayActionPacketQueue({
     queue,
-    ledger: testLedger(),
+    ledger,
     appBaseUrl,
     expectedRunId: "albion-ai-governance-001",
   });
 
   return {
+    ledger,
     queue,
     replayed,
   };
@@ -48,10 +52,11 @@ function testReplayInput() {
 
 describe("Albion queue replay evidence packet snapshot contract", () => {
   it("uses stable key ordering in serialized output", () => {
-    const { queue, replayed } = testReplayInput();
+    const { ledger, queue, replayed } = testReplayInput();
     const created = createAlbionQueueReplayEvidencePacket({
       queue,
       queueReplayResult: replayed,
+      previousLedger: ledger,
       evidencePacketId: "evidence-contract-001",
       queueId: "queue-contract-001",
       replayId: "replay-contract-001",
@@ -77,10 +82,11 @@ describe("Albion queue replay evidence packet snapshot contract", () => {
   });
 
   it("keeps deterministicSummary and ledgerPreviewHash stable", () => {
-    const { queue, replayed } = testReplayInput();
+    const { ledger, queue, replayed } = testReplayInput();
     const first = createAlbionQueueReplayEvidencePacket({
       queue,
       queueReplayResult: replayed,
+      previousLedger: ledger,
       evidencePacketId: "evidence-contract-002",
       queueId: "queue-contract-002",
       replayId: "replay-contract-002",
@@ -91,6 +97,7 @@ describe("Albion queue replay evidence packet snapshot contract", () => {
     const second = createAlbionQueueReplayEvidencePacket({
       queue,
       queueReplayResult: replayed,
+      previousLedger: ledger,
       evidencePacketId: "evidence-contract-002",
       queueId: "queue-contract-002",
       replayId: "replay-contract-002",
@@ -107,10 +114,11 @@ describe("Albion queue replay evidence packet snapshot contract", () => {
   });
 
   it("serializes identically for repeated generation from same replay", () => {
-    const { queue, replayed } = testReplayInput();
+    const { ledger, queue, replayed } = testReplayInput();
     const first = createAlbionQueueReplayEvidencePacket({
       queue,
       queueReplayResult: replayed,
+      previousLedger: ledger,
       evidencePacketId: "evidence-contract-003",
       queueId: "queue-contract-003",
       replayId: "replay-contract-003",
@@ -121,6 +129,7 @@ describe("Albion queue replay evidence packet snapshot contract", () => {
     const second = createAlbionQueueReplayEvidencePacket({
       queue,
       queueReplayResult: replayed,
+      previousLedger: ledger,
       evidencePacketId: "evidence-contract-003",
       queueId: "queue-contract-003",
       replayId: "replay-contract-003",
@@ -135,10 +144,11 @@ describe("Albion queue replay evidence packet snapshot contract", () => {
   });
 
   it("fails closed and cannot set exportAllowed true", () => {
-    const { queue, replayed } = testReplayInput();
+    const { ledger, queue, replayed } = testReplayInput();
     const blocked = createAlbionQueueReplayEvidencePacket({
       queue,
       queueReplayResult: replayed,
+      previousLedger: ledger,
       evidencePacketId: "evidence-contract-004",
       queueId: "queue-contract-004",
       replayId: "replay-contract-004",
@@ -185,10 +195,11 @@ describe("Albion queue replay evidence packet snapshot contract", () => {
   });
 
   it("creates deterministic export handoff review contract with all authority flags false", () => {
-    const { queue, replayed } = testReplayInput();
+    const { ledger, queue, replayed } = testReplayInput();
     const packet = createAlbionQueueReplayEvidencePacket({
       queue,
       queueReplayResult: replayed,
+      previousLedger: ledger,
       evidencePacketId: "evidence-contract-005",
       queueId: "queue-contract-005",
       replayId: "replay-contract-005",
@@ -237,10 +248,11 @@ describe("Albion queue replay evidence packet snapshot contract", () => {
   });
 
   it("fails closed when review contract attempts live export authority", () => {
-    const { queue, replayed } = testReplayInput();
+    const { ledger, queue, replayed } = testReplayInput();
     const packet = createAlbionQueueReplayEvidencePacket({
       queue,
       queueReplayResult: replayed,
+      previousLedger: ledger,
       evidencePacketId: "evidence-contract-006",
       queueId: "queue-contract-006",
       replayId: "replay-contract-006",
@@ -265,10 +277,11 @@ describe("Albion queue replay evidence packet snapshot contract", () => {
   });
 
   it("evaluates approved review as eligible metadata only", () => {
-    const { queue, replayed } = testReplayInput();
+    const { ledger, queue, replayed } = testReplayInput();
     const evidence = createAlbionQueueReplayEvidencePacket({
       queue,
       queueReplayResult: replayed,
+      previousLedger: ledger,
       evidencePacketId: "evidence-contract-007",
       queueId: "queue-contract-007",
       replayId: "replay-contract-007",
@@ -309,4 +322,137 @@ describe("Albion queue replay evidence packet snapshot contract", () => {
       liveIntegrationAllowed: false,
     });
   });
+
+  it("accepts replay evidence with previous-state link and full Roundtable 3/3 authority", () => {
+    const packet = buildValidatedReplayEvidencePacket();
+
+    expect(validateAlbionReplayEvidencePacket(packet)).toEqual({
+      accepted: true,
+      packet,
+    });
+  });
+
+  it("rejects replay evidence missing previous-state link", () => {
+    const packet = buildValidatedReplayEvidencePacket();
+    const invalidPacket = {
+      ...packet,
+      previousLedgerHash: "",
+    };
+
+    const result = validateAlbionReplayEvidencePacket(invalidPacket);
+
+    expect(result.accepted).toBe(false);
+    expect(result.rejectedReason).toBe("missing_previous_ledger_hash");
+  });
+
+  it("rejects replay evidence that claims execution from High Court-only authority", () => {
+    const packet = buildValidatedReplayEvidencePacket();
+    const invalidPacket: AlbionQueueReplayEvidencePacket = {
+      ...packet,
+      executionAuthority: {
+        ...packet.executionAuthority,
+        claimedForExecution: true,
+        authoritySource: "high_court_advisory",
+        approvalLevel: "roundtable_3_of_3",
+        mandateStatus: "pending",
+        approvedForMerlin: false,
+        approvals: {
+          Gawain: "pending",
+          Lancelot: "pending",
+          Percival: "pending",
+        },
+      },
+    };
+
+    const result = validateAlbionReplayEvidencePacket(invalidPacket);
+
+    expect(result.accepted).toBe(false);
+    expect(result.rejectedReason).toBe(
+      "high_court_cannot_grant_execution_authority",
+    );
+  });
+
+  it("rejects replay evidence with incomplete Roundtable execution authority", () => {
+    const packet = buildValidatedReplayEvidencePacket();
+    const invalidPacket: AlbionQueueReplayEvidencePacket = {
+      ...packet,
+      executionAuthority: {
+        ...packet.executionAuthority,
+        claimedForExecution: true,
+        authoritySource: "roundtable_3_of_3",
+        approvalLevel: "roundtable_3_of_3",
+        mandateStatus: "pending",
+        approvedForMerlin: false,
+        approvals: {
+          Gawain: "approve",
+          Lancelot: "approve",
+          Percival: "pending",
+        },
+      },
+    };
+
+    const result = validateAlbionReplayEvidencePacket(invalidPacket);
+
+    expect(result.accepted).toBe(false);
+    expect(result.rejectedReason).toBe(
+      "roundtable_execution_authority_incomplete",
+    );
+  });
+
+  it("rejects unknown fields instead of silently stripping them", () => {
+    const packet = buildValidatedReplayEvidencePacket();
+    const invalidPacket = {
+      ...packet,
+      mysteryField: "unexpected",
+    };
+
+    const result = validateAlbionReplayEvidencePacket(invalidPacket);
+
+    expect(result.accepted).toBe(false);
+    expect(result.rejectedReason).toBe("unknown_field");
+  });
+
+  it("does not mutate the input object while validating", () => {
+    const packet = buildValidatedReplayEvidencePacket();
+    const input = structuredClone(packet);
+    const before = JSON.stringify(input);
+
+    validateAlbionReplayEvidencePacket(input);
+
+    expect(JSON.stringify(input)).toBe(before);
+  });
 });
+
+function buildValidatedReplayEvidencePacket(): AlbionQueueReplayEvidencePacket {
+  const { ledger, queue, replayed } = testReplayInput();
+  const created = createAlbionQueueReplayEvidencePacket({
+    queue,
+    queueReplayResult: replayed,
+    previousLedger: ledger,
+    evidencePacketId: "evidence-contract-authority-001",
+    queueId: "queue-contract-authority-001",
+    replayId: "replay-contract-authority-001",
+    runId: "albion-ai-governance-001",
+    createdAt: "2026-06-10T11:10:00.000-05:00",
+    appBaseUrl,
+  });
+
+  expect(created.created).toBe(true);
+
+  return {
+    ...created.packet!,
+    executionAuthority: {
+      ...created.packet!.executionAuthority,
+      claimedForExecution: true,
+      authoritySource: "roundtable_3_of_3",
+      approvalLevel: "roundtable_3_of_3",
+      mandateStatus: "passed_3_of_3",
+      approvedForMerlin: true,
+      approvals: {
+        Gawain: "approve",
+        Lancelot: "approve",
+        Percival: "approve",
+      },
+    },
+  };
+}

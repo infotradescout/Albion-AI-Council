@@ -17,6 +17,7 @@ import { buildPrivateCommandSurfaceLedgerRecords } from "../src/albion/privateCo
 const appBaseUrl = "https://albion.example.test";
 
 function buildEvidencePacket() {
+  const ledger = createAlbionRunLedger(buildPrivateCommandSurfaceLedgerRecords());
   const queue = createActionPacketQueue([
     buildApprovalActionPacket({
       packetId: "packet-p7-lancelot-approve",
@@ -29,13 +30,14 @@ function buildEvidencePacket() {
   ]);
   const replay = replayActionPacketQueue({
     queue,
-    ledger: createAlbionRunLedger(buildPrivateCommandSurfaceLedgerRecords()),
+    ledger,
     appBaseUrl,
     expectedRunId: "albion-ai-governance-001",
   });
   const evidence = createAlbionQueueReplayEvidencePacket({
     queue,
     queueReplayResult: replay,
+    previousLedger: ledger,
     evidencePacketId: "evidence-p7-001",
     queueId: "queue-p7-001",
     replayId: "replay-p7-001",

@@ -305,6 +305,7 @@ function buildHandoffActionPacketPreview(input: {
   const evidence = createAlbionQueueReplayEvidencePacket({
     queue: queued.queue,
     queueReplayResult: replayed,
+    previousLedger: input.ledger,
     evidencePacketId: `evidence-${input.entry.run.runId}-queue-replay`,
     queueId: `queue-${input.entry.run.runId}`,
     replayId: `replay-${input.entry.run.runId}`,

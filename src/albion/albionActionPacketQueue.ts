@@ -10,6 +10,12 @@ import {
   type AlbionRunLedger,
   type AlbionRunLedgerEntry,
 } from "./albionRunLedger";
+import type {
+  ApprovalLevel,
+  ApprovalVote,
+  KnightName,
+  MandateStatus,
+} from "./albionRunFlow";
 
 export interface AlbionActionPacketQueue {
   schemaVersion: "albion_action_packet_queue_v1";
@@ -38,6 +44,7 @@ export interface AlbionQueueReplayEvidencePacket {
   replayId: string;
   runId: string;
   createdAt: string;
+  previousLedgerHash: string;
   packetCount: number;
   acceptedPacketCount: number;
   rejectedPacketCount: number;
@@ -46,11 +53,24 @@ export interface AlbionQueueReplayEvidencePacket {
   merlinHandoffPreview?: AlbionRunLedgerEntry["merlinHandoffEligibility"];
   ledgerPreviewHash: string;
   deterministicSummary: string;
+  executionAuthority: AlbionReplayExecutionAuthorityEvidence;
   exportHandoffPreview: AlbionEvidencePacketExportHandoffPreview;
   exportAllowed: false;
   mutationAllowed: false;
   executionAllowed: false;
   liveIntegrationAllowed: false;
+}
+
+export interface AlbionReplayExecutionAuthorityEvidence {
+  claimedForExecution: boolean;
+  authoritySource: "none" | "high_court_advisory" | "roundtable_3_of_3";
+  approvalRequired: boolean;
+  approvalLevel: ApprovalLevel;
+  requiredKnights: KnightName[];
+  approvals: Record<KnightName, ApprovalVote>;
+  mandateStatus: MandateStatus;
+  approvedForMerlin: boolean;
+  highCourtAdvisoryOnly: true;
 }
 
 export interface AlbionEvidencePacketExportHandoffPreview {
@@ -445,6 +465,7 @@ export function replayActionPacketQueue(input: {
 export function createAlbionQueueReplayEvidencePacket(input: {
   queue: AlbionActionPacketQueue;
   queueReplayResult: QueueReplayResult;
+  previousLedger: AlbionRunLedger;
   evidencePacketId: string;
   queueId?: string;
   replayId: string;
@@ -512,8 +533,14 @@ export function createAlbionQueueReplayEvidencePacket(input: {
   const packetCount = input.queue.packets.length;
   const acceptedPacketCount = input.queueReplayResult.appliedPacketIds.length;
   const rejectedPacketCount = Math.max(packetCount - acceptedPacketCount, 0);
+  const previousLedgerHash = hashString(
+    serializeAlbionRunLedger(input.previousLedger),
+  );
   const ledgerPreviewHash = hashString(
     serializeAlbionRunLedger(input.queueReplayResult.resultingLedgerPreview),
+  );
+  const executionAuthority = buildReplayExecutionAuthorityEvidence(
+    recomputedRunPreview,
   );
 
   return {
@@ -525,6 +552,7 @@ export function createAlbionQueueReplayEvidencePacket(input: {
       replayId: input.replayId,
       runId: input.runId,
       createdAt: input.createdAt,
+      previousLedgerHash,
       packetCount,
       acceptedPacketCount,
       rejectedPacketCount,
@@ -536,13 +564,17 @@ export function createAlbionQueueReplayEvidencePacket(input: {
         input.queueId ?? `queue-${input.runId}`,
         input.replayId,
         input.runId,
+        previousLedgerHash,
         String(packetCount),
         String(acceptedPacketCount),
         String(rejectedPacketCount),
         ledgerPreviewHash,
+        executionAuthority.authoritySource,
+        executionAuthority.claimedForExecution ? "claimed" : "not_claimed",
         recomputedRunPreview.run.mandate?.mandateStatus ?? "pending",
         recomputedRunPreview.merlinHandoffEligibility.eligible ? "eligible" : "blocked",
       ].join("|"),
+      executionAuthority,
       exportHandoffPreview: buildAlbionEvidencePacketExportHandoffPreview({
         runId: input.runId,
         evidencePacketId: input.evidencePacketId,
@@ -554,6 +586,33 @@ export function createAlbionQueueReplayEvidencePacket(input: {
       executionAllowed: false,
       liveIntegrationAllowed: false,
     },
+  };
+}
+
+function buildReplayExecutionAuthorityEvidence(
+  runPreview: AlbionRunLedgerEntry,
+): AlbionReplayExecutionAuthorityEvidence {
+  const mandate = runPreview.run.mandate;
+  const hasHighCourtNote = runPreview.ledgerRecord.advisoryNotes.some(
+    (note) => note.source === "High Court",
+  );
+
+  return {
+    claimedForExecution: Boolean(mandate?.approvedForMerlin),
+    authoritySource: mandate?.approvedForMerlin
+      ? "roundtable_3_of_3"
+      : hasHighCourtNote
+        ? "high_court_advisory"
+        : "none",
+    approvalRequired: runPreview.run.approvalRequirement.approvalRequired,
+    approvalLevel: runPreview.run.approvalRequirement.approvalLevel,
+    requiredKnights: [...runPreview.run.approvalRequirement.requiredKnights],
+    approvals: {
+      ...runPreview.run.mandate?.approvals ?? runPreview.ledgerRecord.approvals,
+    },
+    mandateStatus: runPreview.run.mandate?.mandateStatus ?? "pending",
+    approvedForMerlin: Boolean(mandate?.approvedForMerlin),
+    highCourtAdvisoryOnly: true,
   };
 }
 
