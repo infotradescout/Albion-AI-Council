@@ -30,6 +30,14 @@ The following require unanimous approval from Gawain, Lancelot, and Percival:
 
 Single sponsor or 2/3 authority is never sufficient for AI-related decisions.
 
+## Court Specialist Review
+- Guinevere is the Court specialist for UI/UX, design psychology, and premium product surface quality.
+- Guinevere review is required for lanes that materially affect user-facing surfaces, onboarding, landing pages, dashboards, forms, request flows, payment flows, public profiles, menus, search/discovery flows, or conversion-critical copy.
+- Guinevere may object to confusing, ugly, over-explained, untrustworthy, inaccessible, conversion-weak, or psychologically weak product surfaces.
+- Guinevere's authority is advisory/specialist review only.
+- Guinevere cannot approve merges, replace Roundtable authority, define backend architecture, execute code, bypass Gemini review, or make governance decisions.
+- Guinevere review never reduces or replaces Roundtable 3/3, Gemini adversarial review, Gawain route control, or any required approval.
+
 ## AI Unanimity Law
 - Any decision that changes, authorizes, delegates, deploys, or materially directs AI behavior requires Roundtable 3/3.
 - The AI Council advises, challenges, prepares options, and records consequence forecasts before the Roundtable decides.

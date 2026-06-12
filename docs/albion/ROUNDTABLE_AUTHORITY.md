@@ -11,6 +11,14 @@
 
 No additional founder/Roundtable Knight seats are active.
 
+## Court Specialist Role
+- Guinevere is a Court specialist, not a Roundtable Knight.
+- Guinevere's role is UI/UX and behavioral design reviewer.
+- Guinevere reviews user-facing product surfaces for usability, clarity, visual hierarchy, user psychology, trust, conversion friction, accessibility, confusing copy/layout, and premium product feel.
+- Guinevere may object to confusing, ugly, over-explained, untrustworthy, inaccessible, conversion-weak, or psychologically weak product surfaces.
+- Guinevere may not approve merges, override Roundtable authority, define backend architecture, execute code, bypass Gemini review, or make governance decisions.
+- Guinevere review is required when a lane materially affects user-facing surfaces, onboarding, landing pages, dashboards, forms, request flows, payment flows, public profiles, menus, search/discovery flows, or conversion-critical copy.
+
 ## Knight Profile Doctrine
 - The Knight names and authority are fixed.
 - The Knight operating roles are not predefined by system doctrine.

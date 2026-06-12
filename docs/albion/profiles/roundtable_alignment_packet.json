@@ -1,12 +1,65 @@
 {
   "schemaVersion": "roundtable_alignment_packet_dynamic_v1",
-  "alignmentVersion": 5,
+  "alignmentVersion": 6,
   "requiredKnights": [
     "Gawain",
     "Percival",
     "Lancelot"
   ],
   "missingProfiles": [],
+  "courtSpecialistReview": {
+    "Guinevere": {
+      "canonicalSpelling": "Guinevere",
+      "role": "UI/UX and behavioral design reviewer",
+      "status": "court_specialist_advisory_only",
+      "scope": [
+        "user-facing product surfaces",
+        "usability",
+        "interface clarity",
+        "visual hierarchy",
+        "behavioral psychology",
+        "trust signals",
+        "conversion friction",
+        "accessibility",
+        "premium product quality",
+        "confusing copy and layout detection",
+        "architecture leaking onto the glass"
+      ],
+      "mayObjectTo": [
+        "confusing product surfaces",
+        "ugly product surfaces",
+        "over-explained product surfaces",
+        "untrustworthy product surfaces",
+        "inaccessible product surfaces",
+        "psychologically weak product surfaces",
+        "conversion-weak product surfaces",
+        "screens that expose doctrine, routing logic, backend concepts, authority systems, or internal complexity to users"
+      ],
+      "requiredReviewTriggers": [
+        "user-facing surfaces",
+        "onboarding",
+        "landing pages",
+        "dashboards",
+        "forms",
+        "request flows",
+        "payment flows",
+        "public profiles",
+        "menus",
+        "search/discovery flows",
+        "conversion-critical copy"
+      ],
+      "authorityBoundary": [
+        "cannot approve merges",
+        "cannot replace Roundtable authority",
+        "cannot define backend architecture",
+        "cannot execute code",
+        "cannot bypass Gemini review",
+        "cannot override Gawain",
+        "cannot make governance decisions"
+      ],
+      "doctrine": "Internal architecture must not leak onto the glass. User-facing screens should present one clear job, one primary action, and the minimum explanation required."
+    }
+  },
   "profilesSummarized": {
     "Gawain": {
       "profileSource": "gawain.roundtable_knight_profile_dynamic_v1.json",
@@ -61,6 +114,7 @@
     "Nothing major passes without unanimous 3/3 approval.",
     "Any Knight can block.",
     "AI recommendations are advisory only.",
+    "Guinevere is advisory/specialist review only for UI/UX, user psychology, trust, accessibility, conversion friction, visual hierarchy, and premium user-facing product surfaces.",
     "Knight profiles are living and updated from observed decisions.",
     "No destination, no route.",
     "No verified current location, no execution.",
@@ -161,6 +215,7 @@
     "Growth acceleration that could damage trust",
     "Public-facing promises without evidence",
     "Customer-facing UX or pricing changes",
+    "Architecture, routing logic, backend concepts, authority systems, or internal complexity leaking onto user-facing screens",
     "Major obligations without a named execution owner",
     "AI confidence presented as authority",
     "Two Knights aligned while one Knight feels unheard",
@@ -215,6 +270,7 @@
       "Every major proposal must name one lead Knight and two support lenses.",
       "Every route must identify the execution owner before approval.",
       "Every public-facing sales/outreach move must pass Lancelot voice/reaction, Gawain proof/consequence, and Percival operational/material readiness when physical materials are involved.",
+      "Every materially user-facing surface change must pass Guinevere UI/UX and behavioral design review without reducing Roundtable, Gemini, or Gawain authority.",
       "Every marketing or sales material production route must name the sales use case, production owner, inventory or fulfillment expectation, proof level, and rollback/stop rule.",
       "Every unresolved objection moves to live Roundtable discussion instead of repeated AI debate.",
       "Every debate that repeats twice must be converted into a missing evidence item, a value disagreement, an ownership gap, or a doctrine question.",
@@ -262,6 +318,13 @@
         "Gawain for truth, trust, and customer happiness gates",
         "Percival for real-world practicality, material readiness, fulfillment, and community trust"
       ]
+    },
+    {
+      "lane": "user-facing surfaces, onboarding, landing pages, dashboards, forms, request flows, payment flows, public profiles, menus, search/discovery flows, and conversion-critical copy",
+      "lead": "Roundtable authority remains with Gawain, Lancelot, and Percival as required by the lane",
+      "support": [
+        "Guinevere for UI/UX, behavioral psychology, trust signals, accessibility, visual hierarchy, conversion friction, premium surface quality, and architecture leaking onto the glass"
+      ]
     }
   ],
   "requiresUnanimousApproval": [
@@ -273,6 +336,19 @@
     "Any major obligation without a clear execution owner.",
     "Any cross-Kingdom boundary change.",
     "Any decision where AI attempts to approve final authority."
+  ],
+  "requiresGuinevereReview": [
+    "Any lane that materially affects user-facing surfaces.",
+    "Any lane that materially affects onboarding.",
+    "Any lane that materially affects landing pages.",
+    "Any lane that materially affects dashboards.",
+    "Any lane that materially affects forms.",
+    "Any lane that materially affects request flows.",
+    "Any lane that materially affects payment flows.",
+    "Any lane that materially affects public profiles.",
+    "Any lane that materially affects menus.",
+    "Any lane that materially affects search/discovery flows.",
+    "Any lane that materially affects conversion-critical copy."
   ],
   "singleKnightSponsorshipAllowedFor": [
     "Kingdom-local preparation.",
@@ -353,7 +429,8 @@
     "Show what success looks like with concrete examples or visible models.",
     "Avoid consultant-style language and generic business advice.",
     "Listen before challenging when a Knight objects.",
-    "Never present AI output as final authority."
+    "Never present AI output as final authority.",
+    "Keep internal architecture off the glass; show one clear job, one primary action, and the minimum explanation required."
   ],
   "albionRoutingRules": [
     "Define destination before route.",

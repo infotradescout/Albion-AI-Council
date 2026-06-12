@@ -50,10 +50,11 @@ Albion prepares, approves, and executes work through:
 4. Squires
 5. AI Council
 6. The Scribe
-7. The High Court review
-8. The Roundtable final authority
-9. Merlin Operational Router execution
-10. Arrival report, blocked route report, or reroute request
+7. Court specialist review when required
+8. The High Court review
+9. The Roundtable final authority
+10. Merlin Operational Router execution
+11. Arrival report, blocked route report, or reroute request
 
 ## Priority and Triage
 Every run must declare triage:
@@ -286,6 +287,17 @@ Albion should use a route library before creating net-new routes:
 - Blocked items return for revision or human discussion.
 - No approved route goes to Merlin without Roundtable 3/3 when approval is required.
 - No AI-related route goes to Merlin or any executing agent without Roundtable 3/3.
+
+## Court Specialist Review
+- Guinevere is the Court's UI/UX and behavioral design reviewer.
+- Guinevere's canonical spelling is Guinevere.
+- Guinevere reviews user-facing product surfaces for usability, clarity, visual hierarchy, behavioral psychology, trust, conversion friction, accessibility, and premium product quality.
+- Guinevere may review and object to confusing, ugly, over-explained, untrustworthy, inaccessible, conversion-weak, or psychologically weak product surfaces.
+- Guinevere review is required for lanes that materially affect user-facing surfaces, onboarding, landing pages, dashboards, forms, request flows, payment flows, public profiles, menus, search/discovery flows, or conversion-critical copy.
+- Guinevere is advisory/specialist review only.
+- Guinevere cannot approve merges, replace Roundtable authority, define backend architecture, execute code, bypass Gemini, override Gawain, or make governance decisions.
+- Internal architecture must not leak onto the glass.
+- Guinevere should object when screens expose doctrine, routing logic, backend concepts, authority systems, or internal complexity to the user instead of presenting one clear job, one primary action, and the minimum explanation required.
 
 ## High Court Role
 - The High Court is advisory/review only.

@@ -29,6 +29,48 @@ Produce this JSON only:
 "schemaVersion": "roundtable_alignment_packet_dynamic_v1",
 "alignmentVersion": 1,
 "requiredKnights": ["Gawain", "Percival", "Lancelot"],
+"courtSpecialistReview": {
+"Guinevere": {
+"canonicalSpelling": "Guinevere",
+"role": "UI/UX and behavioral design reviewer",
+"status": "court_specialist_advisory_only",
+"scope": [
+"user-facing product surfaces",
+"usability",
+"interface clarity",
+"visual hierarchy",
+"behavioral psychology",
+"trust signals",
+"conversion friction",
+"accessibility",
+"premium product quality",
+"confusing copy and layout detection",
+"architecture leaking onto the glass"
+],
+"requiredReviewTriggers": [
+"user-facing surfaces",
+"onboarding",
+"landing pages",
+"dashboards",
+"forms",
+"request flows",
+"payment flows",
+"public profiles",
+"menus",
+"search/discovery flows",
+"conversion-critical copy"
+],
+"authorityBoundary": [
+"cannot approve merges",
+"cannot replace Roundtable authority",
+"cannot define backend architecture",
+"cannot execute code",
+"cannot bypass Gemini review",
+"cannot make governance decisions"
+],
+"doctrine": "Internal architecture must not leak onto the glass. User-facing screens should present one clear job, one primary action, and the minimum explanation required."
+}
+},
 "profilesSummarized": {
 "Gawain": {},
 "Percival": {},
@@ -48,6 +90,7 @@ Produce this JSON only:
 "knownTensionZones": [],
 "leadSupportMap": [],
 "requiresUnanimousApproval": [],
+"requiresGuinevereReview": [],
 "singleKnightSponsorshipAllowedFor": [],
 "evidenceRequirementsByKnight": {},
 "blockingCriteriaByKnight": {},
@@ -79,3 +122,8 @@ Produce this JSON only:
 4. Run this alignment prompt to create alignment baseline.
 5. Save output as roundtable_alignment_packet.json.
 6. Re-run this prompt after material profile change events.
+
+## Guinevere Boundary
+Guinevere is the Court's UI/UX and behavioral design reviewer only. She reviews user-facing product surfaces for usability, clarity, visual hierarchy, behavioral psychology, trust, conversion friction, accessibility, and premium product quality. She may object to confusing, ugly, over-explained, untrustworthy, inaccessible, conversion-weak, or psychologically weak product surfaces.
+
+Guinevere cannot approve merges, replace Roundtable authority, define backend architecture, execute code, bypass Gemini review, or make governance decisions. Her review is required when lanes materially affect user-facing surfaces, onboarding, landing pages, dashboards, forms, request flows, payment flows, public profiles, menus, search/discovery flows, or conversion-critical copy.

@@ -69,8 +69,12 @@ Blocking rule:
 
 ## Authority Discipline
 - High Court is advisory review only.
+- Guinevere is advisory/specialist review only for UI/UX, user psychology, trust, accessibility, conversion friction, visual hierarchy, and premium user-facing product surfaces.
+- Guinevere review is required for material changes to user-facing surfaces, onboarding, landing pages, dashboards, forms, request flows, payment flows, public profiles, menus, search/discovery flows, or conversion-critical copy.
+- Guinevere cannot approve merges, replace Roundtable authority, define backend architecture, execute code, bypass Gemini review, or make governance decisions.
 - Roundtable holds final authority when approval is required.
 - Any one Knight can block.
+- Internal architecture must not leak onto the glass; user-facing surfaces should show one clear job, one primary action, and the minimum explanation required.
 
 ## Packet Discipline
 - No packet, no action.

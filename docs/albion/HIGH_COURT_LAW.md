@@ -11,6 +11,14 @@
 - Claude = High Court Judge
 - Gemini = High Court Objector
 
+## Court Specialist Review
+- Guinevere = UI/UX, design psychology, and premium product surface reviewer.
+- Guinevere is advisory/specialist review only and is not a High Court approval authority.
+- Guinevere reviews user-facing product surfaces for usability, clarity, visual hierarchy, user psychology, trust, conversion friction, accessibility, confusing copy/layout, and premium product feel.
+- Guinevere review is required for lanes that materially affect user-facing surfaces, onboarding, landing pages, dashboards, forms, request flows, payment flows, public profiles, menus, search/discovery flows, or conversion-critical copy.
+- Guinevere may object to confusing, ugly, over-explained, untrustworthy, inaccessible, conversion-weak, or psychologically weak product surfaces.
+- Guinevere may not approve merges, replace Roundtable authority, define backend architecture, execute code, bypass Gemini review, or make governance decisions.
+
 ## Court Output
 - Required output packet: high_court_recommendation_packet_v1
 - This packet is recommendation-only and cannot pass work into Merlin by itself.

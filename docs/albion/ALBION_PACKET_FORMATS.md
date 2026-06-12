@@ -250,6 +250,7 @@ Required fields:
 - schemaVersion
 - alignmentVersion
 - requiredKnights: ["Gawain", "Percival", "Lancelot"]
+- courtSpecialistReview
 - profilesSummarized
 - universalRoundtableLaw[]
 - gawainSpecificRules[]
@@ -260,6 +261,7 @@ Required fields:
 - knownTensionZones[]
 - leadSupportMap[]
 - requiresUnanimousApproval[]
+- requiresGuinevereReview[]
 - singleKnightSponsorshipAllowedFor[]
 - evidenceRequirementsByKnight
 - blockingCriteriaByKnight
@@ -277,6 +279,9 @@ Doctrine rule:
 - Do not force rigid departments.
 - Preserve overlap and shared authority based on profile evidence.
 - Refresh alignment whenever a Knight profile changes materially.
+- Guinevere is a Court specialist for UI/UX and behavioral design review only; Guinevere does not become a Knight, final approver, merge authority, backend architect, executing agent, Gemini replacement, or governance authority.
+- Material changes to user-facing surfaces, onboarding, landing pages, dashboards, forms, request flows, payment flows, public profiles, menus, search/discovery flows, or conversion-critical copy require Guinevere review.
+- Internal architecture must not leak onto the glass; user-facing screens should present one clear job, one primary action, and the minimum explanation required.
 
 ## 6.3) gawain_decision_packet_v1
 Purpose: Schema-first decision-control packet for Gawain routing/governance review.
