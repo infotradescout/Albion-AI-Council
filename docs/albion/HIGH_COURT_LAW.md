@@ -42,6 +42,12 @@
 - No approved route goes to Merlin without Roundtable 3/3 when approval is required.
 - AI-related decisions require AI Council advice and Roundtable 3/3; High Court review remains advisory and cannot substitute for Knight unanimity.
 
+## High Court Unconditional PASS Routing Accelerator (Bypass Rule)
+1. Bypass Trigger Condition: If the High Court Objector (Gemini) issues a clean, unconditional `PASS` containing no conditions, no blockers, no database/schema migration requirements, no legal/trust warning tags, and no merge-risk annotations, the packet is exempt from returning to the High Court Clerk/Chair (Gawain/ChatGPT) for manual pre-flight routing validation.
+2. Direct Dispatch Protocol: Upon a clean `PASS` condition, the packet may immediately route to Roundtable Dispatch. The dispatcher shall assign the appropriate Squire to route the approved packet to its corresponding Merlin execution or AI Council validation path.
+3. Fail-Closed Default: If the High Court Objector returns `PASS WITH CONDITIONS`, `BLOCK`, `needs_revision`, or includes any non-trivial caveat regarding scope, database migrations, security, or authority, the accelerator is void. The packet MUST route back to the High Court Clerk (Gawain) for manual evaluation and re-scoping.
+4. Authority Invariant: This optimization is a routing accelerator only. It grants the High Court no merge, policy, or governance approval rights. Unanimous Roundtable (3/3) and AI Council validation requirements remain absolute for all changes that require active governance.
+
 ## Block Handling
 - Any one Knight rejection blocks passage.
 - Blocked items are routed to:
