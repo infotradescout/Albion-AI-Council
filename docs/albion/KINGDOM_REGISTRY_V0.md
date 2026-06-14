@@ -27,7 +27,7 @@ Merlin OR rule:
 - Merlin is the OR / Operational Router inside Albion.
 - Merlin is not a Kingdom.
 - Merlin is not listed in the Kingdom Registry.
-- Merlin receives and executes approved complete routes only.
+- Merlin receives and executes only complete routes backed by Roundtable human authority when required.
 - Merlin cannot invent missing facts, approve final authority, or override Knights.
 
 ## Governance Flow
@@ -37,7 +37,7 @@ Merlin OR rule:
 4. Scribe packaging
 5. High Court advisory review (high_court_recommendation_packet_v1)
 6. Roundtable final mandate (roundtable_mandate_v1)
-7. Approved complete route to Merlin for execution
+7. Roundtable-authorized complete route to Merlin for eligibility review and execution
 
 ## Approval Separation
 - High Court is advisory only.
@@ -58,4 +58,4 @@ Merlin OR rule:
 - No Scribe votes or deploys.
 - Albion is the full Kingdom operating system.
 - Merlin is the OR / Operational Router inside Albion.
-- Merlin executes approved routes only.
+- Merlin executes routes only after Roundtable human authority is satisfied and Merlin eligibility checks pass.

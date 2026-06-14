@@ -5,7 +5,7 @@
 - Working repo label: AI Council
 
 ## Repo Doctrine
-Albion AI Council is the doctrine, governance, packet, and local execution surface for Albion. Albion is the full Kingdom operating system. Merlin is the Operational Router inside Albion and executes approved routes only.
+Albion AI Council is the doctrine, governance, packet, and local execution surface for Albion. Albion is the full Kingdom operating system. Merlin is the Operational Router inside Albion and executes routes only after Roundtable human authority is satisfied and Merlin eligibility checks pass.
 
 Core doctrine for this repo:
 - Preserve Albion authority boundaries.

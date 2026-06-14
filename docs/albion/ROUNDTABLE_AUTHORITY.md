@@ -49,7 +49,7 @@ No additional founder/Roundtable Knight seats are active.
 - This includes AI strategy, AI agent behavior, AI authority, AI execution, AI safety, and AI-governance changes.
 - Individual Knight authority and 2/3 approval are not valid for AI-related decisions.
 - The AI Council must advise, challenge, prepare route options, and surface consequence forecasts before the Roundtable decides.
-- Once unanimously approved, AI work executes through the appropriate agents, guilds, or Merlin route rather than by unilateral action.
+- Once Roundtable human authority is satisfied, AI work executes through the appropriate agents, guilds, or Merlin route rather than by unilateral action.
 
 ## Outcomes
 - 3 approves: passed_3_of_3
@@ -76,17 +76,17 @@ Roundtable decisions are recorded as roundtable_mandate_v1 and must include:
   - routeLawful
   - checkpointsPassed
   - kingdomIsolationPreserved
-  - approvedForMerlin
+  - approvedForMerlin (legacy field meaning Roundtable human authority and Merlin eligibility gates are satisfied)
 
 ## Enforcement
-- No approved route goes to Merlin without Roundtable 3/3 when approval is required.
+- No route goes to Merlin eligibility review without Roundtable 3/3 when approval is required.
 - Blocked items return for revision or human discussion.
 - No AI-related route goes to Merlin or any executing agent without Roundtable 3/3.
 
 ## Route Governance Rules
 - The destination cannot change without Roundtable authorization.
 - A blocked route must return as reroute or human discussion, never random execution.
-- Arrival must be evidenced before approvedForMerlin is true.
+- Arrival must be evidenced before approvedForMerlin can be true, and that field must remain backed by Roundtable human authority when approval is required.
 
 ## Alignment Gate Before Major Approval
 - Roundtable major-approval work must use onboarded Knight profiles.

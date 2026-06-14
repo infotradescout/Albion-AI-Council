@@ -71,7 +71,9 @@ describe("High Court unconditional PASS routing accelerator doctrine", () => {
   it("does not grant Merlin execution authority", () => {
     const section = acceleratorSection();
 
-    expect(section).toContain("Merlin execution or AI Council validation path");
+    expect(section).toContain("Merlin execution eligibility check");
+    expect(section).toContain("AI Council validation path");
+    expect(section).toContain("the `PASS` does not approve the packet");
     expect(highCourtLaw).toContain(
       "This packet is recommendation-only and cannot pass work into Merlin by itself.",
     );

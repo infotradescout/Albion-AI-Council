@@ -6,7 +6,7 @@
 - Squires gather information.
 - AI Council organizes, challenges, and prepares routes.
 - Knights approve or deny.
-- Merlin executes approved routes only.
+- Merlin executes routes only after Roundtable human authority is satisfied and Merlin eligibility checks pass.
 - Do not describe Albion as the OR.
 
 ## Routing Doctrine Primer
@@ -44,7 +44,7 @@ For decisions that require approval:
 - All 3 Knights must approve.
 - Any one Knight rejection blocks passage.
 - Blocked work returns for revision or human discussion.
-- No approved route goes to Merlin without Roundtable 3/3.
+- No route goes to Merlin eligibility review without Roundtable 3/3.
 
 ## High Court Composition
 - ChatGPT = High Court Chair/Clerk
@@ -72,7 +72,7 @@ Profile lifecycle rule:
 5. Scribe route summary and evidence packet assembled
 6. High Court advisory route review
 7. Roundtable mandate decision
-8. Merlin executes the approved route or rejects incomplete work back to Council/human review
+8. Merlin executes the Roundtable-authorized route or rejects incomplete work back to Council/human review
 
 ## Routing Laws (Founder Baseline)
 1. No destination = no route.

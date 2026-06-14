@@ -77,7 +77,7 @@ function renderRunListItem(
       <span class="run-title">${escapeHtml(item.run.destination)}</span>
       <span class="run-meta">${escapeHtml(item.run.kingdomId)} · ${escapeHtml(item.run.priority)} · ${escapeHtml(item.run.status)}</span>
       <span class="run-state ${item.merlinHandoffEligibility.eligible ? "ready" : "blocked"}">
-        ${item.merlinHandoffEligibility.eligible ? "Merlin ready" : `${blockers} blocker${blockers === 1 ? "" : "s"}`}
+        ${item.merlinHandoffEligibility.eligible ? "Merlin eligible" : `${blockers} blocker${blockers === 1 ? "" : "s"}`}
       </span>
     </a>
   `;

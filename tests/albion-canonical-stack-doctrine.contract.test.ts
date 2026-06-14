@@ -9,6 +9,14 @@ function readDoctrine(relativePath: string) {
   return readFileSync(resolve(repoRoot, relativePath), "utf8");
 }
 
+const currentDoctrinePaths = [
+  "docs/albion/ALBION_CONTROL_BIBLE.md",
+  "docs/albion/AUTHORITY_MATRIX.md",
+  "docs/albion/HIGH_COURT_LAW.md",
+  "docs/albion/MERLIN_OPERATIONAL_ROUTER.md",
+  "docs/albion/ROUNDTABLE_AUTHORITY.md",
+] as const;
+
 describe("Albion canonical stack doctrine", () => {
   it("locks the canonical Albion, Roundtable, AI Council, and Merlin stack", () => {
     const controlBible = readDoctrine("docs/albion/ALBION_CONTROL_BIBLE.md");
@@ -22,7 +30,9 @@ describe("Albion canonical stack doctrine", () => {
     expect(controlBible).toContain(
       "AI Council is the advisory frontier AI layer for planning, orchestration, objection, and drift prevention.",
     );
-    expect(controlBible).toContain("Merlin executes approved routes only.");
+    expect(controlBible).toContain(
+      "Merlin executes routes only after Roundtable human authority is satisfied and Merlin eligibility checks pass.",
+    );
   });
 
   it("keeps 3/3 law on Roundtable human authority rather than AI Council authority", () => {
@@ -49,5 +59,18 @@ describe("Albion canonical stack doctrine", () => {
     expect(modelGovernance).toContain(
       "The Council does not hold final authority, merge authority, policy authority, governance authority, or execution authority.",
     );
+  });
+
+  it("keeps active doctrine from using ambiguous Merlin approval shorthand", () => {
+    const activeDoctrine = currentDoctrinePaths
+      .map((path) => readDoctrine(path))
+      .join("\n");
+
+    expect(activeDoctrine).not.toContain("Merlin executes approved routes only");
+    expect(activeDoctrine).not.toContain("approved packet");
+    expect(activeDoctrine).toContain(
+      "Roundtable human authority is satisfied",
+    );
+    expect(activeDoctrine).toContain("Merlin eligibility");
   });
 });

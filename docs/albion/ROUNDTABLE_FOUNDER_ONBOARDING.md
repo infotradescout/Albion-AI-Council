@@ -74,7 +74,7 @@ Every material update must cite sourceRunId or sourceDecisionId.
 ## Preserved Albion Laws
 - Albion is the full Kingdom operating system.
 - Merlin is the OR / Operational Router inside Albion.
-- Merlin executes approved routes only.
+- Merlin executes routes only after Roundtable human authority is satisfied and Merlin eligibility checks pass.
 - Merlin cannot invent missing facts, approve final authority, or override Knights.
 - No packet, no action.
 - No evidence, no claim.

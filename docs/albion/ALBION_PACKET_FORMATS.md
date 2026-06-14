@@ -185,7 +185,7 @@ Fields:
 	- routeLawful
 	- checkpointsPassed
 	- kingdomIsolationPreserved
-	- approvedForMerlin
+	- approvedForMerlin (legacy field meaning Roundtable human authority and Merlin eligibility gates are satisfied)
 - evidence[]
 
 Authority rule:
@@ -431,7 +431,7 @@ Required fields:
 
 ## Packet Law
 - No packet, no action.
-- No approved output to Merlin without valid Roundtable mandate when approval is required.
+- No output proceeds to Merlin without valid Roundtable human authority when approval is required.
 - No packet claim is valid without evidence entries.
 - No Knight role assumption is valid without onboarding profile packets.
 - No material recommendation, approval request, or execution route proceeds without a complete consequenceForecast.
