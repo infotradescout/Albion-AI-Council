@@ -1,7 +1,10 @@
 # Albion Control Bible
 
 ## Realm Separation
+- Albion defines the law. Roundtable holds human authority. AI Council advises and objects. Merlin transports and executes only after authority is satisfied.
 - Albion is the full Kingdom operating system.
+- Roundtable is the human authority layer for Knights, dispatch, human input, and future human-facing output.
+- AI Council is the advisory frontier AI layer for planning, orchestration, objection, and drift prevention.
 - Merlin is the OR / Operational Router inside Albion.
 - Squires gather information.
 - AI Council organizes, challenges, and prepares routes.
@@ -271,6 +274,7 @@ Albion should use a route library before creating net-new routes:
 
 ## Final Authority
 - Final approval authority belongs to The Roundtable, not the AI High Court.
+- Roundtable 3/3 is human authority held by the three Knights, not AI Council authority.
 - Albion has exactly 3 Knights in the founder/Roundtable layer:
   - Thomas = Gawain
   - Levon = Lancelot

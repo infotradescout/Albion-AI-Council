@@ -55,7 +55,7 @@ Changing models must never affect:
 
 ## AI Council
 
-The Albion Council exists as a persistent governance system.
+The AI Council is the advisory frontier AI layer: ChatGPT, Gemini, and Claude frontier models used by the Knights for planning, orchestration, objection, drift prevention, and route preparation.
 
 The Council evaluates:
 
@@ -70,11 +70,15 @@ The Council may recommend.
 
 The Council may not self-authorize.
 
+The Council does not hold final authority, merge authority, policy authority, governance authority, or execution authority.
+
 ## Human Authority
 
-Human authority is final.
+Roundtable human authority is final.
 
 All execution authority originates from a human decision-maker.
+
+The 3/3 law belongs to Roundtable as human authority, not to the AI Council.
 
 AI may advise.
 

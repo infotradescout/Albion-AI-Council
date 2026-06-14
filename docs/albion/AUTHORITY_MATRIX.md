@@ -3,6 +3,8 @@
 ## Purpose
 The Authority Matrix determines who can approve what, and when Roundtable 3/3 is mandatory.
 
+Albion defines the law. Roundtable holds human authority. AI Council advises and objects. Merlin transports and executes only after authority is satisfied.
+
 ## Authority Field Shape
 - approvalRequired
 - approvalLevel: single_sponsor | roundtable_3_of_3
@@ -40,6 +42,7 @@ Single sponsor or 2/3 authority is never sufficient for AI-related decisions.
 
 ## AI Unanimity Law
 - Any decision that changes, authorizes, delegates, deploys, or materially directs AI behavior requires Roundtable 3/3.
+- Roundtable 3/3 is human Knight authority, not AI Council authority.
 - The AI Council advises, challenges, prepares options, and records consequence forecasts before the Roundtable decides.
 - All Knights must approve before AI work can pass to Merlin or any executing agent.
 - Approved AI work must execute through the appropriate agents, guilds, or routers; no single actor may unilaterally bypass the Council, Roundtable, or Merlin route.

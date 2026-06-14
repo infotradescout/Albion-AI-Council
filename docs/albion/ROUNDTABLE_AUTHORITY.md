@@ -2,6 +2,8 @@
 
 ## Supreme Approval Authority
 - The Roundtable is the sole final approval authority for Albion decisions that require approval.
+- Roundtable is the human authority layer for the three Knights, dispatch, human input, and future human-facing output.
+- Albion defines the law. Roundtable holds human authority. AI Council advises and objects. Merlin transports and executes only after authority is satisfied.
 - The High Court is advisory and does not have final pass power.
 
 ## Knights (Exact and Exclusive)
@@ -43,6 +45,7 @@ No additional founder/Roundtable Knight seats are active.
 
 ## AI Unanimity Law
 - AI-related decisions always require Roundtable 3/3 unanimous approval.
+- The 3/3 law belongs to Roundtable as human authority, not to the AI Council.
 - This includes AI strategy, AI agent behavior, AI authority, AI execution, AI safety, and AI-governance changes.
 - Individual Knight authority and 2/3 approval are not valid for AI-related decisions.
 - The AI Council must advise, challenge, prepare route options, and surface consequence forecasts before the Roundtable decides.

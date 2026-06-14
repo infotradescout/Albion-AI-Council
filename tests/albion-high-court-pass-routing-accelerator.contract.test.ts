@@ -58,14 +58,14 @@ describe("High Court unconditional PASS routing accelerator doctrine", () => {
     const section = acceleratorSection();
 
     expect(section).toContain("routing accelerator only");
-    expect(section).toContain("no merge, policy, or governance approval rights");
+    expect(section).toContain("no merge, policy, governance approval, or execution rights");
   });
 
-  it("does not bypass Roundtable 3/3 or AI Council validation requirements", () => {
+  it("does not bypass Roundtable human 3/3 or AI Council advisory validation requirements", () => {
     const section = acceleratorSection();
 
-    expect(section).toContain("Unanimous Roundtable (3/3)");
-    expect(section).toContain("AI Council validation requirements remain absolute");
+    expect(section).toContain("Unanimous Roundtable (3/3) human authority");
+    expect(section).toContain("AI Council advisory validation requirements remain absolute");
   });
 
   it("does not grant Merlin execution authority", () => {
