@@ -7,6 +7,13 @@
   line-height: 1.5;
 }
 
+html,
+body,
+#app {
+  width: 100%;
+  max-width: 100%;
+}
+
 * {
   box-sizing: border-box;
 }
@@ -15,18 +22,37 @@ body {
   margin: 0;
   min-width: 320px;
   min-height: 100vh;
+  overflow-x: hidden;
 }
 
 a {
   color: inherit;
 }
 
+h1,
+h2,
+h3,
+p,
+span,
+strong,
+dt,
+dd,
+li {
+  max-width: 100%;
+  overflow-wrap: anywhere;
+  word-break: break-word;
+}
+
 .surface-shell {
+  width: 100%;
   min-height: 100vh;
+  max-width: 100%;
+  overflow-x: hidden;
 }
 
 .surface-band {
   width: 100%;
+  max-width: 100%;
   padding: 28px clamp(18px, 4vw, 48px);
 }
 
@@ -97,9 +123,17 @@ h3 {
   grid-template-columns: minmax(260px, 360px) minmax(0, 1fr);
   gap: 0;
   min-height: calc(100vh - 117px);
+  min-width: 0;
+}
+
+.surface-grid > * {
+  min-width: 0;
 }
 
 .run-list {
+  width: 100%;
+  min-width: 0;
+  max-width: 100%;
   border-right: 1px solid #d8ded6;
   background: #eef2ed;
 }
@@ -117,10 +151,19 @@ h3 {
 
 .run-list-item {
   display: grid;
+  grid-template-columns: minmax(0, 1fr);
   gap: 8px;
+  width: 100%;
+  min-width: 0;
+  max-width: 100%;
   padding: 16px 20px;
   border-top: 1px solid #d8ded6;
   text-decoration: none;
+}
+
+.run-list-item > * {
+  min-width: 0;
+  max-width: 100%;
 }
 
 .run-list-item.active {
@@ -129,17 +172,26 @@ h3 {
 }
 
 .run-title {
+  display: block;
+  min-width: 0;
+  overflow-wrap: anywhere;
   font-weight: 800;
   line-height: 1.2;
 }
 
 .run-meta {
+  display: block;
+  min-width: 0;
+  overflow-wrap: anywhere;
   color: #5f6e64;
   font-size: 0.86rem;
 }
 
 .run-state {
+  display: block;
+  max-width: 100%;
   width: fit-content;
+  overflow-wrap: anywhere;
 }
 
 .run-state.ready,
@@ -157,7 +209,9 @@ h3 {
 }
 
 .run-detail {
+  width: 100%;
   min-width: 0;
+  max-width: 100%;
   padding: 28px clamp(18px, 4vw, 44px);
 }
 
@@ -169,12 +223,22 @@ h3 {
   margin-bottom: 24px;
 }
 
+.detail-header > div {
+  min-width: 0;
+}
+
+.detail-header h2 {
+  overflow-wrap: anywhere;
+}
+
 .detail-sections {
   display: grid;
   gap: 18px;
+  min-width: 0;
 }
 
 .detail-section {
+  min-width: 0;
   padding: 18px;
   border: 1px solid #d8ded6;
   border-radius: 8px;
@@ -185,6 +249,12 @@ h3 {
   display: grid;
   grid-template-columns: minmax(220px, 0.7fr) minmax(0, 1fr);
   gap: 18px;
+}
+
+.detail-section.split > div,
+.fact-grid > div,
+.vote {
+  min-width: 0;
 }
 
 .fact-grid {
@@ -294,6 +364,7 @@ dd {
 pre {
   overflow: auto;
   margin: 0;
+  max-width: 100%;
   max-height: 260px;
   padding: 14px;
   border-radius: 8px;
@@ -318,6 +389,15 @@ pre {
   .fact-grid,
   .vote-grid {
     grid-template-columns: 1fr;
+  }
+
+  .run-list-item {
+    display: block;
+    white-space: normal;
+  }
+
+  .run-list-item > * + * {
+    margin-top: 8px;
   }
 
   .run-list {
