@@ -6,6 +6,7 @@ import {
   renderPrivateCommandSurface,
 } from "../src/albion/privateCommandSurface";
 import { buildPrivateCommandSurfaceRuns } from "../src/albion/privateCommandSurfaceData";
+import { escapeHtml } from "../src/albion/shared/escapeHtml";
 import { currentRunIdFromLocation } from "../src/main";
 
 describe("Albion OS private command surface read model", () => {
@@ -113,6 +114,18 @@ describe("Albion OS private command surface read model", () => {
 });
 
 describe("Albion OS private command surface rendering", () => {
+  it("keeps the shared HTML escape helper bit-for-bit equivalent", () => {
+    expect(escapeHtml(`Albion & <Roundtable> "Merlin" 'Gawain'`)).toBe(
+      "Albion &amp; &lt;Roundtable&gt; &quot;Merlin&quot; &#039;Gawain&#039;",
+    );
+    expect(escapeHtml("&amp;<tag attr=\"value\">'")).toBe(
+      "&amp;amp;&lt;tag attr=&quot;value&quot;&gt;&#039;",
+    );
+    expect(escapeHtml("No reserved HTML characters")).toBe(
+      "No reserved HTML characters",
+    );
+  });
+
   it("parses both hash run links and generated app run URLs", () => {
     expect(
       currentRunIdFromLocation({

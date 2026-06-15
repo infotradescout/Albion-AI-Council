@@ -2,6 +2,7 @@ import {
   buildPrivateCommandSurfaceRuns,
   type PrivateCommandSurfaceRun,
 } from "./privateCommandSurfaceData";
+import { escapeHtml } from "./shared/escapeHtml";
 
 export interface PrivateCommandSurfaceState {
   activeRunId: string;
@@ -224,13 +225,4 @@ function renderBlockers(blockers: string[]): string {
       ${blockers.map((blocker) => `<li>${escapeHtml(blocker)}</li>`).join("")}
     </ul>
   `;
-}
-
-function escapeHtml(value: string): string {
-  return value
-    .replaceAll("&", "&amp;")
-    .replaceAll("<", "&lt;")
-    .replaceAll(">", "&gt;")
-    .replaceAll('"', "&quot;")
-    .replaceAll("'", "&#039;");
 }
