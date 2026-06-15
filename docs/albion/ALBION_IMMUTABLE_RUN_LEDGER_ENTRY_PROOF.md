@@ -57,7 +57,7 @@ Fields:
 - `approvals.Lancelot`
 - `approvals.Percival`
 - `mandateStatus`
-- `approvedForMerlin`
+- `approvedForMerlin` (legacy field meaning Roundtable human authority and Merlin eligibility gates are satisfied)
 - `highCourtAdvisoryOnly`: must be `true`
 
 Authority rules:
@@ -68,7 +68,7 @@ Authority rules:
   - `authoritySource = roundtable_3_of_3`
   - `approvalLevel = roundtable_3_of_3`
   - `mandateStatus = passed_3_of_3`
-  - `approvedForMerlin = true`
+  - `approvedForMerlin = true` as a Roundtable-backed Merlin eligibility signal
   - `approvals.Gawain = approve`
   - `approvals.Lancelot = approve`
   - `approvals.Percival = approve`

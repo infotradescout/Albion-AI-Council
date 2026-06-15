@@ -5,7 +5,7 @@
 - Working repo label: AI Council
 
 ## Repo Doctrine
-Albion AI Council is the doctrine, governance, packet, and local execution surface for Albion. Albion is the full Kingdom operating system. Merlin is the Operational Router inside Albion and executes approved routes only.
+Albion AI Council is the doctrine, governance, packet, and local execution surface for Albion. Albion is the full Kingdom operating system. Merlin is the Operational Router inside Albion and executes routes only after Roundtable human authority is satisfied and Merlin eligibility checks pass.
 
 Core doctrine for this repo:
 - Preserve Albion authority boundaries.
@@ -13,10 +13,12 @@ Core doctrine for this repo:
 - The High Court remains strictly advisory and holds no execution or blocking authority.
 - Preserve brand and Kingdom isolation.
 - Preserve evidence law: no evidence, no claim; no test artifact, no test pass claim.
+- Preserve Zachary's QA-first workflow: QA current UX, fix broken behavior, perform DRY/SRP cleanup, re-QA, then add new features.
 - Keep product behavior changes separate from operating-doc or governance-document slices unless explicitly assigned.
 
 ## Safe Parallel Lanes
 - operating-docs: repo operating docs, lane definitions, return formats, and non-product process documentation.
+- qa-dry-release-gate: QA, bug-report, release-gate, and DRY/SRP templates or rules only; no runtime refactor or product behavior changes.
 - albion-doctrine-docs: Albion doctrine documents under `docs/albion/`.
 - packet-contracts: packet shape contracts and contract tests for Albion packets.
 - run-ledger: run ledger data structures, tests, and documentation.
@@ -50,6 +52,7 @@ Examples:
 
 ## Lane-Specific Allowed Files
 - operating-docs: `docs/AI_PARALLEL_EXECUTION.md`, `docs/REPO_LANES.md`, and other repo-level process docs under `docs/` when assigned.
+- qa-dry-release-gate: `docs/QA_DRY_RELEASE_GATE.md`, `docs/templates/**`, and `docs/REPO_LANES.md` when assigned.
 - albion-doctrine-docs: `docs/albion/**/*.md` and `docs/albion/**/*.json` when assigned.
 - packet-contracts: `tests/*.contract.test.ts`, packet format docs under `docs/albion/`, and directly related `src/albion/*` contract types when assigned.
 - run-ledger: `src/albion/albionRunLedger.ts`, `tests/albion-run-ledger.test.ts`, and directly related docs.
@@ -61,6 +64,7 @@ Examples:
 
 ## Lane-Specific Banned Files
 - operating-docs: banned from changing `src/**`, `tests/**`, package files, generated output, or product copy.
+- qa-dry-release-gate: banned from changing `src/**`, `tests/**`, package files, generated output, runtime behavior, product copy, or schemas.
 - albion-doctrine-docs: banned from changing `src/**`, `tests/**`, package files, or generated output unless explicitly assigned.
 - packet-contracts: banned from unrelated UI shell files, unrelated doctrine rewrites, and package files unless validation tooling is assigned.
 - run-ledger: banned from private command surface files, frontend shell files, and unrelated packet contracts.

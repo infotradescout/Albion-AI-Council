@@ -231,7 +231,7 @@ Rule:
 
 ## 11) Follow-Through Monitor
 
-If approved work is not followed through, output:
+If Roundtable-authorized work is not followed through, output:
 
 ```text
 Open commitment debt detected.

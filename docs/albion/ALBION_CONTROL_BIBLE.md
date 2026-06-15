@@ -1,23 +1,26 @@
 # Albion Control Bible
 
 ## Realm Separation
+- Albion defines the law. Roundtable holds human authority. AI Council advises and objects. Merlin transports and executes only after authority is satisfied.
 - Albion is the full Kingdom operating system.
+- Roundtable is the human authority layer for Knights, dispatch, human input, and future human-facing output.
+- AI Council is the advisory frontier AI layer for planning, orchestration, objection, and drift prevention.
 - Merlin is the OR / Operational Router inside Albion.
 - Squires gather information.
 - AI Council organizes, challenges, and prepares routes.
 - Knights approve or deny.
-- Merlin executes approved routes only.
+- Merlin executes routes only after Roundtable human authority is satisfied and Merlin eligibility checks pass.
 - Do not describe Albion as the OR.
 
 ## Dispatch Tower
-Dispatch Tower is Albion's first route-classification gate before approved work can reach Merlin.
+Dispatch Tower is Albion's first route-classification gate before Roundtable-authorized work can reach Merlin eligibility review.
 
 Flow:
 1. Input enters Albion Dispatch Tower.
 2. Dispatch classifies input type and required route depth.
 3. Squires and AI Council gather information, challenge assumptions, and prepare route options.
 4. Knights approve or deny when authority is required.
-5. Merlin receives only approved complete routes for execution.
+5. Merlin receives only complete routes after Roundtable human authority is satisfied and Merlin eligibility checks pass.
 
 Dispatch categories:
 - answer_only
@@ -33,7 +36,7 @@ Dispatch categories:
 - blocked_or_ambiguous
 
 ## Routing Doctrine
-Merlin routes approved work through Google Maps-style execution logic:
+Merlin routes Roundtable-authorized work through Google Maps-style execution logic:
 1. Define Destination.
 2. Verify Current Location.
 3. Compare Route Options.
@@ -113,7 +116,7 @@ Required path:
 1. Squires and AI Council gather evidence, challenge assumptions, prepare options, and forecast consequences.
 2. The High Court provides advisory review when approval is required.
 3. The Roundtable decides by 3/3 unanimous approval.
-4. Merlin routes only the approved work.
+4. Merlin routes only work backed by satisfied Roundtable human authority.
 5. Execution proceeds through the appropriate agents, guilds, or routers.
 
 Prohibited paths:
@@ -212,7 +215,7 @@ Every route sent to Merlin must include:
 - Decision
 - Destination
 - Current Location
-- Approved route
+- Roundtable-authorized route when authority is required
 - Evidence
 - Consequence forecast
 - Roadblocks
@@ -271,6 +274,7 @@ Albion should use a route library before creating net-new routes:
 
 ## Final Authority
 - Final approval authority belongs to The Roundtable, not the AI High Court.
+- Roundtable 3/3 is human authority held by the three Knights, not AI Council authority.
 - Albion has exactly 3 Knights in the founder/Roundtable layer:
   - Thomas = Gawain
   - Levon = Lancelot
@@ -285,7 +289,7 @@ Albion should use a route library before creating net-new routes:
   - Percival approve
 - Any single Knight rejection blocks passage.
 - Blocked items return for revision or human discussion.
-- No approved route goes to Merlin without Roundtable 3/3 when approval is required.
+- No route goes to Merlin eligibility review without Roundtable 3/3 when approval is required.
 - No AI-related route goes to Merlin or any executing agent without Roundtable 3/3.
 
 ## Court Specialist Review
@@ -320,7 +324,7 @@ Albion should use a route library before creating net-new routes:
   - routeLawful
   - checkpointsPassed
   - kingdomIsolationPreserved
-  - approvedForMerlin
+  - approvedForMerlin (legacy field meaning Roundtable human authority and Merlin eligibility gates are satisfied)
 
 ## Preserved Albion Laws
 - No packet, no action.
@@ -332,5 +336,5 @@ Albion should use a route library before creating net-new routes:
 - No Scribe votes or deploys.
 - Albion is the full Kingdom operating system.
 - Merlin is the OR / Operational Router inside Albion.
-- Merlin executes approved routes only.
+- Merlin executes routes only after Roundtable human authority is satisfied and Merlin eligibility checks pass.
 - Merlin cannot invent missing facts, approve final authority, or override Knights.

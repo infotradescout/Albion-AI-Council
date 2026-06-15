@@ -3,7 +3,7 @@
 ## Purpose
 Albion is the full Kingdom operating system. Merlin is the OR / Operational Router inside Albion.
 
-Merlin executes approved work like Google Maps routing:
+Merlin executes Roundtable-authorized work like Google Maps routing:
 - define the destination
 - verify the current location
 - map route options
@@ -14,7 +14,7 @@ Merlin executes approved work like Google Maps routing:
 - reroute when blocked
 - prove arrival
 
-Routing starts only after Dispatch Tower classification. Merlin executes only after the route is complete and approved.
+Routing starts only after Dispatch Tower classification. Merlin executes only after the route is complete, Roundtable human authority is satisfied where required, and Merlin eligibility checks pass.
 
 ## Routing Terms
 - Destination = end goal and desired state
@@ -79,7 +79,7 @@ Blocking rule:
 8. Scribe records route summary and evidence.
 9. High Court performs advisory route-lawfulness review when required.
 10. Roundtable issues final mandate when required by authority level.
-11. Merlin executes the approved route or rejects incomplete work back to Council/human review.
+11. Merlin executes the Roundtable-authorized route or rejects incomplete work back to Council/human review.
 
 ## Route Depth Model
 - Depth 0: Merlin answers directly (no Albion run)
@@ -105,7 +105,7 @@ If route prerequisites fail, Albion must return a no-run state:
 - No route may violate Kingdom isolation law.
 - No route may proceed without packet evidence.
 - No route may proceed without required consequence forecast.
-- No route may proceed to Merlin without required approval.
+- No route may proceed to Merlin without required Roundtable human authority.
 
 ## Authority Alignment
 - High Court is advisory only.

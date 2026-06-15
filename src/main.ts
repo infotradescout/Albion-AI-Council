@@ -4,12 +4,24 @@ import {
 } from "./albion/privateCommandSurface";
 import "./styles.css";
 
-const root = document.querySelector<HTMLDivElement>("#app");
+export function currentRunIdFromLocation(input: {
+  hash: string;
+  pathname: string;
+}): string | undefined {
+  const hashMatch = input.hash.match(/^#\/runs\/([^/]+)$/);
 
-function currentRunIdFromHash(): string | undefined {
-  const match = window.location.hash.match(/^#\/runs\/([^/]+)$/);
-  return match?.[1] ? decodeURIComponent(match[1]) : undefined;
+  if (hashMatch?.[1]) {
+    return decodeURIComponent(hashMatch[1]);
+  }
+
+  const pathMatch = input.pathname.match(/^\/runs\/([^/]+)$/);
+
+  return pathMatch?.[1] ? decodeURIComponent(pathMatch[1]) : undefined;
 }
+
+const root = typeof document === "undefined"
+  ? undefined
+  : document.querySelector<HTMLDivElement>("#app");
 
 function render(): void {
   if (!root) {
@@ -18,11 +30,14 @@ function render(): void {
 
   const state = createPrivateCommandSurfaceState({
     appBaseUrl: window.location.origin,
-    activeRunId: currentRunIdFromHash(),
+    activeRunId: currentRunIdFromLocation(window.location),
   });
 
   root.innerHTML = renderPrivateCommandSurface(state);
 }
 
-window.addEventListener("hashchange", render);
-render();
+if (typeof window !== "undefined") {
+  window.addEventListener("hashchange", render);
+  window.addEventListener("popstate", render);
+  render();
+}

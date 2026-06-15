@@ -13,7 +13,7 @@ P4-P8 governance status (current):
 - P8: Revocation + Review History Contract enforces latest-valid-review eligibility with deterministic history and revocation tracking.
 
 Core flow:
-Intake -> Dispatch classification -> Packet checklist -> Evidence and consequence forecast -> High Court advisory review when required -> Roundtable approval when required -> Merlin handoff only after approval.
+Intake -> Dispatch classification -> Packet checklist -> Evidence and consequence forecast -> High Court advisory review when required -> Roundtable approval when required -> Merlin handoff only after Roundtable human authority is satisfied and eligibility checks pass.
 
 Governance chain:
 Queue Replay -> Evidence Packet -> Deterministic Snapshot -> Export Handoff Preview -> Export Review Contract -> Revocation + Review History Contract
@@ -25,7 +25,7 @@ Build the minimum reliable operating path that can:
 - prepare agent coordination packets without executing AI agents
 - track evidence and approval state
 - alert through Discord without making Discord the approval authority
-- generate Merlin handoff eligibility only for approved complete routes
+- generate Merlin handoff eligibility only for complete routes backed by Roundtable human authority when required
 
 ## Canonical Doctrine Baseline
 Canonical doctrine files:
@@ -40,7 +40,7 @@ Hard doctrine preserved:
 - AI-related decisions require Gawain + Lancelot + Percival unanimous 3/3 approval.
 - High Court is advisory only and cannot approve work.
 - Discord cannot be the primary approval authority.
-- Merlin receives only approved complete routes.
+- Merlin receives only complete routes after Roundtable human authority is satisfied and eligibility checks pass.
 - The MVP coordinates AI agents through packets, prompts, assignments, status, and evidence, but does not directly execute AI agents.
 
 ## Operating Architecture
@@ -48,7 +48,7 @@ Hard doctrine preserved:
 - Google Sheets is the MVP structured operating ledger/source of truth for runs, approvals, statuses, blockers, and audit rows.
 - Google Drive is the evidence vault for packet exports, artifacts, screenshots, reports, generated docs, and final Merlin handoffs.
 - Discord sends alerts and command pings only.
-- Merlin is the downstream execution recipient only after approved complete handoff gates pass.
+- Merlin is the downstream execution recipient only after Roundtable human authority and complete handoff gates pass.
 
 ## MVP Interfaces
 Primary MVP interfaces:
@@ -104,7 +104,7 @@ The first slice uses deterministic local functions and tests only. It does not c
 ### MerlinHandoffs
 - runId
 - status
-- approvedForMerlin
+- approvedForMerlin (legacy field meaning Roundtable human authority and Merlin eligibility gates are satisfied)
 - handoffDriveUrl
 - responseType
 
@@ -124,7 +124,7 @@ Drive folder plan for each run:
 5. Prepare High Court advisory packet when required.
 6. Send Roundtable approval request when required.
 7. Require unanimous 3/3 for AI-related or other major decisions.
-8. Produce Merlin handoff only when mandateStatus is passed_3_of_3 and approvedForMerlin is true.
+8. Produce Merlin handoff only when mandateStatus is passed_3_of_3 and approvedForMerlin is true as a Roundtable-backed eligibility signal.
 9. Record blocked, needs_revision, reroute_required, or human_discussion_required when approval fails.
 
 ## Discord Integration
@@ -132,7 +132,7 @@ Discord is used for:
 - intake confirmations
 - approval-needed alerts
 - blocked-route alerts
-- Merlin-ready notifications
+- Merlin eligibility notifications
 - links back to the app run detail page
 
 Discord is not used as the primary approval authority in the MVP.
@@ -149,7 +149,7 @@ Merlin handoff is allowed only when:
 - no Knight rejection is active
 - High Court output is advisory only
 
-No approved mandate means no Merlin handoff.
+No Roundtable-backed mandate means no Merlin handoff when approval is required.
 
 ## P7 Governance Export Review Contract
 Purpose:

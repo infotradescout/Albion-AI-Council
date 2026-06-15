@@ -32,7 +32,7 @@ Required fields:
   - high_court_recommendation_packet_v1
   - roundtable_mandate_v1
   - albion_action_manifest_v1
-- Merlin receives approved route outcome reporting through Albion output packets.
+- Merlin receives Roundtable-authorized route outcome reporting through Albion output packets.
 - Merlin rejects incomplete routes and sends them back to Council or human review.
 
 ## Preserved Constraints

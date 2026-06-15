@@ -74,7 +74,7 @@ No approval = no execution.
 - Squires gather information.
 - AI Council organizes, challenges, and prepares routes.
 - Knights approve or deny.
-- Merlin executes approved routes only.
+- Merlin executes routes only after Roundtable human authority is satisfied and Merlin eligibility checks pass.
 - Merlin rejects incomplete routes and sends them back to Council or human review.
 - Merlin cannot invent missing facts, approve final authority, or override Knights.
 - No packet = no action.

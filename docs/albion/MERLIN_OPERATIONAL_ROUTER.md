@@ -6,22 +6,22 @@
 - Squires = gather information.
 - AI Council = organizes, challenges, and prepares routes.
 - Knights = approve or deny.
-- Merlin = executes approved routes only.
+- Merlin = executes routes only after Roundtable human authority is satisfied and Merlin eligibility checks pass.
 
 Do not describe Albion as the OR. Albion is the operating system. Merlin is the Operational Router.
 
 ## Merlin Definition
-Merlin is the Operational Router: it receives approved routes, checks destination/current-state/evidence/approval completeness, executes only when the route is complete, and rejects or reroutes incomplete work.
+Merlin is the Operational Router: it receives Roundtable-authorized routes, checks destination/current-state/evidence/authority completeness, executes only when the route is complete and eligible, and rejects or reroutes incomplete work.
 
 Merlin does not invent the destination, approve the mission, or override the Knights.
 
 ## Route Logic
-Merlin routes approved work from current reality to target outcome using Google Maps-style execution logic:
+Merlin routes Roundtable-authorized work from current reality to target outcome using Google Maps-style execution logic:
 
 Destination -> Current Location -> Route -> Roadblocks -> Consequence Forecast -> Checkpoints -> Reroute Rules -> Arrival Proof
 
 ## Consequence Forecast Gate
-Merlin rejects approved routes that lack a complete consequence forecast.
+Merlin rejects Roundtable-authorized routes that lack a complete consequence forecast.
 
 Required visibility before execution:
 - expected outcome

@@ -1,9 +1,12 @@
 import { describe, expect, it } from "vitest";
+import { readFileSync } from "node:fs";
+import { resolve } from "node:path";
 import {
   createPrivateCommandSurfaceState,
   renderPrivateCommandSurface,
 } from "../src/albion/privateCommandSurface";
 import { buildPrivateCommandSurfaceRuns } from "../src/albion/privateCommandSurfaceData";
+import { currentRunIdFromLocation } from "../src/main";
 
 describe("Albion OS private command surface read model", () => {
   const runs = buildPrivateCommandSurfaceRuns({
@@ -110,6 +113,27 @@ describe("Albion OS private command surface read model", () => {
 });
 
 describe("Albion OS private command surface rendering", () => {
+  it("parses both hash run links and generated app run URLs", () => {
+    expect(
+      currentRunIdFromLocation({
+        hash: "#/runs/tradescout-public-copy-002",
+        pathname: "/",
+      }),
+    ).toBe("tradescout-public-copy-002");
+    expect(
+      currentRunIdFromLocation({
+        hash: "",
+        pathname: "/runs/tradescout-public-copy-002",
+      }),
+    ).toBe("tradescout-public-copy-002");
+    expect(
+      currentRunIdFromLocation({
+        hash: "#/runs/tradescout-public-copy-002",
+        pathname: "/runs/albion-ai-governance-001",
+      }),
+    ).toBe("tradescout-public-copy-002");
+  });
+
   it("renders run list, run detail, approvals, handoff, and previews", () => {
     const html = renderPrivateCommandSurface(
       createPrivateCommandSurfaceState({
@@ -140,5 +164,15 @@ describe("Albion OS private command surface rendering", () => {
     expect(html).toContain("Queued Packets");
     expect(html).toContain("Replay Preview");
     expect(html).toContain("/Albion OS/Runs/tradescout-public-copy-002/evidence");
+  });
+
+  it("keeps audited layout surfaces constrained against page overflow", () => {
+    const styles = readFileSync(resolve("src/styles.css"), "utf8");
+
+    expect(styles).toContain("overflow-x: hidden;");
+    expect(styles).toContain(".surface-grid");
+    expect(styles).toContain("min-width: 0;");
+    expect(styles).toContain("overflow-wrap: anywhere;");
+    expect(styles).toContain("max-width: 100%;");
   });
 });

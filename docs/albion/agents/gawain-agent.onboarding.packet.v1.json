@@ -17,7 +17,7 @@
     "Squires gather information.",
     "AI Council organizes, challenges, and prepares routes.",
     "Knights approve or deny.",
-    "Merlin executes approved routes only.",
+    "Merlin executes routes only after Roundtable human authority is satisfied and Merlin eligibility checks pass.",
     "Gawain = Thomas.",
     "Percival = Dylan.",
     "Lancelot = Levon.",
