@@ -5,6 +5,7 @@ import {
   createPrivateCommandSurfaceState,
   renderPrivateCommandSurface,
 } from "../src/albion/privateCommandSurface";
+import { currentRunIdFromLocation as sharedCurrentRunIdFromLocation } from "../src/albion/shared/currentRunIdFromLocation";
 import { buildPrivateCommandSurfaceRuns } from "../src/albion/privateCommandSurfaceData";
 import { escapeHtml } from "../src/albion/shared/escapeHtml";
 import { currentRunIdFromLocation } from "../src/main";
@@ -114,6 +115,21 @@ describe("Albion OS private command surface read model", () => {
 });
 
 describe("Albion OS private command surface rendering", () => {
+  const legacyCurrentRunIdFromLocation = (input: {
+    hash: string;
+    pathname: string;
+  }): string | undefined => {
+    const hashMatch = input.hash.match(/^#\/runs\/([^/]+)$/);
+
+    if (hashMatch?.[1]) {
+      return decodeURIComponent(hashMatch[1]);
+    }
+
+    const pathMatch = input.pathname.match(/^\/runs\/([^/]+)$/);
+
+    return pathMatch?.[1] ? decodeURIComponent(pathMatch[1]) : undefined;
+  };
+
   it("keeps the shared HTML escape helper bit-for-bit equivalent", () => {
     expect(escapeHtml(`Albion & <Roundtable> "Merlin" 'Gawain'`)).toBe(
       "Albion &amp; &lt;Roundtable&gt; &quot;Merlin&quot; &#039;Gawain&#039;",
@@ -124,6 +140,85 @@ describe("Albion OS private command surface rendering", () => {
     expect(escapeHtml("No reserved HTML characters")).toBe(
       "No reserved HTML characters",
     );
+  });
+
+  it("keeps the shared currentRunIdFromLocation helper bit-for-bit equivalent", () => {
+    const extremeRunId = "r".repeat(512);
+    const cases: Array<{
+      label: string;
+      input: { hash: string; pathname: string };
+    }> = [
+      {
+        label: "null hash throws",
+        input: { hash: null as unknown as string, pathname: "/" },
+      },
+      {
+        label: "undefined hash throws",
+        input: { hash: undefined as unknown as string, pathname: "/" },
+      },
+      {
+        label: "empty string returns undefined",
+        input: { hash: "", pathname: "" },
+      },
+      {
+        label: "leading whitespace is preserved and unmatched",
+        input: { hash: " #/runs/run-001", pathname: "/" },
+      },
+      {
+        label: "trailing whitespace in pathname is preserved",
+        input: { hash: "", pathname: "/runs/run-001%20" },
+      },
+      {
+        label: "leading and trailing whitespace decode is preserved",
+        input: { hash: "#/runs/%20run-001%20", pathname: "/" },
+      },
+      {
+        label: "standard hash route",
+        input: { hash: "#/runs/tradescout-public-copy-002", pathname: "/" },
+      },
+      {
+        label: "mixed case route id",
+        input: { hash: "#/runs/Mixed-Case-Run", pathname: "/" },
+      },
+      {
+        label: "extreme long run id",
+        input: { hash: `#/runs/${extremeRunId}`, pathname: "/" },
+      },
+      {
+        label: "special characters decode",
+        input: {
+          hash: "",
+          pathname: `/runs/${encodeURIComponent(`run & <tag> "quote" 'apostrophe'`)}`,
+        },
+      },
+      {
+        label: "hash route keeps precedence over pathname",
+        input: {
+          hash: "#/runs/hash-precedence",
+          pathname: "/runs/path-fallback",
+        },
+      },
+    ];
+
+    for (const testCase of cases) {
+      const legacyCall = () => legacyCurrentRunIdFromLocation(testCase.input);
+      const sharedCall = () => sharedCurrentRunIdFromLocation(testCase.input);
+
+      try {
+        const legacyResult = legacyCall();
+
+        expect(sharedCall(), testCase.label).toBe(legacyResult);
+        expect(currentRunIdFromLocation(testCase.input), testCase.label).toBe(
+          legacyResult,
+        );
+      } catch (error) {
+        expect(sharedCall, testCase.label).toThrow(error);
+        expect(
+          () => currentRunIdFromLocation(testCase.input),
+          testCase.label,
+        ).toThrow(error);
+      }
+    }
   });
 
   it("parses both hash run links and generated app run URLs", () => {
