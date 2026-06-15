@@ -9,6 +9,7 @@ import { currentRunIdFromLocation as sharedCurrentRunIdFromLocation } from "../s
 import { buildPrivateCommandSurfaceRuns } from "../src/albion/privateCommandSurfaceData";
 import { escapeHtml } from "../src/albion/shared/escapeHtml";
 import { renderBlockers as sharedRenderBlockers } from "../src/albion/shared/renderBlockers";
+import { renderFact as sharedRenderFact } from "../src/albion/shared/renderFact";
 import { currentRunIdFromLocation } from "../src/main";
 
 describe("Albion OS private command surface read model", () => {
@@ -140,6 +141,15 @@ describe("Albion OS private command surface rendering", () => {
     <ul class="blocker-list">
       ${blockers.map((blocker) => `<li>${escapeHtml(blocker)}</li>`).join("")}
     </ul>
+  `;
+  };
+
+  const legacyRenderFact = (label: string, value: string): string => {
+    return `
+    <div>
+      <dt>${escapeHtml(label)}</dt>
+      <dd>${escapeHtml(value)}</dd>
+    </div>
   `;
   };
 
@@ -289,6 +299,73 @@ describe("Albion OS private command surface rendering", () => {
     for (const testCase of cases) {
       const legacyCall = () => legacyRenderBlockers(testCase.input);
       const sharedCall = () => sharedRenderBlockers(testCase.input);
+
+      try {
+        const legacyResult = legacyCall();
+
+        expect(sharedCall(), testCase.label).toBe(legacyResult);
+      } catch (error) {
+        expect(sharedCall, testCase.label).toThrow(error);
+      }
+    }
+  });
+
+  it("keeps the shared renderFact helper bit-for-bit equivalent", () => {
+    const extremeLabel = `label-${"L".repeat(256)}`;
+    const extremeValue = `value-${"V".repeat(256)}`;
+    const cases: Array<{
+      label: string;
+      input: [string, string];
+    }> = [
+      {
+        label: "null label throws",
+        input: [null as unknown as string, "value"],
+      },
+      {
+        label: "undefined label throws",
+        input: [undefined as unknown as string, "value"],
+      },
+      {
+        label: "null value throws",
+        input: ["label", null as unknown as string],
+      },
+      {
+        label: "undefined value throws",
+        input: ["label", undefined as unknown as string],
+      },
+      {
+        label: "empty strings preserve structure",
+        input: ["", ""],
+      },
+      {
+        label: "leading whitespace is preserved",
+        input: ["  label-leading", "  value-leading"],
+      },
+      {
+        label: "trailing whitespace is preserved",
+        input: ["label-trailing  ", "value-trailing  "],
+      },
+      {
+        label: "standard values",
+        input: ["Kingdom", "TradeScout"],
+      },
+      {
+        label: "mixed case values",
+        input: ["mIxEd LaBeL", "MiXeD VaLuE"],
+      },
+      {
+        label: "special characters are escaped",
+        input: [`label & <tag> "quote"`, `value & <tag> 'apostrophe'`],
+      },
+      {
+        label: "extreme long values",
+        input: [extremeLabel, extremeValue],
+      },
+    ];
+
+    for (const testCase of cases) {
+      const legacyCall = () => legacyRenderFact(...testCase.input);
+      const sharedCall = () => sharedRenderFact(...testCase.input);
 
       try {
         const legacyResult = legacyCall();

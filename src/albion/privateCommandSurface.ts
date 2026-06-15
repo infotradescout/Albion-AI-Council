@@ -4,6 +4,7 @@ import {
 } from "./privateCommandSurfaceData";
 import { escapeHtml } from "./shared/escapeHtml";
 import { renderBlockers } from "./shared/renderBlockers";
+import { renderFact } from "./shared/renderFact";
 
 export interface PrivateCommandSurfaceState {
   activeRunId: string;
@@ -171,15 +172,6 @@ function renderRunDetail(item: PrivateCommandSurfaceRun): string {
           ${item.driveVaultPlan.folders.map((folder) => `<li>${escapeHtml(folder)}</li>`).join("")}
         </ul>
       </section>
-    </div>
-  `;
-}
-
-function renderFact(label: string, value: string): string {
-  return `
-    <div>
-      <dt>${escapeHtml(label)}</dt>
-      <dd>${escapeHtml(value)}</dd>
     </div>
   `;
 }
