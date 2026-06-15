@@ -8,6 +8,7 @@ import {
 import { currentRunIdFromLocation as sharedCurrentRunIdFromLocation } from "../src/albion/shared/currentRunIdFromLocation";
 import { buildPrivateCommandSurfaceRuns } from "../src/albion/privateCommandSurfaceData";
 import { escapeHtml } from "../src/albion/shared/escapeHtml";
+import { renderBlockers as sharedRenderBlockers } from "../src/albion/shared/renderBlockers";
 import { currentRunIdFromLocation } from "../src/main";
 
 describe("Albion OS private command surface read model", () => {
@@ -130,6 +131,18 @@ describe("Albion OS private command surface rendering", () => {
     return pathMatch?.[1] ? decodeURIComponent(pathMatch[1]) : undefined;
   };
 
+  const legacyRenderBlockers = (blockers: string[]): string => {
+    if (blockers.length === 0) {
+      return `<p class="blocker-list empty">No blockers.</p>`;
+    }
+
+    return `
+    <ul class="blocker-list">
+      ${blockers.map((blocker) => `<li>${escapeHtml(blocker)}</li>`).join("")}
+    </ul>
+  `;
+  };
+
   it("keeps the shared HTML escape helper bit-for-bit equivalent", () => {
     expect(escapeHtml(`Albion & <Roundtable> "Merlin" 'Gawain'`)).toBe(
       "Albion &amp; &lt;Roundtable&gt; &quot;Merlin&quot; &#039;Gawain&#039;",
@@ -217,6 +230,72 @@ describe("Albion OS private command surface rendering", () => {
           () => currentRunIdFromLocation(testCase.input),
           testCase.label,
         ).toThrow(error);
+      }
+    }
+  });
+
+  it("keeps the shared renderBlockers helper bit-for-bit equivalent", () => {
+    const extremeBlocker = "blocker-".repeat(128);
+    const cases: Array<{
+      label: string;
+      input: string[];
+    }> = [
+      {
+        label: "null input throws",
+        input: null as unknown as string[],
+      },
+      {
+        label: "undefined input throws",
+        input: undefined as unknown as string[],
+      },
+      {
+        label: "empty list uses empty state",
+        input: [],
+      },
+      {
+        label: "single empty string entry",
+        input: [""],
+      },
+      {
+        label: "leading whitespace entry is preserved",
+        input: ["  blocker-leading"],
+      },
+      {
+        label: "trailing whitespace entry is preserved",
+        input: ["blocker-trailing  "],
+      },
+      {
+        label: "leading and trailing whitespace entry is preserved",
+        input: ["  blocker-both  "],
+      },
+      {
+        label: "standard entry",
+        input: ["required_approval_not_satisfied"],
+      },
+      {
+        label: "extreme long entry",
+        input: [extremeBlocker],
+      },
+      {
+        label: "special characters are escaped",
+        input: [`blocker & <tag> "quote" 'apostrophe'`],
+      },
+      {
+        label: "multiple entries preserve order",
+        input: ["first-blocker", "second-blocker", "third-blocker"],
+      },
+    ];
+
+    for (const testCase of cases) {
+      const legacyCall = () => legacyRenderBlockers(testCase.input);
+      const sharedCall = () => sharedRenderBlockers(testCase.input);
+
+      try {
+        const legacyResult = legacyCall();
+
+        expect(sharedCall(), testCase.label).toBe(legacyResult);
+      } catch (error) {
+        expect(sharedCall, testCase.label).toThrow(error);
       }
     }
   });
